@@ -1,0 +1,1 @@
+update bisis.records set in_use_by=NULL;

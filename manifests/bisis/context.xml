@@ -1,0 +1,41 @@
+<Context 
+  docBase="bisis" 
+  debug="5" 
+  reloadable="false" 
+  crossContext="false">
+
+  <Resource 
+    name="jdbc/Bisis" 
+    auth="Container" 
+    type="javax.sql.DataSource"
+    maxActive="20" 
+    maxIdle="10" 
+    maxWait="10000"
+    username="bisis" 
+    password="bisis" 
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://localhost/bisis?autoReconnectForPools=true"
+    removeAbandoned="true"
+    removeAbandonedTimeout="300"
+    logAbandoned="true"
+    defaultAutoCommit="false"/>
+    
+  <Resource 
+    name="jms/ConnectionFactory" 
+    auth="Container" 
+    type="org.apache.activemq.ActiveMQConnectionFactory" 
+    description="JMS Connection Factory"
+    factory="org.apache.activemq.jndi.JNDIReferenceFactory" 
+    brokerURL="vm://localhost?broker.persistent=false" 
+    brokerName="LocalActiveMQBroker"
+    useEmbeddedBroker="true"/>
+
+  <Resource 
+    name="jms/queue/BisisIndexer" 
+    auth="Container" 
+    type="org.apache.activemq.command.ActiveMQQueue" 
+    description="Queue for indexing records"
+    factory="org.apache.activemq.jndi.JNDIReferenceFactory" 
+    physicalName="BISIS.INDEX"/>
+        
+</Context>

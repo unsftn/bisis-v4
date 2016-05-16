@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Odeljenje" table="Odeljenje">
+    <cache usage="read-only"/>
+        <id name="odeljenjeId" type="string">
+            <column name="odeljenje_id" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="odeljenjeNaziv" type="string">
+            <column name="odeljenje_naziv" not-null="true">
+            </column>
+        </property>
+        <set name="primercis" inverse="true">
+            <key>
+                <column name="odeljenje_id" length="2">
+                </column>
+            </key>
+            <one-to-many class="Primerci" />
+        </set>
+        <set name="godines" inverse="true">
+            <key>
+                <column name="odeljenje_id" length="2">
+                </column>
+            </key>
+            <one-to-many class="Godine" />
+        </set>
+    </class>
+</hibernate-mapping>

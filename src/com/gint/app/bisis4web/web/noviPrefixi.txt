@@ -1,0 +1,14 @@
+AI=Autor izlo\u017ebe
+FO=Fotograf
+IL=Ilustrator
+KM=Komentator
+PI=Pisac
+PG=Pisac predgovora
+PE=Prera\u0111iva\u010d
+PO=Pisac pogovora
+PV=Prevodilac
+PD=Prire\u0111iva\u010d
+RD=Redaktor
+SB=Predmetne odrednice
+SD=Predmetne pododrednice
+UR=Urednik

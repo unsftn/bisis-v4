@@ -1,0 +1,7 @@
+#!/bin/bash
+# make report xml files
+
+java -Xms64m -Xmx256m -jar /opt/bisis4-jars/reports-generator.jar 
+
+
+

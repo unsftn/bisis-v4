@@ -1,0 +1,25 @@
+Podesavanje Tomcat-a 6
+======================
+
+A. JDBC drajver 
+---------------
+1. JDBC drajver za MySQL iskopiraj u $CATALINA_HOME/common/lib
+
+
+B. Web aplikacije sa pristupom ogranicenim po IP adresama
+---------------------------------------------------------
+1. Svaka web aplikacija ima svoj WEB-INF/web.xml. Njen kontekst Tomcat
+definise automatski ako se drugacije ne uradi prema nazivu war fajla. 
+Kontekst aplikacije mora biti jedinstven na nivou servera. Kontekst moze
+da se definise i u fajlu META-INF/context.xml u okviru web aplikacije.
+Sadrzaj ovog fajla je <Context> element iz Tomcatove konfiguracije. Ovo
+podrazumeva da ne postoji odgovarajuci fajl za ovu web aplikaciju u 
+$CATALINA_HOME/conf/[enginename]/[hostname]/ direktorijumu.
+
+2. Sadrzaj <Context> elementa moze da ima i <Valve> - komponentu koja se
+ubacuje u request processing pipeline. Tomcat vec stize sa nekoliko 
+valve-ova, a jedan od njih je i RemoteAddrValve.
+<Context>
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+    allow="192.168.1.*,127.0.0.1"/>
+</Context>

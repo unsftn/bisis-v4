@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+   <distributable/>
+   <servlet>
+     <servlet-name>ReportServlet</servlet-name>
+     <servlet-class>com.gint.app.bisis4.reports.ReportServlet</servlet-class>
+     <init-param>
+       <param-name>reportDir</param-name>
+       <param-value>/opt/reports-files</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+   </servlet>
+   
+   
+   <servlet-mapping>
+     <servlet-name>ReportServlet</servlet-name>
+     <url-pattern>/ReportServlet</url-pattern>
+   </servlet-mapping>
+
+</web-app>
+   

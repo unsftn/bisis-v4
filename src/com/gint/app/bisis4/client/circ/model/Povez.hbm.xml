@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Povez" table="Povez">
+    <cache usage="read-only"/>
+        <id name="povezId" type="char">
+            <column name="povez_id" length="1" />
+            <generator class="assigned" />
+        </id>
+        <property name="povezOpis" type="string">
+            <column name="povez_opis" not-null="true">
+            </column>
+        </property>
+        <set name="primercis" inverse="true">
+            <key>
+                <column name="povez_id" length="1">
+                </column>
+            </key>
+            <one-to-many class="Primerci" />
+        </set>
+        <set name="godines" inverse="true">
+            <key>
+                <column name="povez_id" length="1">
+                </column>
+            </key>
+            <one-to-many class="Godine" />
+        </set>
+    </class>
+</hibernate-mapping>

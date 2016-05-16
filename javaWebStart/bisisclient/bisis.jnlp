@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp codebase="http://147.91.218.23/bisisclient" href="bisis.jnlp" spec="1.7+">
+  <information>
+    <title>Bisis aplikacija</title>
+    <shortcut>
+      <desktop/>
+      <menu submenu="BISIS"/>
+    </shortcut>
+    <vendor>Inovacioni centar za elektronske biblioteke i arhive</vendor>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.6+"/>
+    <jar href="bisis-client.jar"/>
+    <jar href="bisis-textsrv.jar"/>
+    <jar href="bisis-utils.jar"/>
+    <jar href="bisis-records.jar"/>
+    <jar href="bisis-reports.jar"/>
+    <jar href="libs/antlr-2.7.6.jar"/>
+    <jar href="libs/asm.jar"/>
+    <jar href="libs/axis.jar"/>
+    <jar href="libs/c3p0-0.9.1.jar"/>
+    <jar href="libs/cglib-2.2.jar"/>
+    <jar href="libs/commons-dbcp-1.2.1.jar"/>
+    <jar href="libs/commons-beanutils.jar"/>
+    <jar href="libs/commons-betwixt-0.7.jar"/>
+    <jar href="libs/commons-codec-1.3.jar"/>
+    <jar href="libs/commons-collections-3.2.jar"/>
+    <jar href="libs/commons-digester-1.7.jar"/>
+    <jar href="libs/commons-fileupload-1.2.1.jar"/>
+    <jar href="libs/commons-httpclient-3.1.jar"/>
+    <jar href="libs/commons-io-1.4.jar"/>
+    <jar href="libs/commons-jxpath-1.1.jar"/>
+    <jar href="libs/commons-lang-2.2.jar"/>
+    <jar href="libs/commons-pool-1.3.jar"/>
+    <jar href="libs/commons-logging-1.1.jar"/>
+    <jar href="libs/commons-validator-1.3.0.jar"/>
+    <jar href="libs/dom4j-1.6.1.jar"/>
+    <jar href="libs/forms-1.0.7.jar"/>
+    <jar href="libs/freemarker.jar"/>
+    <jar href="libs/gint-utils.jar"/>
+    <jar href="libs/hessian-3.0.20.jar"/>
+    <jar href="libs/hibernate3.jar"/>
+    <jar href="libs/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+    <jar href="libs/iText-2.1.7.jar"/>
+    <jar href="libs/jakarta-oro-2.0.8.jar"/>
+    <jar href="libs/jasperreports-5.5.0.jar"/>
+    <jar href="libs/jasperreports-fonts-5.5.0.jar"/>
+    <jar href="libs/javassist-3.12.0.GA.jar"/>
+    <jar href="libs/jaxm-api.jar"/>
+    <jar href="libs/jaxm-runtime.jar"/>
+    <jar href="libs/jaxp-api.jar"/>
+    <jar href="libs/jcalendar-1.3.2.jar"/>
+    <jar href="libs/jdbc2_0-stdext.jar"/>
+    <jar href="libs/jsr173_1.0_api.jar"/>
+    <jar href="libs/jta-1.1.jar"/>
+    <jar href="libs/log4j-1.2.11.jar"/>
+    <jar href="libs/looks-2.1.1.jar"/>
+    <jar href="libs/lucene-core-2.2.0.jar"/>
+    <jar href="libs/mysql-connector-java-5.1.6-bin.jar"/>
+    <jar href="libs/options.jar"/>
+    <jar href="libs/PDFBox-0.7.3.jar"/>
+    <jar href="libs/report.jar"/>
+    <jar href="libs/slf4j-api-1.6.4.jar"/>
+    <jar href="libs/slf4j-simple-1.6.4.jar"/>
+    <jar href="libs/swingmiglayout15.jar"/>
+    <jar href="libs/validator.jar"/>
+    <jar href="libs/warnings.jar"/>
+    <jar href="libs/xalan.jar"/>
+    <jar href="libs/xbean.jar"/>
+    <jar href="libs/xercesImpl.jar"/>
+    <jar href="libs/xml-apis.jar"/>
+    <jar href="libs/xmlpublic.jar"/>
+    <jar href="libs/jaxen-1.1.1.jar"/>
+    <jar href="libs/servlet-api-2.4.jar"/>
+  </resources>
+  <resources os="Windows"/>
+  <application-desc main-class="com.gint.app.bisis4.client.BisisApp">
+    <argument>http://localhost/bisisclient/client-config.ini</argument>
+  </application-desc>
+</jnlp>

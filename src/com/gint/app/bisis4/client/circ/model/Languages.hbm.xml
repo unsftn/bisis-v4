@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Languages" table="languages">
+    <cache usage="read-only"/>
+        <id name="id" type="int" unsaved-value="null">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="string">
+            <column name="name">
+            </column>
+        </property>
+        <set name="userses" inverse="true">
+            <key>
+                <column name="languages">
+                </column>
+            </key>
+            <one-to-many class="Users" />
+        </set>
+    </class>
+</hibernate-mapping>

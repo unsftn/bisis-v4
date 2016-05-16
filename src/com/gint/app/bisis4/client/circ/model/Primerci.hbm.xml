@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Primerci" table="Primerci">
+        <id name="primerakId" type="int">
+            <column name="primerak_id" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" type="int">
+            <column name="version" not-null="true">
+            </column>
+        </version>
+        <many-to-one name="internaOznaka" class="InternaOznaka" fetch="select">
+            <column name="IntOzn_id" length="2">
+            </column>
+        </many-to-one>
+        <many-to-one name="sigformat" class="Sigformat" fetch="select">
+            <column name="SigFormat_ID" length="2">
+            </column>
+        </many-to-one>
+        <many-to-one name="odeljenje" class="Odeljenje" fetch="select">
+            <column name="odeljenje_id" length="2">
+            </column>
+        </many-to-one>
+        <many-to-one name="povez" class="Povez" fetch="select">
+            <column name="povez_id" length="1">
+            </column>
+        </many-to-one>
+        <many-to-one name="statusPrimerka" class="StatusPrimerka" fetch="join" lazy="false">
+            <column name="status_id" length="1">
+            </column>
+        </many-to-one>
+        <many-to-one name="nacinNabavke" class="NacinNabavke" fetch="select">
+            <column name="nacin_id" length="1">
+            </column>
+        </many-to-one>
+        <many-to-one name="records" class="Records" fetch="select">
+            <column name="record_id" not-null="true">
+            </column>
+        </many-to-one>
+        <many-to-one name="podlokacija" class="Podlokacija" fetch="select">
+            <column name="podlokacija_id" length="2">
+            </column>
+        </many-to-one>
+        <property name="invBroj" type="string">
+            <column name="inv_broj" length="25" not-null="true">
+            </column>
+        </property>
+        <property name="datumRacuna" type="date">
+            <column name="datum_racuna" length="10">
+            </column>
+        </property>
+        <property name="brojRacuna" type="string">
+            <column name="broj_racuna" length="50">
+            </column>
+        </property>
+        <property name="dobavljac" type="string">
+            <column name="dobavljac">
+            </column>
+        </property>
+        <property name="cena" type="big_decimal">
+            <column name="cena" precision="12">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="finansijer" type="string">
+            <column name="finansijer">
+            </column>
+        </property>
+        <property name="usmeravanje" type="string">
+            <column name="usmeravanje">
+            </column>
+        </property>
+        <property name="sigDublet" type="string">
+            <column name="sig_dublet" length="25">
+            </column>
+        </property>
+        <property name="sigNumerusCurens" type="string">
+            <column name="sig_numerus_curens" length="25">
+            </column>
+        </property>
+        <property name="sigUdk" type="string">
+            <column name="sig_udk">
+            </column>
+        </property>
+        <property name="datumInventarisanja" type="date">
+            <column name="datum_inventarisanja" length="10">
+            </column>
+        </property>
+        <property name="napomene" type="string">
+            <column name="napomene">
+            </column>
+        </property>
+        <property name="stanje" type="int">
+            <column name="stanje">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="StatusPrimerka" table="Status_Primerka">
+    <cache usage="read-only"/>
+        <id name="statusId" type="char">
+            <column name="status_id" length="1" />
+            <generator class="assigned" />
+        </id>
+        <property name="statusOpis" type="string">
+            <column name="status_opis" not-null="true">
+            </column>
+        </property>
+        <property name="zaduziv" type="int">
+            <column name="zaduziv" not-null="true">
+            </column>
+        </property>
+        <set name="sveskes" inverse="true">
+            <key>
+                <column name="status_id" length="1" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Sveske" />
+        </set>
+        <set name="primercis" inverse="true">
+            <key>
+                <column name="status_id" length="1">
+                </column>
+            </key>
+            <one-to-many class="Primerci" />
+        </set>
+    </class>
+</hibernate-mapping>

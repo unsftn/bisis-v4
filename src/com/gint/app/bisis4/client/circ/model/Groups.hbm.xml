@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Groups" table="groups">
+        <id name="sysId" type="int">
+            <column name="sys_id" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="string">
+            <column name="user_id" not-null="true">
+            </column>
+        </property>
+        <property name="instName" type="string">
+            <column name="inst_name">
+            </column>
+        </property>
+        <property name="signDate" type="timestamp">
+            <column name="sign_date" length="19">
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="address">
+            </column>
+        </property>
+        <property name="city" type="string">
+            <column name="city">
+            </column>
+        </property>
+        <property name="zip" type="integer">
+            <column name="zip">
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone">
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email">
+            </column>
+        </property>
+        <property name="fax" type="string">
+            <column name="fax">
+            </column>
+        </property>
+        <property name="secAddress" type="string">
+            <column name="sec_address">
+            </column>
+        </property>
+        <property name="secCity" type="string">
+            <column name="sec_city">
+            </column>
+        </property>
+        <property name="secZip" type="integer">
+            <column name="sec_zip">
+            </column>
+        </property>
+        <property name="secPhone" type="string">
+            <column name="sec_phone">
+            </column>
+        </property>
+        <property name="contFname" type="string">
+            <column name="cont_fname">
+            </column>
+        </property>
+        <property name="contLname" type="string">
+            <column name="cont_lname">
+            </column>
+        </property>
+        <property name="contEmail" type="string">
+            <column name="cont_email">
+            </column>
+        </property>
+        <set name="userses" inverse="true">
+            <key>
+                <column name="groups">
+                </column>
+            </key>
+            <one-to-many class="Users" />
+        </set>
+    </class>
+</hibernate-mapping>

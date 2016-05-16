@@ -1,0 +1,39 @@
+<Context 
+  docBase="commandsrv" 
+  debug="5" 
+  reloadable="false" 
+  crossContext="false">
+
+  <Resource 
+    name="jdbc/CommandConn" 
+    auth="Container" 
+    type="javax.sql.DataSource"
+    maxActive="20" 
+    maxIdle="10" 
+    maxWait="10000"
+    username="bisis" 
+    password="bisis" 
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://localhost/bisis?autoReconnectForPools=true"
+    removeAbandoned="true"
+    removeAbandonedTimeout="300"
+    logAbandoned="true"
+    defaultAutoCommit="false"/>
+    
+  <Resource 
+    name="jdbc/CommandConnArchive" 
+    auth="Container" 
+    type="javax.sql.DataSource"
+    maxActive="20" 
+    maxIdle="10" 
+    maxWait="10000"
+    username="bisis" 
+    password="bisis" 
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://localhost/arhiva?autoReconnectForPools=true"
+    removeAbandoned="true"
+    removeAbandonedTimeout="300"
+    logAbandoned="true"
+    defaultAutoCommit="false"/>
+        
+</Context>

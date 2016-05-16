@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Users" table="users">
+        <id name="sysId" type="int">
+            <column name="sys_id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="mmbrTypes" class="MmbrTypes" fetch="select">
+            <column name="mmbr_type" >
+            </column>
+        </many-to-one>
+        <many-to-one name="eduLvl" class="EduLvl" fetch="select">
+            <column name="edu_lvl">
+            </column>
+        </many-to-one>
+        <many-to-one name="userCategs" class="UserCategs" fetch="select">
+            <column name="user_categ">
+            </column>
+        </many-to-one>
+        <many-to-one name="organization" class="Organization" fetch="select">
+            <column name="organization">
+            </column>
+        </many-to-one>
+        <many-to-one name="groups" class="Groups" fetch="select">
+            <column name="groups">
+            </column>
+        </many-to-one>
+        <many-to-one name="languages" class="Languages" fetch="select">
+            <column name="languages">
+            </column>
+        </many-to-one>
+        <property name="userId" type="string">
+            <column name="user_id" length="11" not-null="true">
+            </column>
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name">
+            </column>
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name">
+            </column>
+        </property>
+        <property name="parentName" type="string">
+            <column name="parent_name">
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="address">
+            </column>
+        </property>
+        <property name="city" type="string">
+            <column name="city">
+            </column>
+        </property>
+        <property name="zip" type="integer">
+            <column name="zip">
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone">
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email">
+            </column>
+        </property>
+        <property name="jmbg" type="string">
+            <column name="jmbg">
+            </column>
+        </property>
+        <property name="docId" type="integer">
+            <column name="doc_id">
+            </column>
+        </property>
+        <property name="docNo" type="string">
+            <column name="doc_no">
+            </column>
+        </property>
+        <property name="docCity" type="string">
+            <column name="doc_city">
+            </column>
+        </property>
+        <property name="country" type="string">
+            <column name="country">
+            </column>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="1">
+            </column>
+        </property>
+        <property name="age" type="string">
+            <column name="age" length="1">
+            </column>
+        </property>
+        <property name="secAddress" type="string">
+            <column name="sec_address">
+            </column>
+        </property>
+        <property name="secZip" type="integer">
+            <column name="sec_zip">
+            </column>
+        </property>
+        <property name="secCity" type="string">
+            <column name="sec_city">
+            </column>
+        </property>
+        <property name="secPhone" type="string">
+            <column name="sec_phone">
+            </column>
+        </property>
+        <property name="note" type="string">
+            <column name="note">
+            </column>
+        </property>
+        <property name="interests" type="string">
+            <column name="interests">
+            </column>
+        </property>
+        <property name="warningInd" type="integer">
+            <column name="warning_ind">
+            </column>
+        </property>
+        <property name="occupation" type="string">
+            <column name="occupation">
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="indexNo" type="string">
+            <column name="index_no">
+            </column>
+        </property>
+        <property name="classNo" type="integer">
+            <column name="class_no">
+            </column>
+        </property>
+        <property name="pass" type="string">
+            <column name="pass">
+            </column>
+        </property>
+        <property name="blockReasons" type="string">
+            <column name="block_reason">
+            </column>
+        </property>
+        <set name="lendings" cascade="none" where="return_date is null" order-by="lend_date" lazy="true">
+            <key>
+                <column name="sys_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Lending" />
+        </set>
+        <set name="alllendings" inverse="true" cascade="delete">
+            <key>
+                <column name="sys_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Lending" />
+        </set>
+        <set name="signings" inverse="true" cascade="delete" order-by="sign_date" lazy="true">
+            <key>
+                <column name="sys_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Signing" />
+        </set>
+        <set name="duplicates" inverse="true" cascade="delete" lazy="true">
+            <key>
+                <column name="sys_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Duplicate" />
+        </set>
+        <set name="picturebooks" inverse="true" cascade="delete" order-by="sdate" lazy="true">
+            <key>
+                <column name="sys_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Picturebooks" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Warnings" table="warnings">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="lending" class="Lending" fetch="select">
+            <column name="lending_id" not-null="true">
+            </column>
+        </many-to-one>
+        <many-to-one name="warningTypes" class="WarningTypes" fetch="join" lazy="false" >
+            <column name="wtype" not-null="true">
+            </column>
+        </many-to-one>
+        <property name="wdate" type="timestamp">
+            <column name="wdate" length="19" not-null="true">
+            </column>
+        </property>
+        <property name="warnNo" type="string">
+            <column name="warn_no">
+            </column>
+        </property>
+        <property name="deadline" type="timestamp">
+            <column name="deadline" length="19">
+            </column>
+        </property>
+        <property name="note" type="string">
+            <column name="note">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

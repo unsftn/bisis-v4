@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Archive.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Bibliotekari.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Counters.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Configs.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Duplicate.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/EduLvl.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Godine.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Groups.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/InternaOznaka.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Languages.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Lending.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Location.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Membership.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/MmbrTypes.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/NacinNabavke.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Odeljenje.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Organization.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Podlokacija.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Povez.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Primerci.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Records.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Sigformat.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Signing.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/StatusPrimerka.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Sveske.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/TipoviObrade.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/UserCategs.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Users.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/WarnCounters.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Warnings.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/WarningTypes.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Places.hbm.xml"/>
+        <mapping resource="com/gint/app/bisis4/client/circ/model/Picturebooks.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

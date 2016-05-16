@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <distributable/>
+  <servlet>
+    <servlet-name>Service</servlet-name>
+    <display-name>Service</display-name>
+    <description>Implements Hessian remoting protocol for the BISIS circulacion service</description>
+    <servlet-class>com.caucho.burlap.server.BurlapServlet</servlet-class>
+    <init-param>
+      <param-name>service-class</param-name>
+      <param-value>com.gint.app.bisis4.commandservice.ServerImpl</param-value>
+    </init-param>
+    <init-param>
+      <param-name>api-class</param-name>
+      <param-value>com.gint.app.bisis4.commandservice.Server</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+ <servlet-mapping>
+    <servlet-name>Service</servlet-name>
+    <url-pattern>/Service</url-pattern>
+  </servlet-mapping>
+  
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/CommandConn</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+
+</web-app>

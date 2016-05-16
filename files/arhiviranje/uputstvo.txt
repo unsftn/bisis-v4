@@ -1,0 +1,28 @@
+# kreiraj semu 'arhiva'
+echo "create schema arhiva; " | mysql -u root
+
+# napravi usera 'arhiva'
+echo "grant select on arhiva.* to 'arhiva'@'localhost' identified by 'arhiva'; " | mysql -u root
+echo "grant select on arhiva.* to 'arhiva'@'%' identified by 'arhiva'; " | mysql -u root
+
+# dodeli useru 'bisis' prava na arhivu
+echo "grant all privileges on arhiva.* to 'bisis'@'%' identified by 'bisis'; " | mysql -u root
+echo "grant all privileges on arhiva.* to 'bisis'@'localhost' identified by 'bisis'; " | mysql -u root
+
+# kreiraj semu baze u arhivi
+mysql -D arhiva -u bisis -pbisis < textsrv-create.sql
+mysql -D arhiva -u bisis -pbisis < circ-create.ddl
+
+# prepisi sifarnike iz cirkulacije u arhivu
+mysql -D bisis -u bisis -pbisis < arhiva-sifarnici.sql
+
+# kreiraj stored procedure za arhiviranje
+mysql -D bisis -u bisis -pbisis < archive.sql
+mysql -D bisis -u bisis -pbisis < maketemp.sql
+
+# pronadji neaktivne korisnike i upisi njihove ID-jeve u temp tabele
+echo "call temp1();" | mysql -D bisis -u bisis -pbisis
+echo "call temp2();" | mysql -D bisis -u bisis -pbisis
+
+# uradi arhiviranje
+echo "call archiveall();" | mysql -D bisis -u bisis -pbisis

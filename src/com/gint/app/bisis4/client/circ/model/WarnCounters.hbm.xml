@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="WarnCounters" table="warn_counters">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="warningTypes" class="WarningTypes" fetch="select">
+            <column name="wtype" not-null="true">
+            </column>
+        </many-to-one>
+        <property name="warnYear" type="integer">
+            <column name="warn_year" not-null="true">
+            </column>
+        </property>
+        <property name="lastNo" type="integer">
+            <column name="last_no">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

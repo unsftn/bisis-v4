@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="TipoviObrade" table="Tipovi_obrade">
+    <cache usage="read-only"/>
+        <id name="tipobrId" type="int">
+            <column name="tipobr_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="tipobrSpec" type="string">
+            <column name="tipobr_spec" length="65535" not-null="true">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

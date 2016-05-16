@@ -1,0 +1,575 @@
+<project name="bisis4" default="build">
+
+  <property file=".ant.properties" />
+  <property name="libs" location="libs" />
+
+  <path id="runtime.classpath">
+    <fileset dir="libs" includes="*.jar" />
+  </path>
+
+  <path id="compile.classpath">
+    <pathelement location="bin" />
+    <path refid="runtime.classpath" />
+    <fileset dir="compile-libs" includes="*.jar" />	
+  </path>
+
+  <path id="classpath.all">
+    <path refid="compile.classpath" />
+    <fileset dir="test-libs" includes="*.jar" />
+  </path>
+
+  <target name="copy.files">
+    <mkdir dir="bin" />
+    <copy todir="bin">
+      <fileset dir="src" includes="**/*.png" />
+      <fileset dir="src" includes="**/*.gif" />
+      <fileset dir="src" includes="**/*.jpg" />
+      <fileset dir="src" includes="**/*.properties" />
+      <fileset dir="src" includes="**/*.xml" />
+      <fileset dir="src" includes="**/*.xsd" />
+      <fileset dir="src" includes="**/*.jasper" />
+      <fileset dir="src" includes="**/*.ftl" />
+      <fileset dir="src" includes="**/*.ini" />
+      <fileset dir="src" includes="**/*.txt" />
+      <fileset dir="src" includes="**/*.xsl" />
+    </copy>
+  </target>
+
+  <target name="compile" depends="copy.files">
+    <javac srcdir="src" destdir="bin" classpathref="compile.classpath" debug="true" includeantruntime="false"/>
+  </target>
+
+  <target name="jasper">
+    <taskdef classpathref="compile.classpath" classname="net.sf.jasperreports.ant.JRAntCompileTask" name="jrc" />
+    <jrc>
+      <src>
+        <fileset dir="src" includes="**/*.jrxml" />
+      </src>
+      <classpath refid="compile.classpath" />
+    </jrc>
+  </target>
+
+  <!-- razne utility klase -->
+  <target name="build.utils" depends="compile">
+    <mkdir dir="jars" />
+    <jar destfile="jars/bisis-utils.jar">
+      <zipfileset dir="bin">
+        <include name="com/gint/app/bisis4/utils/**" />
+      	<include name="com/gint/app/bisis4/barcode/**" />
+      </zipfileset>
+    </jar>
+  </target>
+
+  <!-- klase o zapisima, formatu i prefiksima -->
+  <target name="build.records" depends="build.utils">
+    <jar destfile="jars/bisis-records.jar" manifest="manifests/bisis-records.mf">
+      <zipfileset dir="bin">
+        <include name="com/gint/app/bisis4/records/**" />
+        <include name="com/gint/app/bisis4/format/**" />
+        <include name="com/gint/app/bisis4/prefixes/**" />
+      </zipfileset>
+    </jar>
+  </target>
+
+  <!-- tekst server klase -->
+  <target name="build.textsrv" depends="build.records">
+    <jar destfile="jars/bisis-textsrv.jar" manifest="manifests/bisis-textsrv.mf">
+      <zipfileset dir="bin">
+        <include name="com/gint/app/bisis4/textsrv/**" />
+        <include name="com/gint/app/bisis4/remoting/**" />
+      </zipfileset>
+    </jar>
+  </target>
+
+  <!-- izvestaji -->
+  <target name="build.reports" depends="build.textsrv">
+    <jar destfile="jars/bisis-reports.jar">
+      <zipfileset dir="bin">
+        <include name="com/gint/app/bisis4/reports/**" />
+      </zipfileset>
+    </jar>
+  </target>
+
+  <!-- bisis klijent -->
+  <target name="build.client" depends="build.reports">
+    <!--<jar destfile="jars/bisis-config.jar">
+      <zipfileset dir="bin">
+        <include name="client-config.ini" />
+        <include name="reports.ini" /> 
+        <include name="log4j.properties" />
+        <include name="circ-options.xml" />
+      	<include name="user-bean-validator.xml" />
+      </zipfileset>
+    </jar> -->
+    <jar destfile="jars/bisis-client.jar" manifest="manifests/bisis-client.mf">
+      <zipfileset dir="bin">
+        <include name="com/gint/app/bisis4/client/**" />
+        <include name="com/gint/app/bisis4/librarian/**" />
+        <include name="com/gint/app/bisis4/cards/**" />
+      	<include name="com/gint/app/bisis4/xmlmessaging/**" />
+      	<include name="com/gint/app/bisis4/commandservice/**" /> 
+      	<include name="log4j.properties" />
+      </zipfileset>
+    </jar>
+  </target>
+
+  <!--reindex-->
+  <target name="reindex" depends="compile">
+    <mkdir dir="temp" />
+    <unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+    <unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+    <unjar src="${libs}/lucene-core-2.2.0.jar" dest="temp" />
+    <unjar src="${libs}/gint-utils.jar" dest="temp" />
+    <unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />
+    <jar destfile="jars/bisis-reindex.jar" manifest="manifests/reindex.mf">
+      <fileset dir="temp" includes="**" />
+      <fileset dir="bin" includes="**" />
+      <include name="log4j.properties" />
+
+    </jar>
+    <delete dir="temp" />
+  </target>
+
+  <!--index and store records-->
+  <target name="indexer" depends="compile">
+    <mkdir dir="temp" />
+    <unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+    <unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+    <unjar src="${libs}/lucene-core-2.2.0.jar" dest="temp" />
+    <unjar src="${libs}/gint-utils.jar" dest="temp" />
+    <unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+    <unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />
+    <jar destfile="jars/bisis-indexer.jar" manifest="manifests/indexer.mf">
+      <fileset dir="temp" includes="**" />
+      <fileset dir="bin" includes="**" />
+      <include name="log4j.properties" />
+    </jar>
+    <delete dir="temp" />
+  </target>
+	
+	  <!--aplikacija za generisanje izvestaja-->
+	  <target name="reportGen" depends="compile">
+	    <mkdir dir="temp" />
+	  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+	  	<unjar src="${libs}/xercesImpl.jar" dest="temp" />
+	  	<unjar src="${libs}/xml-apis.jar" dest="temp" />
+	  	 <unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+	    <unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />
+	  	<unjar src="${libs}/lucene-core-2.2.0.jar" dest="temp" />
+	  	<unjar src="${libs}/gint-utils.jar" dest="temp" />
+	  	<unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+	  	<unjar src="${libs}/jasperreports-5.5.0.jar" dest="temp" />
+	    <jar destfile="jars/reports-generator.jar" manifest="manifests/reportGen.mf">
+	      <fileset dir="temp" includes="**" />
+	    	<zipfileset dir="bin">
+	    		<include name="com/gint/app/bisis4/reports/**"/>
+		      <include name="com/gint/app/bisis4/records/**"/>
+	    		<include name="com/gint/app/bisis4/format/**"/>
+	    		<include name="com/gint/app/bisis4/utils/**"/>
+	    		<include name="com/gint/app/bisis4/textsrv/**"/>
+	    		<include name="com/gint/app/bisis4/client/commands/**" />
+	    		<include name="com/gint/app/bisis4/commandservice/**" />
+	    		<include name="log4j.properties"/>
+	    	    <include name="reports.ini"/>
+	    	</zipfileset>
+	    </jar>
+	    <delete dir="temp" />
+	  </target>
+	
+	<!--aplikacija za importovanje podataka-->
+	<target name="importApp" depends="compile">
+    <mkdir dir="temp" />
+  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+  	<unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+    <unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />
+  	<unjar src="${libs}/gint-utils.jar" dest="temp" />
+  	<unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+    <unjar src="${libs}/swingmiglayout15.jar" dest="temp" />
+    <unjar src="${libs}/commons-beanutils.jar" dest="temp" />    
+    <unjar src="${libs}/commons-betwixt-0.7.jar" dest="temp" />
+    <unjar src="${libs}/commons-digester-1.7.jar" dest="temp" />
+    <jar destfile="jars/bisis-import.jar" manifest="manifests/import.mf">
+      <fileset dir="temp" includes="**" />
+    	<zipfileset dir="bin">
+    		<include name="com/gint/app/bisis4/client/backup/**"/>
+    		<include name="com/gint/app/bisis4/utils/**"/>
+    		<include name="com/gint/app/bisis4/client/images/**"/>
+    		<include name="log4j.properties"/>
+    		<include name="client-config.ini" />
+    	</zipfileset>
+    </jar>
+    <delete dir="temp" />
+  </target>
+	
+	<!--aplikacija za backup-->
+		<target name="backup" depends="compile">
+	    <mkdir dir="temp" />
+	  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+	  	<unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+	    <unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />
+	  	<unjar src="${libs}/gint-utils.jar" dest="temp" />
+	  	<unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+	    <unjar src="${libs}/commons-beanutils.jar" dest="temp" />    
+	    <unjar src="${libs}/commons-betwixt-0.7.jar" dest="temp" />
+      <unjar src="${libs}/commons-digester-1.7.jar" dest="temp" />
+	    <jar destfile="jars/bisis-backup.jar" manifest="manifests/backup.mf">
+	      <fileset dir="temp" includes="**" />
+	    	<zipfileset dir="bin">
+	    		<include name="com/gint/app/bisis4/client/backup/**"/>
+	    		<include name="com/gint/app/bisis4/utils/**"/>
+	    		<include name="log4j.properties"/>
+	    	</zipfileset>
+	    </jar>
+	    <delete dir="temp" />
+	  </target>
+	
+	<!--barcode server-->
+		<target name="barcodeServer" depends="compile">
+	    <mkdir dir="temp" />
+	  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />  
+	    <jar destfile="jars/bisis-barcode.jar" manifest="manifests/barcode.mf">
+	      <fileset dir="temp" includes="**" />
+	    	<zipfileset dir="bin">
+	    		<include name="com/gint/app/bisis4/barcode/**"/>
+
+	    		<include name="log4j.properties"/>
+	    	</zipfileset>
+	    </jar>
+	    <delete dir="temp" />
+	  </target>	
+	
+	<!--pincode generator-->
+		<target name="pincodeGenerator" depends="compile">
+	    <mkdir dir="temp" />
+	  	<unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />  
+	    <jar destfile="jars/pincodeGenerator.jar" manifest="manifests/pincode.mf">
+	      <fileset dir="temp" includes="**" />
+	    	<zipfileset dir="bin">
+	    		<include name="com/gint/app/bisis4/client/circ/common/**"/>
+	    	</zipfileset>
+	    </jar>
+	    <delete dir="temp" />
+	  </target>
+	
+  <!-- web aplikacija -->
+  <target name="build.war" depends="build.textsrv">
+    <jar destfile="jars/bisis.war">
+      <zipfileset dir="manifests/bisis" prefix="WEB-INF">
+        <include name="web.xml" />
+      </zipfileset>
+      <zipfileset dir="manifests/bisis" prefix="META-INF">
+        <include name="context.xml" />
+      </zipfileset>
+    	<zipfileset dir="${libs}" prefix="WEB-INF/lib">
+        <include name="mysql-connector-java-5.1.6-bin.jar" />
+        <include name="gint-utils.jar" />
+    		<include name="commons-codec-1.3.jar" />
+    		<include name="commons-fileupload-1.2.1.jar" />
+    		<include name="commons-io-1.4.jar" />
+        <include name="commons-logging-1.1.jar" />
+      	<include name="commons-dbcp-1.2.1.jar" />
+      	<include name="commons-lang-2.2.jar" />
+      	<include name="commons-pool-1.3.jar" />
+      	<include name="lucene-core-2.2.0.jar" />
+    		<include name="PDFBox-0.7.3.jar" />
+    		<include name="hessian-3.0.20.jar" />
+    		<include name="log4j-1.2.11.jar" />
+    		<include name="incubator-activemq-4.0.1.jar" />
+      </zipfileset>
+      <zipfileset dir="jars" prefix="WEB-INF/lib" includes="*.jar">
+        <exclude name="bisis-client.jar" />
+      </zipfileset>
+    </jar>
+  </target>
+	
+	 <!-- web aplikacija za izvestaje-->
+	  <target name="reports.war" depends="compile">
+	    <jar destfile="jars/bisis-reports.war">
+	      <zipfileset dir="manifests/reports-war" prefix="WEB-INF">
+	        <include name="web.xml" />
+	      </zipfileset>
+	      <zipfileset dir="libs" prefix="WEB-INF/lib">
+	    	<include name="commons-logging-1.1.jar" />
+	    	<include name="commons-lang-2.2.jar" />
+	      	<include name="mysql-connector-java-5.1.6-bin.jar" />
+	      	<include name="gint-utils.jar" />
+	      </zipfileset>
+	       <zipfileset dir="bin" prefix="WEB-INF/classes">
+	         <include name="com/gint/app/bisis4/reports/**"/>
+	       	 <include name="com/gint/app/bisis4/utils/**"/>
+	       </zipfileset>
+	    </jar>
+	  </target>
+	
+	<target name="xdoclet.web" description="Web Generation">
+    <taskdef classpathref="classpath.all" classname="xdoclet.modules.web.WebDocletTask" name="webdoclet" />
+    <webdoclet destDir="web-files/WEB-INF">
+      <fileset dir="src/com/gint/app/bisis4web/" includes="**/*Servlet.java,**/*Tag.java" />
+      <deploymentdescriptor Servletspec="2.3">
+        <taglib uri="http://www.bisis.ns.ac.yu/jsptags/display" location="display.tld" />
+      </deploymentdescriptor>
+      <jsptaglib jspversion="2.0" taglibversion="1.0" uri="http://www.bisis.ns.ac.yu/jsptags/display" filename="display.tld" shortname="display" />
+    </webdoclet>
+  </target>
+	
+	<target name="web.war" description="bisis4web.war">
+    <jar destfile="jars/bisis4web.war">
+      <zipfileset dir="web-files/WEB-INF" prefix="WEB-INF">
+        <include name="web.xml" />
+      	<include name="display.tld" />
+      </zipfileset>
+      <zipfileset dir="${libs}" prefix="WEB-INF/lib">
+        <include name="mysql-connector-java-5.1.6-bin.jar" />
+        <include name="freemarker.jar" />
+        <include name="gint-utils.jar" />
+        <include name="commons-logging-1.1.jar" />
+      	<include name="commons-dbcp-1.2.1.jar" />
+      	<include name="commons-lang-2.2.jar" />
+      	<include name="commons-pool-1.3.jar" />
+      	<include name="lucene-core-2.2.0.jar" />
+      	<include name="incubator-activemq-4.0.1.jar" />
+      </zipfileset>
+      <zipfileset dir="bin" prefix="WEB-INF/classes" >
+      	<include name="com/gint/app/bisis4web/**" />
+    		<include name="com/gint/app/bisis4/utils/**" />
+      	<include name="com/gint/app/bisis4/records/**" />
+      	<include name="com/gint/app/bisis4/format/**" />
+      	<include name="com/gint/app/bisis4/prefixes/**" />
+      	<include name="com/gint/app/bisis4/textsrv/**" />
+      	<include name="com/gint/app/bisis4/remoting/**" />
+      </zipfileset>
+      <zipfileset dir="web-files/docroot"/>
+    </jar>
+  </target>
+	
+  <target name="xmlmserver.war" description="bisis4XMLM.war">
+    <jar destfile="jars/bisis4XMLM.war">
+      <zipfileset dir="web-files/WEB-INF/XMLM" prefix="WEB-INF">
+        <include name="web.xml" />
+      </zipfileset>
+      <zipfileset dir="manifests/bisisXMLM" prefix="META-INF">
+        <include name="context.xml" />
+      </zipfileset>
+      <zipfileset dir="${libs}" prefix="WEB-INF/lib">
+        <include name="mysql*.jar" />
+        <include name="gint-utils.jar" />
+        <include name="commons-logging-1.1.jar" />
+      	<include name="commons-dbcp-1.2.1.jar" />
+      	<include name="commons-lang-2.2.jar" />
+      	<include name="commons-pool-1.3.jar" />
+      	<include name="lucene-core-2.2.0.jar" />
+      	<include name="incubator-activemq-4.0.1.jar" />
+      	<include name="jax*.jar" />
+      	<include name="dom4j-1.6.1.jar" />
+      	<include name="xerces*.jar" />
+      </zipfileset>
+      <zipfileset dir="bin" prefix="WEB-INF/classes" >
+      	<include name="com/gint/app/bisis4web/**" />
+    	  <include name="com/gint/app/bisis4/utils/**" />
+      	<include name="com/gint/app/bisis4/records/**" />
+      	<include name="com/gint/app/bisis4/format/**" />
+      	<include name="com/gint/app/bisis4/formatters/**" />
+      	<include name="com/gint/app/bisis4/prefixes/**" />
+      	<include name="com/gint/app/bisis4/textsrv/**" />
+      	<include name="com/gint/app/bisis4/remoting/**" />
+      </zipfileset>
+    </jar>
+  </target>
+	
+	<target name="admin.war" description="bisisAdmin.war">
+	    <jar destfile="jars/bisisAdmin.war">
+	      <zipfileset dir="web-files/WEB-INF/admin" prefix="WEB-INF">
+	        <include name="web.xml" />
+	      </zipfileset>
+	      <zipfileset dir="${libs}" prefix="WEB-INF/lib">
+	        <include name="commons-logging-1.1.jar" />
+	      	<include name="commons-dbcp-1.2.1.jar" />
+	      	<include name="commons-lang-2.2.jar" />
+	      	<include name="commons-pool-1.3.jar" />
+	      	<include name="mysql-connector-java-5.1.6-bin.jar" />
+	      </zipfileset>
+	      <zipfileset dir="bin" prefix="WEB-INF/classes" >
+	      	<include name="com/gint/app/bisisadmin/**" />
+	      </zipfileset>
+	    	<zipfileset dir="web-files/bisisadmin"/>
+	    	<zipfileset dir="javaWebStart">
+	      	<include name="bisis.jks" />
+	      </zipfileset>
+	    </jar>
+	  </target>
+	<target name="bisismobile.war" description="bisismobile.war">
+	    <jar destfile="jars/bisismobile.war">
+	      <zipfileset dir="web-files/WEB-INF/mobile" prefix="WEB-INF">
+	        <include name="web.xml" />
+	      </zipfileset>
+	      <zipfileset dir="${libs}" prefix="WEB-INF/lib">
+	        <include name="mysql-connector-java-5.1.6-bin.jar" />
+	        <include name="gint-utils.jar" />
+	        <include name="commons-logging-1.1.jar" />
+	      	<include name="commons-dbcp-1.2.1.jar" />
+	      	<include name="commons-lang-2.2.jar" />
+	      	<include name="commons-pool-1.3.jar" />
+	      	<include name="lucene-core-2.2.0.jar" />
+	      	<include name="incubator-activemq-4.0.1.jar" />
+	      </zipfileset>
+	      <zipfileset dir="bin" prefix="WEB-INF/classes" >
+	      	<include name="com/gint/app/bisismobile/**" />
+	    	<include name="com/gint/app/bisis4/utils/**" />
+	      	<include name="com/gint/app/bisis4/records/**" />
+	      	<include name="com/gint/app/bisis4/format/**" />
+	      	<include name="com/gint/app/bisis4/prefixes/**" />
+	      	<include name="com/gint/app/bisis4/textsrv/**" />
+	      	<include name="com/gint/app/bisis4/remoting/**" />
+	      </zipfileset>
+	    </jar>
+	  </target>
+	
+ <target name="commandsrv.war" depends="">
+    <jar destfile="jars/commandsrv.war">
+	    <zipfileset dir="manifests/commandservice" prefix="WEB-INF">
+	        <include name="web.xml" />
+	    </zipfileset>
+    	<zipfileset dir="manifests/commandservice" prefix="META-INF">
+    	     <include name="context.xml" />
+    	</zipfileset>
+	    <zipfileset dir="libs" prefix="WEB-INF/lib" >
+	    	<include name="commons-logging-1.1.jar" />
+	    	<include name="commons-lang-2.2.jar" />
+	    	<include name="commons-collections-3.2.jar" />
+	    	<include name="jta-1.1.jar" />
+	    	<include name="javassist-3.12.0.GA.jar" />
+	    	<include name="slf4j-api-1.6.4.jar" />
+	    	<include name="slf4j-simple-1.6.4.jar" />
+	    	<include name="hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+	    	<include name="xml-apis.jar" />
+	    	<include name="c3p0-0.9.1.jar" />
+	    	<include name="log4j-1.2.11.jar" />
+	    	<include name="dom4j-1.6.1.jar" />
+	    	<include name="antlr-2.7.6.jar" />
+	    	<include name="cglib-2.2.jar" />
+	    	<include name="asm.jar" />
+	    	<include name="jdbc2_0-stdext.jar" />
+	    	<include name="hibernate3.jar" />
+	    	<include name="hessian-3.0.20.jar" />   	
+	    </zipfileset>
+			<zipfileset dir="bin" prefix="WEB-INF/classes" >
+		    <include name="com/gint/app/bisis4/client/circ/commands/**" />
+				<include name="com/gint/app/bisis4/client/commands/**" />
+				<include name="com/gint/app/bisis4/commandservice/**" />
+		    <include name="com/gint/app/bisis4/client/circ/model/**" />
+		    <include name="com/gint/app/bisis4/client/circ/common/**" />
+				<include name="com/gint/app/bisis4/utils/**" />
+				<include name="log4j.properties" />
+			</zipfileset>
+    </jar>
+  </target>
+	
+	<target name="archiveUsers" depends="compile">
+    <mkdir dir="temp" />
+  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+		<unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+		<unjar src="${libs}/commons-collections-3.2.jar" dest="temp" />
+		<unjar src="${libs}/jta-1.1.jar" dest="temp" />
+		<unjar src="${libs}/javassist-3.12.0.GA.jar" dest="temp" />
+		<unjar src="${libs}/slf4j-api-1.6.4.jar" dest="temp" />
+		<unjar src="${libs}/slf4j-simple-1.6.4.jar" dest="temp" />
+		<unjar src="${libs}/hibernate-jpa-2.0-api-1.0.1.Final.jar" dest="temp" />
+  	<unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+		<unjar src="${libs}/xml-apis.jar" dest="temp" />
+  	<unjar src="${libs}/c3p0-0.9.1.jar" dest="temp" />
+    <unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />    
+    <unjar src="${libs}/dom4j-1.6.1.jar" dest="temp" />
+    <unjar src="${libs}/antlr-2.7.6.jar" dest="temp" />
+		<unjar src="${libs}/cglib-2.2.jar" dest="temp" />
+		<unjar src="${libs}/asm.jar" dest="temp" />
+		<unjar src="${libs}/jdbc2_0-stdext.jar" dest="temp" />
+		<unjar src="${libs}/hibernate3.jar" dest="temp" />
+    <jar destfile="jars/archiveUsers.jar" manifest="manifests/archiveUsers.mf">
+      <fileset dir="temp" includes="**" />
+    	<zipfileset dir="bin">
+    		<include name="com/gint/app/bisis4/client/circ/commands/**"/>
+    		<include name="com/gint/app/bisis4/commandservice/**" />
+    		<include name="com/gint/app/bisis4/client/circ/model/**"/>
+    		<include name="com/gint/app/bisis4/client/circ/archive/**"/>
+    		<include name="com/gint/app/bisis4/utils/**"/>
+    		<include name="log4j.properties"/>
+    	</zipfileset>
+    </jar>
+    <delete dir="temp" />
+  </target>
+	
+	<target name="archiveCoders" depends="compile">
+	    <mkdir dir="temp" />
+	  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+			<unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+			<unjar src="${libs}/commons-collections-3.2.jar" dest="temp" />
+			<unjar src="${libs}/jta-1.1.jar" dest="temp" />
+			<unjar src="${libs}/javassist-3.12.0.GA.jar" dest="temp" />
+			<unjar src="${libs}/slf4j-api-1.6.4.jar" dest="temp" />
+			<unjar src="${libs}/slf4j-simple-1.6.4.jar" dest="temp" />
+			<unjar src="${libs}/hibernate-jpa-2.0-api-1.0.1.Final.jar" dest="temp" />
+	  	<unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+			<unjar src="${libs}/xml-apis.jar" dest="temp" />
+	  	<unjar src="${libs}/c3p0-0.9.1.jar" dest="temp" />
+	    <unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />    
+	    <unjar src="${libs}/dom4j-1.6.1.jar" dest="temp" />
+	    <unjar src="${libs}/antlr-2.7.6.jar" dest="temp" />
+			<unjar src="${libs}/cglib-2.2.jar" dest="temp" />
+			<unjar src="${libs}/asm.jar" dest="temp" />
+			<unjar src="${libs}/jdbc2_0-stdext.jar" dest="temp" />
+			<unjar src="${libs}/hibernate3.jar" dest="temp" />
+	    <jar destfile="jars/archiveCoders.jar" manifest="manifests/archiveCoders.mf">
+	      <fileset dir="temp" includes="**" />
+	    	<zipfileset dir="bin">
+	    		<include name="com/gint/app/bisis4/client/circ/commands/**"/>
+	    		<include name="com/gint/app/bisis4/commandservice/**" />
+	    		<include name="com/gint/app/bisis4/client/circ/model/**"/>
+	    		<include name="com/gint/app/bisis4/client/circ/archive/**"/>
+	    		<include name="com/gint/app/bisis4/utils/**"/>
+	    		<include name="log4j.properties"/>
+	    	</zipfileset>
+	    </jar>
+	    <delete dir="temp" />
+	  </target>
+	
+	<!-- program koji popravlja polje 992b. Uradjeno za sabac-->
+	<target name="sabacFix" depends="compile">
+	    <mkdir dir="temp" />
+	  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+		<unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+		<unjar src="${libs}/commons-collections-3.2.jar" dest="temp" />
+	  	<unjar src="${libs}/mysql-connector-java-5.1.6-bin.jar" dest="temp" />
+		<unjar src="${libs}/gint-utils.jar" dest="temp" />
+	    <jar destfile="jars/sabacFix.jar" manifest="manifests/sabacFix.mf">
+	      <fileset dir="temp" includes="**" />
+	    	<zipfileset dir="bin">
+	    		<include name="com/gint/app/bisis4/format/**"/>
+	    		<include name="com/gint/app/bisis4/textsrv/**" />
+	    		<include name="com/gint/app/bisis4/records/**"/>
+	    		<include name="com/gint/app/bisis4/reports/gbsa/**"/>
+	    		<include name="com/gint/app/bisis4/utils/**"/>
+	    		<include name="log4j.properties"/>
+	    	</zipfileset>
+	    </jar>
+	    <delete dir="temp" />
+	  </target>
+	
+  <target name="build" depends="build.client, build.war" />
+  <target name="clean">
+    <delete dir="bin" />
+  </target>
+
+  <target name="clean.jasper">
+    <delete>
+      <fileset dir="src" includes="**/*.jasper" />
+    </delete>
+  </target>
+
+  <target name="rebuild" depends="clean, build" />
+  <target name="rebuild.all" depends="clean,clean.jasper,jasper,build"/>
+
+  <target name="deploy" depends="build">
+    <copy file="jars/bisis.war" todir="${deploydir}" />
+  </target>
+
+</project>

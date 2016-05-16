@@ -1,0 +1,231 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Searching in BISIS - User Manual</title>
+</head>
+<body>
+
+<h2>Searching in BISIS - User Manual</h2>
+
+<p>The BISIS Retrieval home page displays a menu for choosing the retrieval method
+(see Figure 1). The retrieval of records may be performed by using one or multiple
+search prefixes. If using a single prefix, searching may be performed <i>by author</i>,
+<i>by title</i>, and <i>by keywords</i>. Searching on multiple prefixes with logic
+operators is invoked by clicking <i>advanced search</i>. The language of the
+application may be selected by clicking <i>Srpski, Magyar, Slovenský, Română, Pyски, 
+English</i>. This manual is opened by clicking the <i>Help</i> link.</p>
+
+<center><img src="pic01.png"><br>
+Figure 1.
+</center>
+
+<h3>1. Searching By Author</h3>
+
+<p>This section describes searching the BISIS database by author. Equivalent instructions
+apply for searching <i>by title</i> and <i>by keywords</i>.</p>
+
+<p>Clicking on <i>by author</i>, displays a search form with a text field for the name
+of the author being searched for (see Figure 2). Clicking the <i>Submit</i> button will
+send the query and display the report on the number of bibliographic records matching the
+query (see Figure 3). Clicking the <i>Show results</i> button will display the matching
+records (see Figure 4).</p>
+
+<center><img src="pic02.png"><br>
+Figure 2.
+</center>
+<br><br>
+<center><img src="pic03.png"><br>
+Figure 3.
+</center>
+
+<p>Browsing the retrieved records is performed in the following three modes: <i>brief</i>,
+<i>detailed</i>, and <i>full display</i>. The brief display presents only the basic
+elements of bibliographic records. Detailed display presents a broader set of record data,
+while the full display presents the whole bibliographic record in UNIMARC format. Choosing
+the display mode is performed by clicking the <i>Brief</i>, <i>Detailed</i>, and <i>Full
+display</i> buttons, respectively. Figures 4-6 illustrate the three display modes presenting
+the same record set.</p>
+
+<center><img src="pic04.png"><br>
+Figure 4.
+</center>
+<br><br>
+<center><img src="pic05.png"><br>
+Figure 5.
+</center>
+<br><br>
+<center><img src="pic06.png"><br>
+Figure 6.
+</center>
+
+<p>Each display mode presents records in pages of 5, 10, or 20 records per page (as chosen
+by the user). Moving across pages is invoked by clicking the <i>Previous</i> and <i>Next</i>
+buttons. Return to the home page for entering a new query is invoked by clicking the
+<i>New query</i> button.</p>
+
+<p>Remark 1: BISIS retrieval treats cyrillic and latin letters equivalently, as used in the
+Serbian laguage. For example, the following queries by author return the same result:
+andrić, andric, андрић, анdрiћ, and so on.</p>
+
+<p>Remark 2: The search query may contain wildcard characters, namely * and ?. An asterisk
+(*) replaces a sequence of characters in a single word, while the question mark (?)
+replaces a single character in a single word.</p>
+
+<h3>2. Advanced Search</h3> 
+
+<p>Clicking the <i>advanced search</i> link on the home page (Figure 1) will display the
+query form for custom queries that enables combining multiple search criteria, as
+presented in Figure 7.</p>
+
+<p>Combining multiple search criteria is made using the logic operators AND, NOT and OR.</p>
+
+<h4>Semantics of the logic operators</h4>
+
+<p>Let the contents of one prefix be Text1 and the other one Text2. Then:</p>
+<ol>
+<li>Operator <i>AND</i> in the query Text1 AND Text2 combines the query elements in
+such a way that it extracts only records that contain the first content (Text1) and
+the second content (Text2) at the same time.</li>
+<li>Operator <i>NOT</i> in the query Text1 NOT Text2 combines the query elements in
+such a way that it extracts only records that contain the first content (Text1) and
+do not contain the second content (Text2) at the same time.</li>
+<li>Operator <i>OR</i> in the query Text1 OR Text2 combines the query elements in
+such a way that it extracts records that contain any of the first content (Text1),
+the second content (Text2), or both contents.</li>
+</ol>
+
+<center><img src="pic07.png"><br>
+Figure 7.
+</center>
+
+<p>The form for advanced search provides for combining five different prefixes at most.
+Choosing a search prefix is done by selecting the appropriate item in the combo box
+at the left-hand side. The content searched for is entered in the corresponding text
+field. Combining with other query elements is governed by the logic operator chosen
+in the combo box at the right hand side of the line that contains the given search term.
+If a text field is empty, the corresponding query element is ignored.</p>
+
+<h4>Example 1</h4>
+
+<p>Figure 7 presents an example query that retrieves records conforming to the following 
+criteria:</p>
+<ul>
+<li>the author is Ivo Andrić (combo box in the first row selects the prefix <i>Author</i>, 
+while the text field in the first row contains <i>ivo andrić</i>),</li>
+<li>the title of the record is not “Na Drini ćuprija” (the combo box with logic operators
+in the previous row selects <i>NOT</i>, the prefix <i>Tile</i> in the current row is selected,
+and the text field in the current row contains <i>na drini ćuprija</i>),</li>
+<li>the language of the record is Serbian, using cyrillic alphabet (prefix selection combo
+box in the fifth row selects <i>Language</i>, the text field in the same row contains <i>scc</i> 
+(the code for the language), and the operator combo box in the last previous non-empty row - the
+second row - selects <i>AND</i>).</li>
+</ul>
+
+<p>Let us go through the process of entering this query step by step.
+The first query part searches by author. The search prefix denoting the author is
+<i>Author</i> and is chosen in the first combo box, as presented in Figure 8.</p>
+
+<center><img src="pic08.png"><br>
+Figure 8.
+</center>
+
+<p>The corresponding text field, placed in the same row as the selected prefix author <i>Autor</i>, 
+should contain the name of the author being searched for. In this example it is Ivo Andrić, 
+as presented in Figure 9.</p>
+
+<center><img src="pic09.png"><br>
+Figure 9.
+</center>
+
+<p>The next part of the query is the requirement that retrieved records <b>do not</b>
+contain the text <i>Na Drini ćuprija</i> as the title. The negation is represented by
+the NOT operator, that is chosen in the right-hand-side combo box placed in the row where
+the previous prefix is defined (the first row in this case), as presented in Figure 10.</p>
+
+<center><img src="pic10.png"><br>
+Figure 10.
+</center>
+
+<p>The next prefix may be placed in any of the following rows. The example presented in
+Figure 11 uses the second row.</p>
+
+<center><img src="pic11.png"><br>
+Figure 11.
+</center>
+
+<p>The contents of the <i>Title</i> prefix are entered in the text field placed in the
+second row of the query form, as presented in Figure 12.</p>
+
+<center><img src="pic12.png"><br>
+Figure 12.
+</center>
+
+<p>The third query segment deals with the language of the bibliographic unit - the
+example requires it to be the Serbian language, using cyrillic alphabet. The operator
+connecting this segment with the previous elements is AND, and it is selected in the
+combo box placed in the last non-empty row (the second row in this example), as
+presented in Figure 13.</p>
+
+<center><img src="pic13.png"><br>
+Figure 13.
+</center>
+
+<p>Choosing the prefix <i>Language</i>, denoting the language of the bibliographic 
+material, may be done in any of the rows after the last row used. This example uses
+the last row, as presented in Figure 14.</p>
+
+<center><img src="pic14.png"><br>
+Figure 14.
+</center>
+
+<p>Query formulation is finished by entering the contents of the last prefix. In this
+example, the content is <i>scc</i>, entered in the text field placed in the same row as
+the row of the selected prefix (the fifth row in this example), as presented in Figure 
+15.</p>
+
+<center><img src="pic15.png"><br>
+Figure 15.
+</center>
+
+<p>Upon formulation, the query is submitted by clicking the <i>Submit</i> button.
+The report on the number of retrieved records, and the display of the records in
+brief, detailed and full mode is performed in the same manner as for other types
+of queries (see Section 1, Search By Author).</p>
+
+<p>Koristeći raspoložive prefikse i logičke operatore moguće je formirati
+složene upite analogno prethodnom primeru. Pretraživanje po izabranim prefiksima
+omogućava korisniku formiranje upita kojima se precizno mogu izdvojiti traženi
+podaci. Za ilistraciju ovde je navedeno nekoliko upita.</p>
+
+<h4>Example 2</h4>
+
+<p>Retrieve records authored by <i>Ivo Andrić</i>, and the title <b>is not</b>
+<i>Na Drini ćuprija</i>, and the language of material is Serbian, using cyrillic alphabet.
+The query looks like this:<p>
+
+<center><img src="pic16.png"><br>
+<!-- Figure 16. -->
+</center>
+
+<h4>Example 3</h4>
+
+<p>Retrieve records authored by <i>Ivo Andrić</i> <b>or</b>
+<i>Petar Džadžić</i>, and the title contains text <i>Na Drini ćuprija</i>.
+The query looks like this:</p>
+
+<center><img src="pic17.png"><br>
+<!-- Figure 17. -->
+</center>
+
+<h4>Example 4</h4>
+
+<p>Retrieve records authored by <i>Ivo Andrić</i> <b>and</b> the title
+contains <i>Na Drini ćuprija</i> <b>or</b> <i>Znakovi pored puta</i>. The query
+looks like this:</p>
+
+<center><img src="pic18.png"><br>
+<!-- Figure 18. -->
+</center>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Records" table="Records">
+        <id name="recordId" type="int">
+            <column name="record_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="pubType" type="int">
+            <column name="pub_type" not-null="true">
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" not-null="true">
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier">
+            </column>
+        </property>
+        <property name="dateCreated" type="timestamp">
+            <column name="date_created" length="19" not-null="true">
+            </column>
+        </property>
+        <property name="dateModified" type="timestamp">
+            <column name="date_modified" length="19">
+            </column>
+        </property>
+        <property name="archived" type="java.lang.Integer">
+            <column name="archived">
+            </column>
+        </property>
+        <property name="inUseBy" type="string">
+            <column name="in_use_by">
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535">
+            </column>
+        </property>
+        <set name="primercis" inverse="true">
+            <key>
+                <column name="record_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Primerci" />
+        </set>
+        <set name="godines" inverse="true">
+            <key>
+                <column name="record_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Godine" />
+        </set>
+    </class>
+</hibernate-mapping>

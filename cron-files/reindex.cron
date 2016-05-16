@@ -1,0 +1,7 @@
+#!/bin/bash
+# make lucene index files
+
+java -jar /opt/bisis4/bisis-reindex.jar localhost bisis bisis bisis >>bisis-reindex.log 2>&1
+
+
+

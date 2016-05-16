@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Sveske" table="Sveske">
+        <id name="sveskaId" type="int">
+            <column name="sveska_id" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" type="int">
+            <column name="version" not-null="true">
+            </column>
+        </version>
+        <many-to-one name="statusPrimerka" class="StatusPrimerka" fetch="select" lazy="false">
+            <column name="status_id" length="1">
+            </column>
+        </many-to-one>
+        <many-to-one name="godine" class="Godine" fetch="select">
+            <column name="godina_id">
+            </column>
+        </many-to-one>
+        <property name="invBr" type="string">
+            <column name="inv_br" length="25" not-null="true">
+            </column>
+        </property>
+        <property name="signatura" type="string">
+            <column name="signatura">
+            </column>
+        </property>
+        <property name="brojSveske" type="string">
+            <column name="broj_sveske" length="25">
+            </column>
+        </property>
+        <property name="cena" type="big_decimal">
+            <column name="cena" precision="12">
+            </column>
+        </property>
+        <property name="stanje" type="int">
+            <column name="stanje">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

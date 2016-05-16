@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Picturebooks" table="picturebooks">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="users" class="Users" fetch="select">
+            <column name="sys_id" not-null="true">
+            </column>
+        </many-to-one>
+        <property name="sdate" type="timestamp">
+            <column name="sdate" length="19">
+            </column>
+        </property>
+        <property name="lendNo" type="int">
+            <column name="lend_no" not-null="true">
+            </column>
+        </property>
+        <property name="returnNo" type="int">
+            <column name="return_no" not-null="true">
+            </column>
+        </property>
+        <property name="state" type="int">
+            <column name="state" not-null="true">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

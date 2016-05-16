@@ -1,0 +1,7 @@
+#!/bin/bash
+# make bisis backup
+
+java -jar /opt/bisis4-jars/bisis-backup.jar localhost bisis bisis bisis /opt/bisis-backup >>bisis-backup.log 2>&1
+
+
+

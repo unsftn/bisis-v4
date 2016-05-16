@@ -1,0 +1,12 @@
+<Context 
+  docBase="bisis4XMLM" 
+  debug="5" 
+  reloadable="true" 
+  crossContext="false">
+
+  <Valve className="org.apache.catalina.valves.AccessLogValve"
+      prefix="access_log." 
+      suffix=".txt"
+      pattern="combined"/>
+        
+</Context>

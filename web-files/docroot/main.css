@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, Helvetica;
+  font-size: 10pt;
+  margin: 0px;
+}
+
+td {
+  font-size: 10pt;
+}
+
+.mainlink {
+  text-decoration: none;
+  color: black;
+}
+
+.mainlink:hover {
+  color: #E68D00;
+}
+
+.margintable {
+  font-size: 10pt;
+}
+
+.displaytable, .displayinnertable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.displayinnertable {
+  width: 50%;
+ }
+
+.displaycell, .displayinnercell {
+  font-size: 10pt;
+  padding: 5px;
+  border: 1px solid silver;
+}
+
+.displayinnercell {
+  border: 1px solid gray;
+  background-color: lightyellow;
+}
+
+input { 
+  background: #FFD89B; 
+  font: 12px Arial, Helvetica, sans-serif; 
+  color: #000000; 
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black
+}
+
+textarea { 
+  background: #FFD89B;
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #000000;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top : 1px solid black
+}
+
+select { 
+  background: #FFD89B; 
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #000000;
+  border-bottom: 1px solid black;  
+  border-left: 1px solid black;  
+  border-right: 1px solid black;  
+  border-top: 1px solid black 
+}
+
+button { 
+  background: #FFD89B;
+  font: 12px Arial, Helvetica, sans-serif; 
+  color: #000000; 
+  border-bottom: 1px solid black;  
+  border-left: 1px solid black;  
+  border-right: 1px solid black;  
+  border-top: 1px solid black; 
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Lending" table="lending">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="location" class="Location" fetch="select">
+            <column name="location" not-null="true">
+            </column>
+        </many-to-one>
+        <many-to-one name="users" class="Users" fetch="select">
+            <column name="sys_id" not-null="true">
+            </column>
+        </many-to-one>
+        <property name="ctlgNo" type="string">
+            <column name="ctlg_no" not-null="true">
+            </column>
+        </property>
+        <property name="lendDate" type="timestamp">
+            <column name="lend_date" length="19" not-null="true">
+            </column>
+        </property>
+        <property name="returnDate" type="timestamp">
+            <column name="return_date" length="19">
+            </column>
+        </property>
+        <property name="resumeDate" type="timestamp">
+            <column name="resume_date" length="19">
+            </column>
+        </property>
+        <property name="deadline" type="timestamp">
+            <column name="deadline" length="19">
+            </column>
+        </property>
+        <property name="librarianLend" type="string">
+            <column name="librarian_lend" not-null="true">
+            </column>
+        </property>
+        <property name="librarianReturn" type="string">
+            <column name="librarian_return">
+            </column>
+        </property>
+        <property name="librarianResume" type="string">
+            <column name="librarian_resume">
+            </column>
+        </property>
+        <set name="warningses" inverse="true" cascade="delete-orphan" lazy="false" batch-size="50">
+            <key>
+                <column name="lending_id" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="Warnings" />
+        </set>
+    </class>
+</hibernate-mapping>

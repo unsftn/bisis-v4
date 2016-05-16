@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="InternaOznaka" table="Interna_oznaka">
+    <cache usage="read-only"/>
+        <id name="intOznId" type="string">
+            <column name="IntOzn_id" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="intOznOpis" type="string">
+            <column name="IntOzn_opis" not-null="true">
+            </column>
+        </property>
+        <set name="godines" inverse="true">
+            <key>
+                <column name="IntOzn_id" length="2">
+                </column>
+            </key>
+            <one-to-many class="Godine" />
+        </set>
+        <set name="primercis" inverse="true">
+            <key>
+                <column name="IntOzn_id" length="2">
+                </column>
+            </key>
+            <one-to-many class="Primerci" />
+        </set>
+    </class>
+</hibernate-mapping>

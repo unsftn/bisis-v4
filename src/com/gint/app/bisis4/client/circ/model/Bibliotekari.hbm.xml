@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 11, 2007 11:36:46 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Bibliotekari" table="Bibliotekari">
+        <id name="username" type="string">
+            <column name="username" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="password" length="50">
+            </column>
+        </property>
+        <property name="ime" type="string">
+            <column name="ime" length="50">
+            </column>
+        </property>
+        <property name="prezime" type="string">
+            <column name="prezime" length="50">
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50">
+            </column>
+        </property>
+        <property name="napomena" type="string">
+            <column name="napomena" length="50">
+            </column>
+        </property>
+        <property name="obrada" type="int">
+            <column name="obrada" not-null="true">
+            </column>
+        </property>
+        <property name="cirkulacija" type="int">
+            <column name="cirkulacija" not-null="true">
+            </column>
+        </property>
+        <property name="administracija" type="int">
+            <column name="administracija" not-null="true">
+            </column>
+        </property>
+        <property name="context" type="string">
+            <column name="context" length="65535" not-null="true">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

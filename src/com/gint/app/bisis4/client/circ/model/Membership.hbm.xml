@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Membership" table="membership">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="mmbrTypes" class="MmbrTypes" fetch="select">
+            <column name="mmbr_type" not-null="true">
+            </column>
+        </many-to-one>
+        <many-to-one name="userCategs" class="UserCategs" fetch="select">
+            <column name="user_categ" not-null="true">
+            </column>
+        </many-to-one>
+        <property name="cost" type="double">
+            <column name="cost" precision="10" scale="0">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

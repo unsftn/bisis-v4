@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <distributable/>
+
+  <listener>
+    <listener-class>org.apache.commons.fileupload.servlet.FileCleanerCleanup</listener-class>
+  </listener>
+      
+  <servlet>
+    <servlet-name>BisisInitializer</servlet-name>
+    <display-name>BISIS Initializer</display-name>
+    <description>Initializes Bisis Indexer components</description>
+    <servlet-class>com.gint.app.bisis4.remoting.InitializerServlet</servlet-class>
+    <init-param>
+      <param-name>jndiFactory</param-name>
+      <param-value>jms/ConnectionFactory</param-value>
+    </init-param>
+    <init-param>
+      <param-name>jndiQueue</param-name>
+      <param-value>jms/queue/BisisIndexer</param-value>
+    </init-param>
+    <init-param>
+      <param-name>luceneIndex</param-name>
+      <param-value>/opt/lucene-index</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RecordManager</servlet-name>
+    <display-name>Record Manager</display-name>
+    <description>Implements Hessian remoting protocol for the BISIS record manager</description>
+    <servlet-class>com.caucho.burlap.server.BurlapServlet</servlet-class>
+    <init-param>
+      <param-name>service-class</param-name>
+      <param-value>com.gint.app.bisis4.remoting.RecordManagerImpl</param-value>
+    </init-param>
+    <init-param>
+      <param-name>api-class</param-name>
+      <param-value>com.gint.app.bisis4.remoting.RecordManager</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>FileManager</servlet-name>
+    <display-name>File Manager</display-name>
+    <description>Implements file upload operations</description>
+    <servlet-class>com.gint.app.bisis4.remoting.FileManagerServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BisisInitializer</servlet-name>
+    <url-pattern>/BisisInit</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RecordManager</servlet-name>
+    <url-pattern>/RecMgr</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>FileManager</servlet-name>
+    <url-pattern>/FileMgr</url-pattern>
+  </servlet-mapping>
+
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/Bisis</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+
+  <resource-ref>
+    <description>JMS Queue</description>
+    <res-ref-name>jms/queue/BisisIndexer</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>

@@ -1,0 +1,1 @@
+Class-Path: libs/commons-logging-1.1.jar libs/gint-utils.jar libs/commons-lang-2.2.jar bisis-utils.jar bisis-records.jar

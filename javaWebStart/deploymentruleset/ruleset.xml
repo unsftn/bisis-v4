@@ -1,0 +1,26 @@
+<ruleset version="1.0+">
+  <rule>
+    <id>
+      <certificate algorithm="SHA-256" hash="37342936AB6CE061BE5B9B16ED67AD9004558022FFAE757BFA0A31E3C8D4DFAE"/>
+    </id>
+    <action permission="run"/>
+  </rule>
+  <rule>
+    <id>
+      <certificate algorithm="SHA-256" hash="165EC2243836991BA578F19A60C2ABADC3973EEB8A16F9C88CAAEB18BE35AB7B"/>
+    </id>
+    <action permission="run"/>
+  </rule>
+  <rule>
+    <id>
+      <certificate algorithm="SHA-256" hash="0772F124E5AD278564502C585F16A9F456FA35D922131935A7C5D21417E8F5A4"/>
+    </id>
+    <action permission="run"/>
+  </rule>
+  <rule>
+    <id/>
+    <action permission="block">
+      <message>Zabranjeno pokretanje!</message>
+    </action>
+  </rule>
+</ruleset>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2006 4:24:31 PM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping package="com.gint.app.bisis4.client.circ.model">
+    <class name="Archive" table="archive">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="sysId" type="int">
+            <column name="sys_id" not-null="true">
+            </column>
+        </property>
+        <property name="archDate" type="timestamp">
+            <column name="arch_date" length="19" not-null="true">
+            </column>
+        </property>
+        <property name="content" type="text">
+            <column name="content" length="65535">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

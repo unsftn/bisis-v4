@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app >
+   <distributable/>
+
+    <!--
+    To use non XDoclet filters, create a filters.xml file that
+    contains the additional filters (eg Sitemesh) and place it in your
+    project's merge dir.  Don't include filter-mappings in this file,
+    include them in a file called filter-mappings.xml and put that in
+    the same directory.
+    -->
+
+    <!--
+    To use non XDoclet filter-mappings, create a filter-mappings.xml file that
+    contains the additional filter-mappings and place it in your
+    project's merge dir.
+    -->
+
+    <!--
+    To use non XDoclet listeners, create a listeners.xml file that
+    contains the additional listeners and place it in your
+    project's merge dir.
+    -->
+
+  <!--
+  To use non XDoclet servlets, create a servlets.xml file that
+  contains the additional servlets (eg Struts) and place it in your
+  project's merge dir.  Don't include servlet-mappings in this file,
+  include them in a file called servlet-mappings.xml and put that in
+  the same directory.
+  -->
+
+   <servlet>
+      <servlet-name>MultiQuery</servlet-name>
+      <display-name>MultiQuery</display-name>
+      <description><![CDATA[Constructs a Dialog query from a single-prefix form and executes it]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.MultiQueryServlet</servlet-class>
+   </servlet>
+    <servlet>
+      <servlet-name>MobileQuery</servlet-name>
+      <display-name>MobileQuery</display-name>
+      <description><![CDATA[Constructs a Dialog query from a single-prefix form and executes it]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.MobileQueryServlet</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>SingleQuery</servlet-name>
+      <display-name>SingleQuery</display-name>
+      <description><![CDATA[Constructs a Dialog query from a single-prefix form and executes it]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.SingleQueryServlet</servlet-class>
+
+   </servlet>
+   <servlet>
+      <servlet-name>DetailFormat</servlet-name>
+      <display-name>DetailFormat</display-name>
+      <description><![CDATA[Switches to the detailed display format]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.DetailFormatServlet</servlet-class>
+
+   </servlet>
+   <servlet>
+      <servlet-name>PrevPage</servlet-name>
+      <display-name>PrevPage</display-name>
+      <description><![CDATA[Backward paging servlet]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.PrevPageServlet</servlet-class>
+
+   </servlet>
+   <servlet>
+      <servlet-name>BriefFormat</servlet-name>
+      <display-name>BriefFormat</display-name>
+      <description><![CDATA[Switches to the brief display format]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.BriefFormatServlet</servlet-class>
+
+   </servlet>
+   <servlet>
+      <servlet-name>NextPage</servlet-name>
+      <display-name>NextPage</display-name>
+      <description><![CDATA[Forward paging servlet]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.NextPageServlet</servlet-class>
+
+   </servlet>
+   <servlet>
+      <servlet-name>PageSize</servlet-name>
+      <display-name>PageSize</display-name>
+      <description><![CDATA[Sets the page size for viewing records]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.PageSizeServlet</servlet-class>
+
+   </servlet>
+   <servlet>
+      <servlet-name>FullFormat</servlet-name>
+      <display-name>FullFormat</display-name>
+      <description><![CDATA[Switches to the full display format]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.FullFormatServlet</servlet-class>
+
+   </servlet>
+   <servlet>
+      <servlet-name>CoderServlet</servlet-name>
+      <display-name>CoderServlet</display-name>
+      <description><![CDATA[Returns codes for the given prefix]]></description>
+     <servlet-class>com.gint.app.bisis4web.web.servlets.CoderServlet</servlet-class>
+
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>MultiQuery</servlet-name>
+      <url-pattern>/MultiQuery</url-pattern>
+   </servlet-mapping>
+     <servlet-mapping>
+      <servlet-name>MobileQuery</servlet-name>
+      <url-pattern>/MobileQuery</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>SingleQuery</servlet-name>
+      <url-pattern>/SingleQuery</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>DetailFormat</servlet-name>
+      <url-pattern>/DetailFormat</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>PrevPage</servlet-name>
+      <url-pattern>/PrevPage</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>BriefFormat</servlet-name>
+      <url-pattern>/BriefFormat</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>NextPage</servlet-name>
+      <url-pattern>/NextPage</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>PageSize</servlet-name>
+      <url-pattern>/PageSize</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>FullFormat</servlet-name>
+      <url-pattern>/FullFormat</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>CoderServlet</servlet-name>
+      <url-pattern>/Coders</url-pattern>
+   </servlet-mapping>
+
+   <!--
+   To specify mime mappings, create a file named mime-mappings.xml, put it in your project's mergedir.
+   Organize mime-mappings.xml following this DTD slice:
+
+   <!ELEMENT mime-mapping (extension, mime-type)>
+   -->
+
+   <!--
+   To specify error pages, create a file named error-pages.xml, put it in your project's mergedir.
+   Organize error-pages.xml following this DTD slice:
+
+   <!ELEMENT error-page ((error-code | exception-type), location)>
+   -->
+
+  <!--
+  To add taglibs by xml, create a file called taglibs.xml and place it
+  in your merge dir.
+  -->
+
+   <taglib>
+      <taglib-uri>http://www.bisis.ns.ac.yu/jsptags/display</taglib-uri>
+      <taglib-location>display.tld</taglib-location>
+   </taglib>
+
+   <!--
+   To set up security settings for your web app, create a file named web-security.xml, put it in your project's mergedir.
+   Organize web-security.xml following this DTD slice:
+
+   <!ELEMENT security-constraint (display-name?, web-resource-collection+, auth-constraint?, user-data-constraint?)>
+   <!ELEMENT web-resource-collection (web-resource-name, description?, url-pattern*, http-method*)>
+   <!ELEMENT web-resource-name (#PCDATA)>
+   <!ELEMENT url-pattern (#PCDATA)>
+   <!ELEMENT http-method (#PCDATA)>
+   <!ELEMENT user-data-constraint (description?, transport-guarantee)>
+   <!ELEMENT transport-guarantee (#PCDATA)>
+
+   <!ELEMENT login-config (auth-method?, realm-name?, form-login-config?)>
+   <!ELEMENT auth-method (#PCDATA)>
+   <!ELEMENT realm-name (#PCDATA)>
+   <!ELEMENT form-login-config (form-login-page, form-error-page)>
+   <!ELEMENT form-login-page (#PCDATA)>
+   <!ELEMENT form-error-page (#PCDATA)>
+   -->
+
+   <ejb-local-ref>
+      <ejb-ref-name>ejb/bisis/RecordRetrieverLocal</ejb-ref-name>
+      <ejb-ref-type>Session</ejb-ref-type>
+      <local-home>com.gint.app.bisis4web.common.ejb.interfaces.RecordRetrieverLocalHome</local-home>
+      <local>com.gint.app.bisis4web.common.ejb.interfaces.RecordRetrieverLocal</local>
+      <ejb-link>RecordRetriever</ejb-link>
+   </ejb-local-ref>
+</web-app>

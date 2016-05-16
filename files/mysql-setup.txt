@@ -1,0 +1,49 @@
+postaljvanje passworda za root usera:
+mysqladmin -u root password 'new-password'
+
+
+Prilikom instalacije mysql baze a pre kreiranja sheme i tabela potrebno je podesiti odgovarajuce parametre.
+U fajl /etc/my.cnf (Linux) ili c:\Program Files\MySQL\MySQL Server x.x\my.ini (Windows)
+u sekciji [mysqld] dodati sledeca dva reda:
+
+character-set-server=utf8
+sql-mode='NO_AUTO_VALUE_ON_ZERO'
+default-storage-engine=INNODB
+
+
+./mysql_install_db
+
+
+kreiranje seme:
+mysqladmin create bisis -u root -p
+->password
+
+brisanje seme:
+mysqladmin drop bisis -u root -p
+->password
+
+
+
+kreiranje usera:
+mysql -u root -p
+->password
+
+mysql> grant all privileges on bisis.* to 'bisis'@'%' identified by 'bisis';
+mysql> flush privileges;
+mysql> exit;
+
+
+kreiranje tabela:
+mysql --default-character-set=utf8 bisis -u bisis -p
+->bisis
+
+mysql> \. file-name
+ili 
+mysql> source file-name
+
+
+
+U fajlu /etc/init.d/mysqld, na pocetku funkcije start(), treba dodati
+red koji proverava da li mysql radi i ako ne radi brise sock fajl:
+
+if ! ps aux | grep "[m]ysql" >/dev/null; then rm /var/lib/mysql/mysql.sock; fi
