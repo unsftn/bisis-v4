@@ -70,6 +70,16 @@
 				<item code="3" value="Članak u zborniku"/>
 			</coder>
 		</subfield>
+		<subfield name="t" description="Vrsta naučnog članka" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="1.01" value="Izvorni naučni članak"/>
+				<item code="1.02" value="Pregledni naučni članak"/>
+				<item code="1.03" value="Kratki naučni članak"/>
+				<item code="1.04" value="Stručni naučni članak"/>
+				<item code="1.24" value="bibliografija, indeks"/>
+				<item code="1.25" value="drugi sastavni delovi"/>				
+			</coder>
+		</subfield>
 	</field>
 	<field name="010" description="Međunarodni standardni broj za knjigu (ISBN)" mandatory="false" repeatable="true" secondary="true">
 		<subfield name="a" description="Broj" mandatory="false" repeatable="false" length="13"/>
@@ -79,7 +89,7 @@
 		<subfield name="z" description="Pogrešan broj" mandatory="false" repeatable="true" length="0"/>
 	</field>
 	<field name="011" description="Međunarodni standardni broj serijske publikacije (I" mandatory="false" repeatable="false" secondary="true">
-		<subfield name="a" description="Broj" mandatory="false" repeatable="true" length="9"/>
+		<subfield name="a" description="Broj" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="b" description="Oznaka" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="c" description="Neverifikovani ISSN broj i SP broj za povezivanje" mandatory="false" repeatable="false" length="9"/>
 		<subfield name="e" description="Važeći ISSN" mandatory="false" repeatable="false" length="9"/>
@@ -1768,6 +1778,7 @@
 		<subfield name="g" description="Broj knjige" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="h" description="Broj (časopisa)" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="i" description="Godište" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="k" description="Potpolje k" mandatory="false" repeatable="true" length="0"/>
 	</field>
 	<field name="225" description="Knjižna zbirka" mandatory="false" repeatable="true" secondary="false">
 		<indicator index="1" description="Indikator za obliki zajedničkog stvarnog naslova">
