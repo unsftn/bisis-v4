@@ -109,6 +109,7 @@ public class Report {
   		 temp = cfg.getTemplate(typeCode+"_"+locale+".ftl");
         
   	}catch(Exception e1){
+  		e1.printStackTrace();
   		try{
   			 temp = cfg.getTemplate(typeCode+".ftl");
   			

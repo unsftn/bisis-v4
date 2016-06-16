@@ -7,10 +7,11 @@
   <subfield name="001d"	default="2"/>
   <subfield name="001e"/>
   <subfield name="001f"/>
+  <subfield name="001t"/>
   <subfield name="010a"/>
   <subfield name="010b"/>
   <subfield name="011a"/>
-  <subfield name="011b"/>
+  <subfield name="011b"/>  
   <subfield name="100b"/>
   <subfield name="100c"/>
   <subfield name="100d"/>
@@ -54,6 +55,7 @@
   <subfield name="215g"/>
   <subfield name="215h"/>
   <subfield name="215i"/>
+  <subfield name="215k"/>
   <subfield name="225a"/>
   <subfield name="225e"/>
   <subfield name="225v"/>
