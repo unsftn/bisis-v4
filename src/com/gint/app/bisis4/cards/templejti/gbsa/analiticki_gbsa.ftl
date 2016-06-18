@@ -6,9 +6,9 @@
 ><#assign predm=""
 ><#assign predm1=""
 ><#assign firstPO=true
-><@odrednica/><@brojID/><@opisAnalitika/><@signatura/><@fieldAnalitika/><#--
+><@odrednica/><@brojID/><@opisAnalitika/><@signatura/><@fieldAnalitika/><@brojUDC/><#--
 
---><#assign la=la+odred+"<BR>"+val+"<BR><BR>"+"&nbsp;&nbsp;&nbsp;\x0443"+"<BR><BR>"+opisA+"<BR><BR>"+sign+"<BR><BR>"+"&nbsp;&nbsp;&nbsp;U:&nbsp;"+recUtil.getMaticnaPublikacijaMR()+"&nbsp;&nbsp;&nbsp;"
+--><#assign la=la+odred+opisA+"<BR><BR>\x0423:&nbsp;"+recUtil.getMaticnaPublikacijaMRSabac()+"<BR><BR>"+brUDC
 ></#macro
 
 ><@getAnalitika/><#assign la="<BISIS>"+la+"</BISIS>">${la}
