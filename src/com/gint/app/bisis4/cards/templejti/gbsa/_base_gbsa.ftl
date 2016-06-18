@@ -139,7 +139,7 @@
 
 
 ><#macro opisAnalitika
-><@autor1/><#assign opisA=aut+"<BR><BR>"
+><#assign opisA=""
 ><#if f200?exists 
      ><#list f200 as field 
               ><#assign val=""
@@ -148,6 +148,15 @@
               --><#assign opisA=opisA+"&nbsp;&nbsp;&nbsp;"+val
               
     ></#list
+></#if
+ ><#if recUtil.getSubfieldContent("856u")!=""
+      	><#assign opisA = opisA+".-&nbsp;\x041D\x0430\x0447\x0438\x043D \x043F\x0440\x0438\x0441\x0442\x0443\x043F\x0430 (URL):"+ recUtil.getSubfieldContent("856u")          
+></#if
+ ><#if recUtil.getSubfieldContent("300a")!=""
+      	><#assign opisA = opisA+".-&nbsp;"+ recUtil.getSubfieldContent("300a")          
+></#if
+ ><#if recUtil.getSubfieldContent("320a")!=""
+      	><#assign opisA = opisA+".-&nbsp;"+ recUtil.getSubfieldContent("320a")          
 ></#if
 ><#if f205?exists  
   ><#list f205 as field
