@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-06-22T11:47:25 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OpstinskePremaUdk" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="786" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="6a45b1c1-ecd5-4caa-81cd-df444e742b1e">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="libraryName" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Назив библиотеке"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="period" class="java.lang.String"/>
+	<field name="ogranak" class="java.lang.String">
+		<fieldDescription><![CDATA[ogranak]]></fieldDescription>
+	</field>
+	<field name="n0" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n0]]></fieldDescription>
+	</field>
+	<field name="p0" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p0]]></fieldDescription>
+	</field>
+	<field name="n1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n1]]></fieldDescription>
+	</field>
+	<field name="p1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p1]]></fieldDescription>
+	</field>
+	<field name="n2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n2]]></fieldDescription>
+	</field>
+	<field name="p2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p2]]></fieldDescription>
+	</field>
+	<field name="n3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n3]]></fieldDescription>
+	</field>
+	<field name="p3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p3]]></fieldDescription>
+	</field>
+	<field name="n5" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n5]]></fieldDescription>
+	</field>
+	<field name="p5" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p5]]></fieldDescription>
+	</field>
+	<field name="n6" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n6]]></fieldDescription>
+	</field>
+	<field name="p6" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p6]]></fieldDescription>
+	</field>
+	<field name="n7" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n7]]></fieldDescription>
+	</field>
+	<field name="p7" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p7]]></fieldDescription>
+	</field>
+	<field name="n8d" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n8d]]></fieldDescription>
+	</field>
+	<field name="p8d" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p8d]]></fieldDescription>
+	</field>
+	<field name="n8s" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n8s]]></fieldDescription>
+	</field>
+	<field name="p8s" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p8s]]></fieldDescription>
+	</field>
+	<field name="n9" class="java.lang.Integer">
+		<fieldDescription><![CDATA[n9]]></fieldDescription>
+	</field>
+	<field name="p9" class="java.lang.Integer">
+		<fieldDescription><![CDATA[p9]]></fieldDescription>
+	</field>
+	<field name="nd" class="java.lang.Integer">
+		<fieldDescription><![CDATA[nd]]></fieldDescription>
+	</field>
+	<field name="pd" class="java.lang.Integer">
+		<fieldDescription><![CDATA[pd]]></fieldDescription>
+	</field>
+	<field name="nu" class="java.lang.Integer">
+		<fieldDescription><![CDATA[nu]]></fieldDescription>
+	</field>
+	<field name="pu" class="java.lang.Integer">
+		<fieldDescription><![CDATA[pu]]></fieldDescription>
+	</field>
+	<field name="ns" class="java.lang.Integer">
+		<fieldDescription><![CDATA[ns]]></fieldDescription>
+	</field>
+	<field name="ps" class="java.lang.Integer">
+		<fieldDescription><![CDATA[ps]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-2" x="0" y="16" width="785" height="19" uuid="324179d9-3fc8-44bc-854f-e594bb474a6e"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Број инвентарисаних јединица према УДК]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="35" width="182" height="20" uuid="56dae625-1100-41f1-87f4-b9abe6d0ff0b"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" x="3" y="0" width="263" height="16" uuid="886c5dd4-43fd-4621-8335-1a0e09267785"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[Библиотека "Милутин Бојић", Палилула]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="172" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-4" x="110" y="81" width="26" height="91" uuid="1ffac2e7-c3d1-47e2-9464-f0f250e42897"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-5" x="136" y="81" width="26" height="91" uuid="cd004dc1-2814-4742-bd39-767b36ffdb80"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" x="110" y="0" width="52" height="81" uuid="2eee4954-4fd9-4b31-96d0-37d324231152"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-7" x="0" y="0" width="58" height="172" uuid="656c1b3c-5cd1-4adb-b3ba-16fae1066c12"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[огранак]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" x="162" y="0" width="52" height="81" uuid="c3119e96-61a1-48f3-9485-182db93908ab"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-9" x="188" y="81" width="26" height="91" uuid="88e00d0e-05af-4962-8013-2e50fc28a75d"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-10" x="162" y="81" width="26" height="91" uuid="17203084-6298-4306-9b89-666833aec700"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-11" x="214" y="81" width="26" height="91" uuid="91739c17-2505-4e9e-9ace-c1f02e6d4274"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-12" x="240" y="81" width="26" height="91" uuid="c9395f02-4c50-4125-a85b-44b8e15b2bec"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-13" x="214" y="0" width="52" height="81" uuid="561b7092-5b1b-454e-83bc-5a22c9e19638"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-14" x="266" y="81" width="26" height="91" uuid="7ff01387-792e-4185-ab50-bca4065fb39b"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-15" x="292" y="81" width="26" height="91" uuid="8e779227-0e53-432d-b0ab-b799738fb150"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="266" y="0" width="52" height="81" uuid="5d6189ac-32dd-488a-994d-548ebd2a3b37"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-17" x="318" y="0" width="52" height="81" uuid="d8ff6541-b7f3-441a-8c9d-7f8c08fc3d47"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-18" x="318" y="81" width="26" height="91" uuid="1901d995-942c-48bb-adcd-0040bc9756ac"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-19" x="344" y="81" width="26" height="91" uuid="4267f072-e631-4302-89e4-025cc84a5a89"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-20" x="370" y="81" width="26" height="91" uuid="49d83dcf-933c-4f9a-86c5-59663dad9c5b"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-21" x="396" y="81" width="26" height="91" uuid="02062953-ad4b-4441-9ac6-697864457755"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-22" x="370" y="0" width="52" height="81" uuid="d7b144cb-cd4d-4531-9138-60cfeba57870"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-23" x="422" y="81" width="26" height="91" uuid="084aca8a-9e3a-4404-b25f-2b4948e6c59e"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-24" x="448" y="81" width="26" height="91" uuid="0fa38086-b294-425b-a4ae-9273b4c6ca95"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-25" x="422" y="0" width="52" height="81" uuid="e2bfe52d-979d-4819-b36d-d4da640b0b62"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[8  домаћа]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-26" x="474" y="81" width="26" height="91" uuid="c03df209-0e34-4373-af86-0fbe9af9d4ab"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-27" x="500" y="81" width="26" height="91" uuid="3dcc996c-62f8-4485-a184-9024a4a6ea43"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-28" x="474" y="0" width="52" height="81" uuid="7543f0d3-14d7-43cf-a4f1-d37fa605b7e8"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[8  страна]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-29" x="526" y="81" width="26" height="91" uuid="4f013fad-12cf-40ff-bc15-68d496039561"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-30" x="552" y="81" width="26" height="91" uuid="86c02993-1090-43e6-a0ab-86e5a6e78c1f"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-31" x="526" y="0" width="52" height="81" uuid="9cd0bcd9-1b9c-4f12-8d91-e72b16f1998c"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-32" x="578" y="81" width="26" height="91" uuid="c1d59b7e-09b6-4e3b-a245-318628ed11bc"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-33" x="604" y="81" width="26" height="91" uuid="70fee896-0f31-46d3-ad3d-db6d912739d9"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-34" x="578" y="0" width="52" height="81" uuid="ef9581dd-e489-49b9-bbaf-917faea588eb"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[дечија]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-35" x="734" y="81" width="26" height="91" uuid="47c5df70-6874-45a8-b4f3-5f361e0e7ae8"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-36" x="760" y="81" width="26" height="91" uuid="e9957740-0a88-4d57-9bf9-e1936a1af146"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-37" x="734" y="0" width="52" height="81" uuid="0b4a3722-6c4f-4eee-a655-9f4286ae8f9c"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[сликовнице]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-38" x="630" y="81" width="52" height="91" uuid="d605e086-a4d8-4467-97f1-c596611f2949"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-39" x="682" y="81" width="52" height="91" uuid="f03fc444-0267-468b-b725-f1554f4ba91e"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-40" x="630" y="0" width="104" height="81" uuid="b21bdf46-06d0-45dd-bb51-0d0999014dff"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[укупно]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-41" x="58" y="81" width="26" height="91" uuid="55861da7-efe3-46f2-8843-3dac085fd2ad"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број наслова]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-42" x="84" y="81" width="26" height="91" uuid="8c1d5601-2733-4533-9464-6d03d6c64dd3"/>
+				<box bottomPadding="2" rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ број примерака ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-43" x="58" y="0" width="52" height="81" uuid="709ec097-11fd-45ac-81bb-a8ff7f777bdb"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="0" y="0" width="58" height="21" uuid="eb9d3663-b26c-46c1-9c94-9416208a9de5"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ogranak}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="110" y="0" width="26" height="21" uuid="f76c76b8-ed5a-47e6-9235-4f979662f67d"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" x="136" y="0" width="26" height="21" uuid="93e67d66-18f5-442f-a214-1ec078922626"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" x="162" y="0" width="26" height="21" uuid="f368460c-a999-457e-84a1-267cfcf1db19"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-7" x="188" y="0" width="26" height="21" uuid="a4833c78-0384-428c-aa03-edf9499f0b4b"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-8" x="214" y="0" width="26" height="21" uuid="a1455139-01ef-451a-8f04-d7f0e22cf101"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-9" x="240" y="0" width="26" height="21" uuid="61663b6f-c168-4cd9-b051-5484429f00fd"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-10" x="266" y="0" width="26" height="21" uuid="cec3b9c0-2691-49e6-ae58-d5362187f01a"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-11" x="292" y="0" width="26" height="21" uuid="30ae3cb8-f21e-41ba-a4c7-aea23810084b"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-12" x="318" y="0" width="26" height="21" uuid="ef4b7a53-d3dd-406b-8254-c8d69a611b63"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-13" x="344" y="0" width="26" height="21" uuid="7628b5d4-23f8-45c1-adb7-966f34211fac"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-14" x="370" y="0" width="26" height="21" uuid="f9925282-08e8-447f-bcc7-7cded6aa9563"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-15" x="396" y="0" width="26" height="21" uuid="e27ebcb7-2c1a-4d5f-a8ba-b6fb391ac87f"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-16" x="422" y="0" width="26" height="21" uuid="504e744c-8c51-4078-b4bd-2c918db8e864"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n8d}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-17" x="448" y="0" width="26" height="21" uuid="632f1f1a-a299-41e9-b144-1fa24a3d477a"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p8d}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-18" x="474" y="0" width="26" height="21" uuid="225e8252-450d-4af3-bc88-ac92fe4b98e6"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n8s}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-19" x="500" y="0" width="26" height="21" uuid="7b2c9cbc-a1a8-4edb-924a-dd050a920006"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p8s}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-20" x="526" y="0" width="26" height="21" uuid="16f394f0-92b4-4f9c-a51d-db0d3834ad91"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n9}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-21" x="552" y="0" width="26" height="21" uuid="2b06301f-b5b7-443a-8282-cb00f8106178"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p9}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-22" x="578" y="0" width="26" height="21" uuid="d6b46943-f399-418c-882c-c4dff0be4a78"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nd}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-23" x="604" y="0" width="26" height="21" uuid="fbd36e1e-a969-4a6d-9198-df6d671664b9"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pd}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-25" x="760" y="0" width="26" height="21" uuid="cd6b020e-32f2-4cd9-9a04-ab72e46d84be"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ps}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-26" x="630" y="0" width="52" height="21" uuid="4ca5f352-e21f-4194-94d4-ea2546a4a12c"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-27" x="682" y="0" width="52" height="21" uuid="769a6887-2cd9-4768-8cee-6e39dc4bccc1"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-28" x="734" y="0" width="26" height="21" uuid="5051444c-ca65-4c5a-a465-5187af7f87c1"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ns}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-29" x="58" y="0" width="26" height="21" uuid="c7b8068f-2f3e-4549-b4d9-624127a8fb5b"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n0}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-30" x="84" y="0" width="26" height="21" uuid="dd4c0632-cac2-4c59-9db0-1790bc4ea768"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{p0}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
