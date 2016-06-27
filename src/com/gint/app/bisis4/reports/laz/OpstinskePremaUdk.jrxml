@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
-<!-- 2016-06-22T11:39:49 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OpstinskePremaUdk" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="786" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="4855e78e-6c02-44e1-b43a-aa3667a5bc9a">
+<!-- 2016-06-24T14:37:57 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OpstinskePremaUdk" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="786" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="82f1ada2-c054-4c18-97a7-d64237c1c9f2">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -101,7 +101,7 @@
 	<title>
 		<band height="73" splitType="Stretch">
 			<staticText>
-				<reportElement key="staticText-2" x="0" y="16" width="785" height="19" uuid="b5db8934-f3b5-4fb2-9f57-620bc9c59126"/>
+				<reportElement key="staticText-2" x="0" y="16" width="785" height="19" uuid="708423b7-e279-4800-b039-05f2ed380fea"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -114,12 +114,12 @@
 				<text><![CDATA[Број инвентарисаних јединица према УДК]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="266" y="35" width="182" height="20" uuid="4654f04e-c4d8-4836-ac2c-431f0ecac4fe"/>
+				<reportElement x="266" y="35" width="182" height="20" uuid="68da43f3-5516-455a-9083-64891747c95d"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-1" x="3" y="0" width="267" height="16" uuid="534c1771-9687-4cd4-8df6-58a498dddc47"/>
+				<reportElement key="staticText" positionType="Float" x="-2" y="0" width="276" height="20" uuid="ca27f8c0-38c5-483e-b7e6-b8b7062a80e4"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -136,7 +136,7 @@
 	<pageHeader>
 		<band height="172" splitType="Stretch">
 			<staticText>
-				<reportElement key="staticText-4" x="110" y="81" width="26" height="91" uuid="ad15f72d-0f80-4707-b1bf-cf378a8fda89"/>
+				<reportElement key="staticText-4" x="110" y="81" width="26" height="91" uuid="4f92f6a9-4b16-42f9-a075-cc0aa98f1ed5"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -149,7 +149,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-5" x="136" y="81" width="26" height="91" uuid="f739133c-c82c-4a25-a29d-1bdde6545ef6"/>
+				<reportElement key="staticText-5" x="136" y="81" width="26" height="91" uuid="7c12a2d0-3f1d-4cc9-8373-0d1424cc0af4"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -162,7 +162,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-6" x="110" y="0" width="52" height="81" uuid="dd20173c-f856-498a-967a-65cfeb83b767"/>
+				<reportElement key="staticText-6" x="110" y="0" width="52" height="81" uuid="07cd30d8-aeb1-46ec-855e-322705d32447"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -175,7 +175,7 @@
 				<text><![CDATA[1]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-7" x="0" y="0" width="58" height="172" uuid="d7546c61-aece-4a8c-8517-7737958a191c"/>
+				<reportElement key="staticText-7" x="0" y="0" width="58" height="172" uuid="228baba1-f702-4551-9d8d-2f1d7f0b8129"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -188,7 +188,7 @@
 				<text><![CDATA[огранак]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-8" x="162" y="0" width="52" height="81" uuid="24da0f43-3901-4f6b-ae5b-120e521ec3f8"/>
+				<reportElement key="staticText-8" x="162" y="0" width="52" height="81" uuid="e2bc3f48-8ab4-4627-972b-380da921e33b"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -201,7 +201,7 @@
 				<text><![CDATA[2]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-9" x="188" y="81" width="26" height="91" uuid="d5e9aa27-0d94-40c2-bd4c-2c9b9c825bc0"/>
+				<reportElement key="staticText-9" x="188" y="81" width="26" height="91" uuid="5fc3580f-2235-462c-af7f-ed54d6a2ce53"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -214,7 +214,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-10" x="162" y="81" width="26" height="91" uuid="4d4430b3-1fba-4a82-ac41-5e05bfee0863"/>
+				<reportElement key="staticText-10" x="162" y="81" width="26" height="91" uuid="1ca16d54-6cfd-423f-93fc-f14555344419"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -227,7 +227,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-11" x="214" y="81" width="26" height="91" uuid="bd318afa-e11a-4da9-bbf4-871483a99891"/>
+				<reportElement key="staticText-11" x="214" y="81" width="26" height="91" uuid="38c8efe1-0b2d-4f3d-9698-f6ab93ef8913"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -240,7 +240,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-12" x="240" y="81" width="26" height="91" uuid="f6fd883b-e4f1-4057-a7fb-7e7a64487ed0"/>
+				<reportElement key="staticText-12" x="240" y="81" width="26" height="91" uuid="f9eade22-3eee-4704-a0a7-130c0879c0ad"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -253,7 +253,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-13" x="214" y="0" width="52" height="81" uuid="d682f7f2-76e2-4621-8bba-381ceba3e97f"/>
+				<reportElement key="staticText-13" x="214" y="0" width="52" height="81" uuid="482929ac-9a72-4c7d-88b7-ccb95b94abbe"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -266,7 +266,7 @@
 				<text><![CDATA[3]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-14" x="266" y="81" width="26" height="91" uuid="ede416ca-1585-4e99-84be-063e78ea05b0"/>
+				<reportElement key="staticText-14" x="266" y="81" width="26" height="91" uuid="bbc9205e-d62d-4a5a-ab1b-2617998d0e4b"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -279,7 +279,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-15" x="292" y="81" width="26" height="91" uuid="1c202cb2-e510-484a-88b4-a7c09278a954"/>
+				<reportElement key="staticText-15" x="292" y="81" width="26" height="91" uuid="80321863-d3f4-48f4-a945-6aa8d726e40c"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -292,7 +292,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="266" y="0" width="52" height="81" uuid="c2f9af94-a3d8-4398-8bbf-c9e0c5cdfae6"/>
+				<reportElement key="staticText-16" x="266" y="0" width="52" height="81" uuid="d97a5182-fa3b-43ea-919f-bd1cdb203703"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -305,7 +305,7 @@
 				<text><![CDATA[5]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-17" x="318" y="0" width="52" height="81" uuid="c688301d-d9d1-4e50-b638-c1a335afb2a7"/>
+				<reportElement key="staticText-17" x="318" y="0" width="52" height="81" uuid="c14a244f-095c-4c9a-a259-ebc63aafe62b"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -318,7 +318,7 @@
 				<text><![CDATA[6]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-18" x="318" y="81" width="26" height="91" uuid="e0ca0439-badb-4beb-9f80-90cb58ed4522"/>
+				<reportElement key="staticText-18" x="318" y="81" width="26" height="91" uuid="e97c8b33-0698-4a4f-a895-1d65348d44bc"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -331,7 +331,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-19" x="344" y="81" width="26" height="91" uuid="6304d0e3-5e83-4df3-a5e7-560aaf6700e5"/>
+				<reportElement key="staticText-19" x="344" y="81" width="26" height="91" uuid="2f0df1a6-9df2-4ac9-bcb5-8d074fb4b137"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -344,7 +344,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-20" x="370" y="81" width="26" height="91" uuid="9705fd72-b87f-4ea6-a045-950bee8f03e1"/>
+				<reportElement key="staticText-20" x="370" y="81" width="26" height="91" uuid="11ad7569-8d17-426a-b902-545d1da1392e"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -357,7 +357,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-21" x="396" y="81" width="26" height="91" uuid="ec773955-36e9-4e9a-a6c3-0ab897bb0a4e"/>
+				<reportElement key="staticText-21" x="396" y="81" width="26" height="91" uuid="0004fe0b-7dd4-4719-8fe2-f8b9aa469759"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -370,7 +370,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-22" x="370" y="0" width="52" height="81" uuid="8053902e-5d9e-450d-9bad-5140b498c804"/>
+				<reportElement key="staticText-22" x="370" y="0" width="52" height="81" uuid="5d8f6226-1cb7-4e1f-b094-847dd91b39ba"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -383,7 +383,7 @@
 				<text><![CDATA[7]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-23" x="422" y="81" width="26" height="91" uuid="9501e0fc-e6a4-46b7-aa79-e65152e9afa2"/>
+				<reportElement key="staticText-23" x="422" y="81" width="26" height="91" uuid="87c54302-3d04-4493-bf91-a38fc192823b"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -396,7 +396,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-24" x="448" y="81" width="26" height="91" uuid="5dc10a93-3394-46e1-bd87-df0b337c2dbb"/>
+				<reportElement key="staticText-24" x="448" y="81" width="26" height="91" uuid="fb24f6e6-b865-4a6e-8267-f32c873317da"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -409,7 +409,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-25" x="422" y="0" width="52" height="81" uuid="57c9a7ec-f8fd-4c6d-8c11-861955eeb86f"/>
+				<reportElement key="staticText-25" x="422" y="0" width="52" height="81" uuid="d87567b1-16f5-464b-b2ee-66574dcb1520"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -422,7 +422,7 @@
 				<text><![CDATA[8  домаћа]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-26" x="474" y="81" width="26" height="91" uuid="1b55938f-8c3f-49e9-b82b-54ee2d515d45"/>
+				<reportElement key="staticText-26" x="474" y="81" width="26" height="91" uuid="4fbcec36-52cb-4947-937f-5b57d326d0cb"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -435,7 +435,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-27" x="500" y="81" width="26" height="91" uuid="57a2cfbf-cb56-4a28-bb92-c101bf4add22"/>
+				<reportElement key="staticText-27" x="500" y="81" width="26" height="91" uuid="47bc0426-562f-4960-8a3a-3876e2e0b0de"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -448,7 +448,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-28" x="474" y="0" width="52" height="81" uuid="3205efda-742c-4c84-aa92-fc00e102da2c"/>
+				<reportElement key="staticText-28" x="474" y="0" width="52" height="81" uuid="97fdf51f-ee96-402d-a66a-a1a16de8276e"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -461,7 +461,7 @@
 				<text><![CDATA[8  страна]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-29" x="526" y="81" width="26" height="91" uuid="d4050c62-056a-4338-a9c6-24264bf1a823"/>
+				<reportElement key="staticText-29" x="526" y="81" width="26" height="91" uuid="e8d044a6-97c2-416a-884b-92a97501b0ae"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -474,7 +474,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-30" x="552" y="81" width="26" height="91" uuid="26f78fae-1ca9-487f-a9c2-8cd8076231ce"/>
+				<reportElement key="staticText-30" x="552" y="81" width="26" height="91" uuid="e8691fa7-a7b1-4122-b5c8-51b8d9e3fd02"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -487,7 +487,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-31" x="526" y="0" width="52" height="81" uuid="2e9370f3-db53-4dcb-a12d-ba22c00fb6fa"/>
+				<reportElement key="staticText-31" x="526" y="0" width="52" height="81" uuid="c7113081-5827-4fe1-81cb-0dff3c3100ad"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -500,7 +500,7 @@
 				<text><![CDATA[9]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-32" x="578" y="81" width="26" height="91" uuid="bf0a900c-fcea-4189-9bc7-a30721e1c5f7"/>
+				<reportElement key="staticText-32" x="578" y="81" width="26" height="91" uuid="ba11c6ed-9cd5-478c-bb89-2d438727593c"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -513,7 +513,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-33" x="604" y="81" width="26" height="91" uuid="62aea152-2c49-4759-a21c-17c3a4353cb3"/>
+				<reportElement key="staticText-33" x="604" y="81" width="26" height="91" uuid="974b0069-21c2-47d4-9022-e6c68f1b8977"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -526,7 +526,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-34" x="578" y="0" width="52" height="81" uuid="327f0221-53e9-4cc4-8a1e-19bec96198ff"/>
+				<reportElement key="staticText-34" x="578" y="0" width="52" height="81" uuid="638bd010-ef69-4553-b96d-2e37116810d5"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -539,7 +539,7 @@
 				<text><![CDATA[дечија]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-35" x="734" y="81" width="26" height="91" uuid="4d66c2e2-0e92-4939-9c4f-9899b5decce9"/>
+				<reportElement key="staticText-35" x="734" y="81" width="26" height="91" uuid="cb7ea5eb-01c5-4d08-98a7-9695c9a28e50"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -552,7 +552,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-36" x="760" y="81" width="26" height="91" uuid="6c916056-f63e-4b95-a2a6-07c578356bde"/>
+				<reportElement key="staticText-36" x="760" y="81" width="26" height="91" uuid="5fbe4ca6-5a37-4cc5-8211-4d2d26604863"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -565,7 +565,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-37" x="734" y="0" width="52" height="81" uuid="cb213c84-4420-4467-a586-165e36e847aa"/>
+				<reportElement key="staticText-37" x="734" y="0" width="52" height="81" uuid="977ea170-3feb-467d-a028-77676de5a8d8"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -578,7 +578,7 @@
 				<text><![CDATA[сликовнице]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-38" x="630" y="81" width="52" height="91" uuid="78992c17-bbbb-499f-a38a-36b051cefcbe"/>
+				<reportElement key="staticText-38" x="630" y="81" width="52" height="91" uuid="136fbddb-22e6-4a66-b83d-a42051df0d85"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -591,7 +591,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-39" x="682" y="81" width="52" height="91" uuid="7bc9f506-317b-4cd0-af02-6bda5b42d99c"/>
+				<reportElement key="staticText-39" x="682" y="81" width="52" height="91" uuid="971601da-3203-415e-8d4f-a8080fd15cae"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -604,7 +604,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-40" x="630" y="0" width="104" height="81" uuid="caf9effc-06c2-4af6-b7e7-216039b42faa"/>
+				<reportElement key="staticText-40" x="630" y="0" width="104" height="81" uuid="53e0de1d-ff3d-44eb-a594-2218dbbfd735"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -617,7 +617,7 @@
 				<text><![CDATA[укупно]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-41" x="58" y="81" width="26" height="91" uuid="75a84e8e-f438-4e44-8ce4-bd2fc77161ce"/>
+				<reportElement key="staticText-41" x="58" y="81" width="26" height="91" uuid="f0f81dd0-fc64-436b-a942-0aa96829daa3"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -630,7 +630,7 @@
 				<text><![CDATA[ број наслова]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-42" x="84" y="81" width="26" height="91" uuid="561fef9b-0ba0-4253-9f1e-78767507b839"/>
+				<reportElement key="staticText-42" x="84" y="81" width="26" height="91" uuid="974eaa23-3b2c-476e-9fb3-7eb540756e7c"/>
 				<box bottomPadding="2" rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -643,7 +643,7 @@
 				<text><![CDATA[ број примерака ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-43" x="58" y="0" width="52" height="81" uuid="f1abf7c2-85b7-485f-963b-86c022872b16"/>
+				<reportElement key="staticText-43" x="58" y="0" width="52" height="81" uuid="bf7ad810-e23b-4815-85d6-adc14937e1d4"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -663,7 +663,7 @@
 	<detail>
 		<band height="21" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-3" x="0" y="0" width="58" height="21" uuid="d25d53b3-f22f-4cd8-91f1-fe5325dd4d60"/>
+				<reportElement key="textField-3" x="0" y="0" width="58" height="21" uuid="8e53eb60-b303-4c7f-8f8a-d1bfbe2dd808"/>
 				<box leftPadding="2">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -676,7 +676,7 @@
 				<textFieldExpression><![CDATA[$F{ogranak}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-4" x="110" y="0" width="26" height="21" uuid="67abd36e-a056-4da4-9bea-18f7c216f728"/>
+				<reportElement key="textField-4" x="110" y="0" width="26" height="21" uuid="22764037-04fe-4db1-86d0-1bf6a636a996"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -689,7 +689,7 @@
 				<textFieldExpression><![CDATA[$F{n1}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-5" x="136" y="0" width="26" height="21" uuid="ea2e74f1-6fc7-4301-ad39-564427bd2b3b"/>
+				<reportElement key="textField-5" x="136" y="0" width="26" height="21" uuid="b06837ab-0b2b-40a2-b02b-acfde4fbd033"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -702,7 +702,7 @@
 				<textFieldExpression><![CDATA[$F{p1}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-6" x="162" y="0" width="26" height="21" uuid="536e0623-f598-46c8-ac4e-23b7ff6df340"/>
+				<reportElement key="textField-6" x="162" y="0" width="26" height="21" uuid="2c5dfe20-317c-4c84-a25b-a577e8ff5cef"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -715,7 +715,7 @@
 				<textFieldExpression><![CDATA[$F{n2}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-7" x="188" y="0" width="26" height="21" uuid="7b9c988b-9cb9-49c0-9d5b-cca0ee22cf09"/>
+				<reportElement key="textField-7" x="188" y="0" width="26" height="21" uuid="5de61372-3946-4232-8c5b-d2429cddcfd8"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -728,7 +728,7 @@
 				<textFieldExpression><![CDATA[$F{p2}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-8" x="214" y="0" width="26" height="21" uuid="e0e494d6-2f25-4458-b3c1-ebdc99078a00"/>
+				<reportElement key="textField-8" x="214" y="0" width="26" height="21" uuid="d94a680d-a58d-4a6b-94b3-8a56e1d34f08"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -741,7 +741,7 @@
 				<textFieldExpression><![CDATA[$F{n3}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-9" x="240" y="0" width="26" height="21" uuid="50db7745-5a9f-4f7d-b925-59d2e8bd2518"/>
+				<reportElement key="textField-9" x="240" y="0" width="26" height="21" uuid="d4f4b4f9-0056-479e-93cb-d293353ecfde"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -754,7 +754,7 @@
 				<textFieldExpression><![CDATA[$F{p3}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-10" x="266" y="0" width="26" height="21" uuid="19aede99-7c05-4001-9ab8-3de1064961a2"/>
+				<reportElement key="textField-10" x="266" y="0" width="26" height="21" uuid="7400601c-6d2c-493a-a61d-44aadc93dcff"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -767,7 +767,7 @@
 				<textFieldExpression><![CDATA[$F{n5}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-11" x="292" y="0" width="26" height="21" uuid="fb544d74-0dbe-4dd8-bee9-05ab122a25d1"/>
+				<reportElement key="textField-11" x="292" y="0" width="26" height="21" uuid="7eacdf9d-6d36-445d-a096-dab336dd4cd0"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -780,7 +780,7 @@
 				<textFieldExpression><![CDATA[$F{p5}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-12" x="318" y="0" width="26" height="21" uuid="2bcfa7ad-efc3-46f5-bd1c-66ed9a65db6b"/>
+				<reportElement key="textField-12" x="318" y="0" width="26" height="21" uuid="d2e0be85-b63a-4131-a870-305fcc033edf"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -793,7 +793,7 @@
 				<textFieldExpression><![CDATA[$F{n6}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-13" x="344" y="0" width="26" height="21" uuid="800e77e3-55f1-4e8f-a378-ef2b93964e24"/>
+				<reportElement key="textField-13" x="344" y="0" width="26" height="21" uuid="bddd792b-fd73-4e02-8afd-90273dcfba59"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -806,7 +806,7 @@
 				<textFieldExpression><![CDATA[$F{p6}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-14" x="370" y="0" width="26" height="21" uuid="5fa45a95-20d8-40c0-90e7-596602df8602"/>
+				<reportElement key="textField-14" x="370" y="0" width="26" height="21" uuid="5b62adef-eda8-44f7-957a-0fe7d3e924a5"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -819,7 +819,7 @@
 				<textFieldExpression><![CDATA[$F{n7}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-15" x="396" y="0" width="26" height="21" uuid="3ed7338a-8268-4c71-9eb7-1a86a70f514b"/>
+				<reportElement key="textField-15" x="396" y="0" width="26" height="21" uuid="1e455255-cc57-46bd-9105-22e45113bbb0"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -832,7 +832,7 @@
 				<textFieldExpression><![CDATA[$F{p7}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-16" x="422" y="0" width="26" height="21" uuid="a05682f1-0688-462b-8eaf-2f4e2f323f92"/>
+				<reportElement key="textField-16" x="422" y="0" width="26" height="21" uuid="fb5d132c-7ec1-4d71-847e-f8fd55dc40b6"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -845,7 +845,7 @@
 				<textFieldExpression><![CDATA[$F{n8d}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-17" x="448" y="0" width="26" height="21" uuid="0c861d8c-7072-4834-a80c-2371153e5c3f"/>
+				<reportElement key="textField-17" x="448" y="0" width="26" height="21" uuid="0aac832e-dba0-4eb1-85e5-ab18b5fdee1e"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -858,7 +858,7 @@
 				<textFieldExpression><![CDATA[$F{p8d}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-18" x="474" y="0" width="26" height="21" uuid="bb4f6438-42d9-4247-be27-2089aa93e6c7"/>
+				<reportElement key="textField-18" x="474" y="0" width="26" height="21" uuid="8b1b88e3-e1a3-47e6-a13e-39dcf67b9e79"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -871,7 +871,7 @@
 				<textFieldExpression><![CDATA[$F{n8s}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-19" x="500" y="0" width="26" height="21" uuid="cdb13444-6f13-409e-b471-a718116edc3a"/>
+				<reportElement key="textField-19" x="500" y="0" width="26" height="21" uuid="38cb3053-9a99-4086-a7fa-cee2d222d8a7"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -884,7 +884,7 @@
 				<textFieldExpression><![CDATA[$F{p8s}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-20" x="526" y="0" width="26" height="21" uuid="8c0167fc-223b-4e8b-aa1b-f826d845b7b6"/>
+				<reportElement key="textField-20" x="526" y="0" width="26" height="21" uuid="5ad341a1-6cde-45a0-9fc1-5a3f0c408c91"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -897,7 +897,7 @@
 				<textFieldExpression><![CDATA[$F{n9}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-21" x="552" y="0" width="26" height="21" uuid="6205b91e-1e3c-40c1-802c-8085072840f2"/>
+				<reportElement key="textField-21" x="552" y="0" width="26" height="21" uuid="e40c37d5-697d-4e27-95b4-9182239a584c"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -910,7 +910,7 @@
 				<textFieldExpression><![CDATA[$F{p9}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-22" x="578" y="0" width="26" height="21" uuid="2f8c34db-877b-47f7-840d-3c41fb8c0127"/>
+				<reportElement key="textField-22" x="578" y="0" width="26" height="21" uuid="eebdb59c-c0e5-4a5c-bfdb-4f7ffdb21fd5"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -923,7 +923,7 @@
 				<textFieldExpression><![CDATA[$F{nd}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-23" x="604" y="0" width="26" height="21" uuid="f59968c2-7c4f-438d-ba65-4c1bc8e62493"/>
+				<reportElement key="textField-23" x="604" y="0" width="26" height="21" uuid="6fd01d0a-c9d5-473c-b02b-3a461d7ab79f"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -936,7 +936,7 @@
 				<textFieldExpression><![CDATA[$F{pd}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-25" x="760" y="0" width="26" height="21" uuid="90e2091d-737a-43a2-98e0-84f619f885bf"/>
+				<reportElement key="textField-25" x="760" y="0" width="26" height="21" uuid="8dce6bd2-9c9d-4af2-a0f2-685c0c196db4"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -949,7 +949,7 @@
 				<textFieldExpression><![CDATA[$F{ps}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-26" x="630" y="0" width="52" height="21" uuid="0d10c836-2ceb-44db-a40d-1b7631141f57"/>
+				<reportElement key="textField-26" x="630" y="0" width="52" height="21" uuid="b4688efe-75ff-4d6a-bf23-bf14f7bd3bba"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -962,7 +962,7 @@
 				<textFieldExpression><![CDATA[$F{nu}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-27" x="682" y="0" width="52" height="21" uuid="e828ddbd-5d3d-4878-9554-74d70cbcde15"/>
+				<reportElement key="textField-27" x="682" y="0" width="52" height="21" uuid="76d3c3f7-2011-45b1-951c-14317ef4eadf"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -975,7 +975,7 @@
 				<textFieldExpression><![CDATA[$F{pu}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-28" x="734" y="0" width="26" height="21" uuid="2e4ab9ed-cb9a-42bc-8c19-407e699eb4c3"/>
+				<reportElement key="textField-28" x="734" y="0" width="26" height="21" uuid="662d4894-7c43-4724-8221-74671213486a"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -988,7 +988,7 @@
 				<textFieldExpression><![CDATA[$F{ns}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-29" x="58" y="0" width="26" height="21" uuid="1e9dc00d-3a5e-4041-92a0-5a0183138671"/>
+				<reportElement key="textField-29" x="58" y="0" width="26" height="21" uuid="a4a2becf-820a-4354-a837-09e997f3d30b"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -1001,7 +1001,7 @@
 				<textFieldExpression><![CDATA[$F{n0}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-30" x="84" y="0" width="26" height="21" uuid="5922d384-6fd5-4e22-9bae-b8f742ad55c9"/>
+				<reportElement key="textField-30" x="84" y="0" width="26" height="21" uuid="1d6dc492-f01b-4acd-a7ff-58a730ee249f"/>
 				<box rightPadding="1">
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
