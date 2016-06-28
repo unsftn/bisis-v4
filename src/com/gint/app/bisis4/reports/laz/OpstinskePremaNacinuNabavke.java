@@ -45,7 +45,7 @@ public class OpstinskePremaNacinuNabavke extends Report {
         error = true;
       } 
       // ogranak
-      String ogranakID=p.getOdeljenje();
+      String ogranakID=p.getSigPodlokacija();
 	  if (ogranakID == null || ogranakID.equals("")) {
 			  ogranakID = "\u043d\u0435\u0440\u0430\u0437\u0432\u0440\u0441\u0442\u0430\u043d\u0438"; // nerazvrstani
 	  }
@@ -227,11 +227,7 @@ public List<Ogranak> getList(String key) {
     	String odeljenje;
     	System.out.println(ogr);
     	if (!ogr.equalsIgnoreCase("\u043d\u0435\u0440\u0430\u0437\u0432\u0440\u0441\u0442\u0430\u043d\u0438")){
-    	  odeljenje=HoldingsDataCodersJdbc.getValue(HoldingsDataCodersJdbc.ODELJENJE_CODER, ogr);
-    	  int zarez=odeljenje.indexOf(",");
-    	  if(zarez!=-1){
-    		odeljenje=odeljenje.substring(0, zarez);
-    	   }
+    	  odeljenje=HoldingsDataCodersJdbc.getValue(HoldingsDataCodersJdbc.PODLOKACIJA_CODER, ogr);
     	}else{
     		odeljenje=ogr;
     	}
