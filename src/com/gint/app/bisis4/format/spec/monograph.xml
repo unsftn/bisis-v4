@@ -89,8 +89,26 @@
   <subfield name="225z"/>
   <subfield name="300a"/>
   <subfield name="314a"/>
+  <subfield name="316a"/>
+  <subfield name="3165"/>
   <subfield name="317a"/>
   <subfield name="3175"/>
+  <subfield name="318a"/>
+  <subfield name="318b"/>
+  <subfield name="318c"/>
+  <subfield name="318d"/>
+  <subfield name="318e"/>
+  <subfield name="318f"/>
+  <subfield name="318h"/>
+  <subfield name="318i"/>
+  <subfield name="318j"/>
+  <subfield name="318k"/>
+  <subfield name="318l"/>
+  <subfield name="318n"/>
+  <subfield name="318o"/>
+  <subfield name="318p"/>
+  <subfield name="318r"/>  
+  <subfield name="3185"/>  
   <subfield name="320a"/>
   <subfield name="321a"/>
   <subfield name="321b"/>
@@ -249,6 +267,13 @@
   <subfield name="515a"/>
   <subfield name="516a"/>
   <subfield name="517a"/>
+  <subfield name="518a"/>
+  <subfield name="518e"/>
+  <subfield name="518h"/>
+  <subfield name="518i"/>
+  <subfield name="518j"/>
+  <subfield name="518n"/>
+  <subfield name="518z"/>
   <subfield name="520a"/>
   <subfield name="532a"/>
   <subfield name="540a"/>
@@ -572,4 +597,5 @@
   <subfield name="998d"/>
   <subfield name="999a"/>
   <subfield name="999b"/>
+  
 </pubType>

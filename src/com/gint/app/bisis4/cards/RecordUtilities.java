@@ -15,7 +15,10 @@ import com.gint.app.bisis4.records.Godina;
 import com.gint.app.bisis4.records.Primerak;
 import com.gint.app.bisis4.records.Record;
 import com.gint.app.bisis4.records.Subfield;
+import com.gint.app.bisis4.utils.Signature;
 import com.gint.util.string.StringUtils;
+
+import jdk.nashorn.internal.objects.NativeSyntaxError;
 
 public class RecordUtilities {
 	
@@ -704,7 +707,13 @@ public class RecordUtilities {
 								dodatak+="&nbsp;(";
 							dodatak+=getSubfieldContent(record,"215k");
 							dodatak+=")";
-					}					
+					}	
+					if(getSubfieldContent(record,"215a")!=null && !getSubfieldContent(record,"215a").equals("")){
+						if(!dodatak.equals(""))
+							dodatak+=",&nbsp;";
+						dodatak+=getSubfieldContent(record,"215a");
+						
+				}		
 					retVal.append(dodatak);	
 					}				
 			}
@@ -713,6 +722,57 @@ public class RecordUtilities {
 		}
 		}	
 		return "nepoznato";		
+		
+	}
+	
+	
+	public String getMaticnaPublikacijaMRSignatura(){		
+		String retVal = "";
+		int mr = record.getMR();
+		if(mr!=0){			
+			int[] hits;	
+			Term t = new Term("RN",String.valueOf(mr));
+			TermQuery tq = new TermQuery(t);
+			if(BisisApp.isStandalone())
+				hits = BisisApp.getRecordManager().select2(tq, null);
+			else
+				hits = BisisApp.getRecordManager().select2x(SerializationUtils.serialize(tq), null);
+			if(hits.length>0){
+				Record masterRecord = BisisApp.getRecordManager().getRecord(hits[0]);			
+				if(masterRecord!=null){
+					if(masterRecord.getGodine()!=null && masterRecord.getGodine().size()>0){
+						for(Godina g:masterRecord.getGodine()){
+							if(g.getSigPodlokacija().equals("ZP")){
+								 if (g.getSigPodlokacija()!=null && !g.getSigPodlokacija().equals(""))
+								      retVal += g.getSigPodlokacija() + "-";
+								   if (g.getSigIntOznaka()!=null && !g.getSigIntOznaka().equals(""))
+								      retVal += g.getSigIntOznaka() + "-";
+								   if (g.getSigFormat()!=null && !g.getSigFormat().equals(""))
+								      retVal += g.getSigFormat() + "-";
+								   if (g.getSigNumerusCurens()!=null && !g.getSigNumerusCurens().equals(""))
+								      retVal += g.getSigNumerusCurens();
+							}					
+							
+							return retVal.toString();
+						}
+						// ako nema podlokacija ZP
+						Godina g = masterRecord.getGodine().get(0);
+						if (g.getSigPodlokacija()!=null && !g.getSigPodlokacija().equals(""))
+						      retVal += g.getSigPodlokacija() + "-";
+						   if (g.getSigIntOznaka()!=null && !g.getSigIntOznaka().equals(""))
+						      retVal += g.getSigIntOznaka() + "-";
+						   if (g.getSigFormat()!=null && !g.getSigFormat().equals(""))
+						      retVal += g.getSigFormat() + "-";
+						   if (g.getSigNumerusCurens()!=null && !g.getSigNumerusCurens().equals(""))
+						      retVal += g.getSigNumerusCurens();
+						   return retVal;
+						
+					}
+				}
+			}
+		
+		}	
+		return "nepoznata signatura";		
 		
 	}
 	

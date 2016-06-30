@@ -1,4 +1,4 @@
-package com.gint.app.bisis4.reports.laz;
+package com.gint.app.bisis4.reports.pal;
 
 
 import java.io.PrintWriter;

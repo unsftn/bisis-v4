@@ -160,11 +160,13 @@
   <subfield name="7009"/>
   <subfield name="700a"/>
   <subfield name="700b"/>
+  <subfield name="700f"/>
   <subfield name="7014"/>
   <subfield name="7016"/>
   <subfield name="7019"/>
   <subfield name="701a"/>
   <subfield name="701b"/>
+  <subfield name="701f"/>
   <subfield name="7024"/>
   <subfield name="7026"/>
   <subfield name="7029"/>
@@ -322,4 +324,5 @@
   <subfield name="992b"/>
   <subfield name="992c"/>
   <subfield name="998b"/>
+  <subfield name="992f"/>
 </pubType>

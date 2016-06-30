@@ -8,7 +8,7 @@
 ><#assign firstPO=true
 ><@odrednica/><@brojID/><@opisAnalitika/><@signatura/><@fieldAnalitika/><@brojUDC/><#--
 
---><#assign la=la+odred+opisA+"<BR><BR>\x0423:&nbsp;"+recUtil.getMaticnaPublikacijaMRSabac()+"<BR><BR>"+brUDC
+--><#assign la=la+recUtil.getMaticnaPublikacijaMRSignatura()+"<BR><BR>"+odred+opisA+"<BR><BR>\x0423:&nbsp;"+recUtil.getMaticnaPublikacijaMRSabac()+"<BR><BR>"+brUDC
 ></#macro
 
 ><@getAnalitika/><#assign la="<BISIS>"+la+"</BISIS>">${la}

@@ -40,8 +40,6 @@
 	<classpathentry kind="lib" path="libs/jaxp-api.jar"/>
 	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.6-bin.jar"/>
 	<classpathentry kind="lib" path="libs/xercesImpl.jar"/>
-	<classpathentry kind="lib" path="compile-libs/servlet-api.jar"/>
-	<classpathentry kind="lib" path="compile-libs/jsp-api.jar"/>
 	<classpathentry kind="lib" path="libs/commons-io-1.4.jar"/>
 	<classpathentry kind="lib" path="libs/PDFBox-0.7.3.jar"/>
 	<classpathentry kind="lib" path="libs/commons-fileupload-1.2.1.jar"/>
@@ -65,5 +63,7 @@
 	<classpathentry kind="lib" path="libs/jackson-core-2.2.3.jar"/>
 	<classpathentry kind="lib" path="libs/jackson-databind-2.2.3.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="compile-libs/jsp-api.jar"/>
+	<classpathentry kind="lib" path="compile-libs/servlet-api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

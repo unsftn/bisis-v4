@@ -1835,9 +1835,31 @@
 	<field name="314" description="Napomena o podacima o odgovornosti (u antol. zborni" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="false" length="0"/>
 	</field>
+	<field name="316" description="Napomena o opisivanom primerku" mandatory="false" repeatable="true" secondary="false">
+		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="5" description="Institucija za koju je polje od važnosti" mandatory="false" repeatable="false" length="0"/>
+	</field>	
 	<field name="317" description="Napomena o poreklu" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+	</field>
+	<field name="318" description="Napomena o postupku zaštite" mandatory="false" repeatable="true" secondary="false">
+		<subfield name="a" description="Postupak" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="b" description="Identifikacija postupka" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="c" description="Vreme postupka" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="d" description="Interval" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="e" description="Nepredvidjena situacija za postupak Contingency for action" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="f" description="Autorizacija" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="h" description="Nadležnost" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="i" description="Metod" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="j" description="Lokacija" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="k" description="Izvršilac" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="l" description="Status" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="n" description="Obim" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="o" description="Tip jedinice" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="p" description="Napomena koja nije javna" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="r" description="Javna napomena" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="5" description="Institucija za koju je polje od važnosti"  mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="320" description="Napomena o bibliografijama/registrima/sažecima" mandatory="false" repeatable="true" secondary="false">
 		<indicator index="1" description="Indikator o ispisu polja u kataloškim jedinicama">
@@ -2411,6 +2433,19 @@
 		</indicator>
 		<subfield name="a" description="Stvarni naslov" mandatory="false" repeatable="false" length="0"/>
 	</field>
+	<field name="518" description="Naslov u savremenom pravopisu" mandatory="false" repeatable="true" secondary="false">
+              <indicator index="1" description="Indikator važnosti naslova" defaultValue="0">
+                     <item code="0" value="Naslov u savremenom pravopisu nije značajan"/>
+                     <item code="1" value="Naslov u savremenom pravopisu je značajan"/>
+              </indicator>
+		<subfield name="a" description="Glavni stvarni naslov, varijantni naslov ili uporedni naslov u savremenom pravopisu" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="e" description="Podnaslov i ostale informacije o naslovu" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="h" description="Broj dela" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="i" description="Naslov dela" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="j" description="Numeracija i datumi pridruženi naslovu" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="n" description="Razne informacije" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="z" description="Jezik naslova" mandatory="false" repeatable="false" length="0"/>
+	</field>	
 	<field name="520" description="Prethodni naslov (serijske publikacije)" mandatory="false" repeatable="true" secondary="false">
 		<indicator index="1" description="Indikator važnosti stvarnog naslova">
 			<item code="0" value="Prethodni naslov nije značajan"/>

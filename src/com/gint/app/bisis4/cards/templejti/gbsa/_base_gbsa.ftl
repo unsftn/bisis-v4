@@ -143,9 +143,13 @@
 ><#if f200?exists 
      ><#list f200 as field 
               ><#assign val=""
-              ><#assign allSF="af"
+              ><#assign allSF="aefi"
               ><@field200 field/><#--
-              --><#assign opisA=opisA+"&nbsp;&nbsp;&nbsp;"+val
+              --><#if field.ind1="1"
+              	><#assign number=1
+                ><@upperFirstN/><#--
+             --></#if              
+              ><#assign opisA=opisA+"&nbsp;&nbsp;&nbsp;"+val
               
     ></#list
 ></#if
