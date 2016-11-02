@@ -212,12 +212,13 @@ public class BisisApp {
   public static Connection getConnection(){
       Connection conn = null;
       try {
+    	Class.forName(iniFile.getString("database", "driver"));
 	    conn = DriverManager.getConnection(
 	        iniFile.getString("database", "url"), 
 	        iniFile.getString("database", "username"), 
 	        iniFile.getString("database", "password"));     
 	    conn.setAutoCommit(false);
-	  } catch (SQLException e) {
+	  } catch (Exception e) {
 	    log.fatal(e);
 	    splash.setVisible(false);
 	    e.printStackTrace();
