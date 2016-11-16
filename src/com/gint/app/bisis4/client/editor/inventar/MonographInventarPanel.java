@@ -538,14 +538,15 @@ public class MonographInventarPanel extends InventarPanel {
   	int[] selectedPrimerci =  primerciTable.getSelectedRows();
   	for(int i:selectedPrimerci){
   		Primerak p = primerciTableModel.getRow(primerciTable.convertRowIndexToModel(i)); 
-  		if (PrintBarcode.multiplePrinters()){
-  			getPrintersDlg().setPrinters(PrintBarcode.getPrinters());
-  			getPrintersDlg().setVisible(true);
-  			if (getPrintersDlg().isOK())
-  				PrintBarcode.printBarcodeForPrimerak(p, getPrintersDlg().getPrinter()); 
-  		} else {
-  			PrintBarcode.printBarcodeForPrimerak(p, null); 
-  		}
+//  		if (PrintBarcode.multiplePrinters()){
+//  			getPrintersDlg().setPrinters(PrintBarcode.getPrinters());
+//  			getPrintersDlg().setVisible(true);
+//  			if (getPrintersDlg().isOK())
+//  				PrintBarcode.printBarcodeForPrimerak(p, getPrintersDlg().getPrinter()); 
+//  		} else {
+//  			PrintBarcode.printBarcodeForPrimerak(p, null); 
+//  		}
+  		PrintBarcode.printBarcodeForPrimerak(p, null); 
   		 		
   	} 		
   }

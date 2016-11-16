@@ -28,7 +28,7 @@ public class PrintBarcode {
   static private String pageCode;
   static private String optionName;
   static private String port;
-  static private boolean remote;
+  //static private boolean remote;
   static private HashMap<String, List<String>> printers;
   static private List<String> socket;
   static private int printersNo = 0;
@@ -47,24 +47,24 @@ public class PrintBarcode {
     sigfont = BisisApp.getINIFile().getInt("barcode", "sigfont");
     labelfont = BisisApp.getINIFile().getInt("barcode", "labelfont");
     port = BisisApp.getINIFile().getString("barcode", "port");
-    remote = BisisApp.getINIFile().getBoolean("barcode", "remote");
-    if (remote) {
-      printers = new HashMap<String, List<String>>();
-      int i = 1;
-      while (BisisApp.getINIFile().getString("barcode", "remoteName" + Integer.toString(i)) != null) {
-        socket = new ArrayList<String>();
-        socket.add(BisisApp.getINIFile().getString("barcode", "remoteAddress" + Integer.toString(i)));
-        socket.add(BisisApp.getINIFile().getString("barcode", "remotePort" + Integer.toString(i)));
-        printers.put(BisisApp.getINIFile().getString("barcode", "remoteName" + Integer.toString(i)), socket);
-        i++;
-      }
-      printersNo = i - 1;
-    }
+    //remote = BisisApp.getINIFile().getBoolean("barcode", "remote");
+//    if (remote) {
+//      printers = new HashMap<String, List<String>>();
+//      int i = 1;
+//      while (BisisApp.getINIFile().getString("barcode", "remoteName" + Integer.toString(i)) != null) {
+//        socket = new ArrayList<String>();
+//        socket.add(BisisApp.getINIFile().getString("barcode", "remoteAddress" + Integer.toString(i)));
+//        socket.add(BisisApp.getINIFile().getString("barcode", "remotePort" + Integer.toString(i)));
+//        printers.put(BisisApp.getINIFile().getString("barcode", "remoteName" + Integer.toString(i)), socket);
+//        i++;
+//      }
+//      printersNo = i - 1;
+//    }
   }
 
-  public static boolean multiplePrinters() {
-    return (remote && (printersNo > 1));
-  }
+//  public static boolean multiplePrinters() {
+//    return (remote && (printersNo > 1));
+//  }
 
   public static List<String> getPrinters() {
     List<String> list = new ArrayList<String>();
