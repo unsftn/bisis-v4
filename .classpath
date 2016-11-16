@@ -62,8 +62,8 @@
 	<classpathentry kind="lib" path="libs/jackson-annotations-2.2.3.jar"/>
 	<classpathentry kind="lib" path="libs/jackson-core-2.2.3.jar"/>
 	<classpathentry kind="lib" path="libs/jackson-databind-2.2.3.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="compile-libs/jsp-api.jar"/>
 	<classpathentry kind="lib" path="compile-libs/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
