@@ -1715,6 +1715,468 @@
 		<subfield name="c" description="Kodirani pod: Kompjuterske datoteke-Boja" mandatory="false" repeatable="false" length="1">
 		</subfield>
 	</field>
+	<!--  Nova polja -->
+	<field name="140" description="Kodirani pod: Antikvarski - opšti" mandatory="false" repeatable="false" secondary="false">
+		<subfield name="a" description="Ilustracioni kodovi - knjige" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="ilustracioni (kada kod ilustracije nije specifično kodiran)"/>
+				<item code="b" value="iluminacija"/>
+				<item code="c" value="ukrasno pismo"/>
+				<item code="d" value="minijatura"/>
+				<item code="e" value="rubrika (npr. naslov itd. specijalnim slovima)"/>
+				<item code="f" value="vinjeta (npr. kružno ukrašeno veliko slovo itd.)"/>
+				<item code="g" value="ilustracija na početku knjige"/>
+				<item code="h" value="portreti"/>
+				<item code="i" value="pogled (npr. panorama pogled na grad itd.)"/> 
+				<item code="j" value="mape"/>
+				<item code="k" value="grafikoni (npr. navigacione mape)"/>
+				<item code="l" value="planovi"/>
+				<item code="m" value="muzika"/>
+				<item code="n" value="grbovi"/>
+				<item code="o" value="genealoške tabele"/>
+				<item code="y" value="bez ilustracije"/>
+				<item code="z" value="drugo"/>
+			</coder>
+		</subfield>
+		<subfield name="b" description="Ilustracioni kodovi - opširne stranice" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="ilustracije"/>
+				<item code="g" value="ilustracija na početku knjige"/>
+				<item code="h" value="portreti"/>
+				<item code="i" value="pogled (npr. panorama pogled na grad itd.)"/>
+				<item code="j" value="mape"/>
+				<item code="k" value="grafikoni (npr. navigacione mape)"/>
+				<item code="l" value="planovi"/>
+				<item code="m" value="muzika"/>
+				<item code="n" value="grbovi"/>
+				<item code="o" value="genealoške tabele"/>
+				<item code="y" value="bez ilustracije"/>
+				<item code="z" value="drugo"/>
+			</coder>
+		</subfield>
+		<subfield name="c" description="Ilustracioni kodovi - tehnike" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="Duborez"/>
+				<item code="b" value="Litografija"/>
+				<item code="c" value="Radirung"/>
+				<item code="d" value="Akvatinta"/>
+				<item code="e" value="Gravura"/>
+				<item code="u" value="Nepoznato"/>
+				<item code="v" value="Mešovito"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="d" description="Kod oblika sadržaja" mandatory="false" repeatable="false" length="2">
+			<coder external="false">
+				<item code="aa" value="verski rad"/>
+				<item code="ab" value="katheizam"/>
+				<item code="ac" value="molitvene literature"/>
+				<item code="ad" value="propoved"/>
+				<item code="ba" value="naučni rad"/>
+				<item code="bb" value="rasprava, disertacija, teza"/>
+				<item code="ca" value="društveni običaji"/>
+				<item code="da" value="pravna posla"/>
+				<item code="db" value="politički rad"/> 
+				<item code="ea" value="prolazna pojava"/>
+				<item code="fa" value="referentna rad"/>
+				<item code="fb" value="bibliotečki katalog"/>
+				<item code="fc" value="bibliografija"/>
+				<item code="fd" value="kalendar"/>
+				<item code="fe" value="indeks"/>
+				<item code="ff" value="rečnik"/>
+				<item code="fg" value="enciklopedija"/>
+				<item code="ga" value="istorijski rad"/>
+				<item code="ha" value="polemički traktat"/>
+				<item code="ia" value="diskurzivan rad"/>
+				<item code="ja" value="spomen rad"/>
+				<item code="ka" value="nastavni rad"/>
+				<item code="kb" value="uputstvo"/>
+				<item code="kc" value="udžbenik"/>
+				<item code="la" value="vodjenje evidencije"/>
+				<item code="ma" value="rekreacija"/>
+				<item code="na" value="verzija rada"/>
+				<item code="zz" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="e" description="Kod literature" mandatory="false" repeatable="false" length="2">
+			<coder external="false">
+				<item code="aa" value="pozija"/>
+				<item code="ab" value="romansa"/>
+				<item code="ca" value="drama"/>
+				<item code="da" value="libreto"/>
+				<item code="ea" value="fikcija"/>
+				<item code="eb" value="roman"/>
+				<item code="ec" value="novela"/>
+				<item code="ed" value="basna"/>
+				<item code="ef" value="bajka"/> 
+				<item code="eg" value="alegorija"/>
+				<item code="eh" value="legenda"/>
+				<item code="ei" value="parabola"/>
+				<item code="ej" value="kratka priča"/>
+				<item code="fa" value="esej, feljton"/>
+				<item code="ga" value="humor, satira"/>
+				<item code="ha" value="nauka (letters)"/>
+				<item code="fg" value="enciklopedija"/>
+				<item code="ia" value="prikupljeni podaci (miscellanea)"/>
+				<item code="ja" value="maskima, aforizam, poslovica, anegdota"/>
+				<item code="ka" value="maloletnička literatura"/>
+				<item code="la" value="ostalo (npr. hronike, memoari, dnevnici, biografije, erotika itd.)"/>
+				<item code="lb" value="hronika"/>
+				<item code="lc" value="memoar"/>
+				<item code="ld" value="dnevnik"/>
+				<item code="le" value="biografija"/>
+				<item code="lf" value="sveti spisi"/>
+				<item code="lg" value="putopis"/>
+				<item code="lh" value="erotika"/>
+				<item code="li" value="mistična literatura"/>
+				<item code="ma" value="govorništvo, govori"/>
+				<item code="yy" value="nije književni tekst"/>
+				<item code="zz" value="više ili drugo"/>
+			</coder>
+		</subfield>
+		<subfield name="f" description="Biografski kod" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="autobiografija (upotreba u memoarima i ispovestima)"/>
+				<item code="b" value="pojedinačna biografija"/>
+				<item code="c" value="kolektivna biografija"/>
+				<item code="d" value="sadrži biografske podatke"/>
+				<item code="y" value="nije biografski"/>
+				<item code="z" value="više ili drugi oblik"/>
+			</coder>
+		</subfield>
+		<subfield name="g" description="Materijal - knjiga" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="papir, obični"/>
+				<item code="b" value="ručno napravljen papir"/>
+				<item code="c" value="pirinčani papir"/>
+				<item code="d" value="celulozni papir"/>
+				<item code="e" value="pergament, velum"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="h" description="Materijal - stranica" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="papir, obični"/>
+				<item code="b" value="ručno napravljen papir"/>
+				<item code="c" value="pirinčani papir"/>
+				<item code="d" value="celulozni papir"/>
+				<item code="e" value="pergament, velum"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="i" description="Kod vodenog žiga" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="0" value="papir ne sadrži vodeni žig"/>
+				<item code="1" value="papir sadrži vodeni žig"/>
+			</coder>
+		</subfield>
+		<subfield name="j" description="Kod štampača" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="0" value="štampač nije prisutan"/>
+				<item code="1" value="štampač prisutan"/>
+			</coder>
+		</subfield>
+		<subfield name="k" description="Kod uredjaja izdavača" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="0" value="izdavačev uredjaj nije prisutan"/>
+				<item code="1" value="izdavačev uredjaj prisutan"/>
+			</coder>
+		</subfield>
+		<subfield name="l" description="Kod uredjaja za ukrašavanje" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="0" value="uredjaj za ukrašavanje nije prisutan"/>
+				<item code="1" value="uredjaj za ukrašavanje prisutan"/>
+			</coder>
+		</subfield>
+	</field>
+	<field name="141" description="Kodirani pod: kopija specifičnih podataka" mandatory="false" repeatable="true" secondary="false">
+		<subfield name="a" description="Kod vezivnoh materijala" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="pergament, velum"/>
+				<item code="b" value="koža"/>
+				<item code="c" value="drvo"/>
+				<item code="d" value="tkanina"/>
+				<item code="e" value="sintetika"/>
+				<item code="f" value="karton"/>
+				<item code="g" value="papir"/>
+				<item code="h" value="nevezan"/>
+				<item code="i" value="nepoznat"/> 
+				<item code="j" value="ostali"/>
+			</coder>
+		</subfield>
+		<subfield name="b" description="Tip vezivnog koda" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="originalni povez tj. primarni"/>
+				<item code="b" value="neoriginalni povet (rebound)"/>
+				<item code="c" value="moderan"/>
+				<item code="d" value="obnovljen, faksimil"/>
+				<item code="e" value="obnovljen, imitacija"/>
+				<item code="f" value="rad vezan drugim"/>
+				<item code="h" value="u listovima, nevezan"/>
+				<item code="j" value="faksimil"/>
+				<item code="k" value="obnovljen original"/>
+				<item code="l" value="obnovljen, nije original"/>
+				<item code="u" value="nepoznat"/>
+				<item code="z" value="drugo"/>
+			</coder>
+		</subfield>
+		<subfield name="c" description="Vezan za kod" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="0" value="pojedinačna stavka"/>
+				<item code="1" value="vezan sa jednim ili više drugih"/>
+			</coder>
+		</subfield>
+		<subfield name="d" description="Stanje očuvanosti koda - opšti povez" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="odlično"/>
+				<item code="b" value="dobro"/>
+				<item code="c" value="istrošeno"/>
+				<item code="d" value="oštećeno"/>
+				<item code="e" value="polomljen"/>
+				<item code="f" value="nedostaje"/>
+				<item code="g" value="obnovljen"/>
+				<item code="u" value="nepoznat"/>
+				<item code="z" value="drugo"/> 
+			</coder>
+		</subfield>
+		<subfield name="e" description="Stanje očuvanosti koda - telo knjige opšte" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="odlično"/>
+				<item code="b" value="dobro"/>
+				<item code="c" value="istrošeno"/>
+				<item code="d" value="oštećeno"/>
+				<item code="e" value="fali stranica"/>
+				<item code="g" value="obnovljen"/>
+				<item code="u" value="nepoznat"/>
+				<item code="z" value="drugo"/> 
+			</coder>
+		</subfield>
+		<subfield name="f" description="Primarni vezivni materijal - specifične karakteristike" mandatory="false" repeatable="false" length="2">
+			<coder external="false">
+				<item code="aa" value="pergament"/>
+				<item code="ab" value="velum"/>
+				<item code="ac" value="telačej"/>
+				<item code="ad" value="ovčija koža"/>
+				<item code="ae" value="Basil, basan, bazan"/>
+				<item code="af" value="Roan"/>
+				<item code="ag" value="kozja koža"/>
+				<item code="ai" value="Niger"/>
+				<item code="aj" value="divokoza"/>
+				<item code="al" value="svinjska koža"/>
+				<item code="an" value="šagrin"/>
+				<item code="ao" value="konjska ili koža zadnjice"/>
+				<item code="ap" value="ribe i morskih sisara npr. krzno foke"/>
+				<item code="aq" value="zmijska koža"/>
+				<item code="as" value="neidentifikovane krpe i životinjske kože"/>
+				<item code="bi" value="slonovača"/>
+				<item code="bm" value="biser, sedef"/>
+				<item code="bt" value="kornjačin oklop"/>
+				<item code="bz" value="ostali materijali od životinjskih oklopa, kljova itd."/>
+				<item code="ca" value="karton"/>
+				<item code="cb" value="papir"/>
+				<item code="cc" value="mermerni papir"/>
+				<item code="cd" value="papir -mache-"/>
+				<item code="da" value="tkanina knižna"/>
+				<item code="db" value="platneni povez"/>
+				<item code="dc" value="Kaliko"/>
+				<item code="dd" value="kanvas"/>
+				<item code="de" value="platno"/>
+				<item code="df" value="drugo platno"/>
+				<item code="dg" value="svila"/>
+				<item code="dh" value="zalivena svila"/>
+				<item code="dj" value="saten"/>
+				<item code="dl" value="velvet"/>
+				<item code="dm" value="ostale tkanine izradjene od prirodnih materijala"/>
+				<item code="dw" value="drvo"/>
+				<item code="ep" value="plastične obloge"/>
+				<item code="es" value="sintetička vlakna"/>
+				<item code="fb" value="mesing, bronza"/>
+				<item code="fg" value="zlato"/>
+				<item code="fs" value="srebro"/>
+				<item code="tt" value="mešoviti materijal"/>
+				<item code="uu" value="nepoznato"/>
+				<item code="xx" value="neprihvatljivo"/>
+				<item code="zz" value="ostali vezivni materijali"/>
+			</coder>
+		</subfield>
+		<subfield name="g" description="Sekundarni vezivni materijal" mandatory="false" repeatable="false" length="2">
+			<coder external="false">
+				<item code="aa" value="pergament"/>
+				<item code="ab" value="velum"/>
+				<item code="ac" value="telačej"/>
+				<item code="ad" value="ovčija koža"/>
+				<item code="ae" value="Basil, basan, bazan"/>
+				<item code="af" value="Roan"/>
+				<item code="ag" value="kozja koža"/>
+				<item code="ai" value="Niger"/>
+				<item code="aj" value="divokoza"/>
+				<item code="al" value="svinjska koža"/>
+				<item code="an" value="šagrin"/>
+				<item code="ao" value="konjska ili koža zadnjice"/>
+				<item code="ap" value="ribe i morskih sisara npr. krzno foke"/>
+				<item code="aq" value="zmijska koža"/>
+				<item code="as" value="neidentifikovane krpe i životinjske kože"/>
+				<item code="bi" value="slonovača"/>
+				<item code="bm" value="biser, sedef"/>
+				<item code="bt" value="kornjačin oklop"/>
+				<item code="bz" value="ostali materijali od životinjskih oklopa, kljova itd."/>
+				<item code="ca" value="karton"/>
+				<item code="cb" value="papir"/>
+				<item code="cc" value="mermerni papir"/>
+				<item code="cd" value="papir -mache-"/>
+				<item code="da" value="tkanina knižna"/>
+				<item code="db" value="platneni povez"/>
+				<item code="dc" value="Kaliko"/>
+				<item code="dd" value="kanvas"/>
+				<item code="de" value="platno"/>
+				<item code="df" value="drugo platno"/>
+				<item code="dg" value="svila"/>
+				<item code="dh" value="zalivena svila"/>
+				<item code="dj" value="saten"/>
+				<item code="dl" value="velvet"/>
+				<item code="dm" value="ostale tkanine izradjene od prirodnih materijala"/>
+				<item code="dw" value="drvo"/>
+				<item code="ep" value="plastične obloge"/>
+				<item code="es" value="sintetička vlakna"/>
+				<item code="fb" value="mesing, bronza"/>
+				<item code="fg" value="zlato"/>
+				<item code="fs" value="srebro"/>
+				<item code="tt" value="mešoviti materijal"/>
+				<item code="uu" value="nepoznato"/>
+				<item code="xx" value="neprihvatljivo"/>
+				<item code="zz" value="ostali vezivni materijali"/>
+			</coder>
+		</subfield>
+		<subfield name="h" description="Dekoracija vezivanja" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="#" value="Informacija nedostupna"/>
+				<item code="a" value="zaltni rad"/>
+				<item code="b" value="srebrni rad"/>
+				<item code="c" value="vezivni rad"/>
+				<item code="u" value="nepoznato"/>
+				<item code="x" value="neprihvatljivo"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="i" description="Dekoracioni motivi" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="#" value="Informacija nedostupna"/>
+				<item code="a" value="geometrijski"/>
+				<item code="b" value="antropomorfni"/>
+				<item code="c" value="cvetni"/>
+				<item code="d" value="životinjski"/>
+				<item code="e" value="heraldički"/>
+				<item code="f" value="monogrami"/>
+				<item code="g" value="mešoviti"/>
+				<item code="u" value="nepoznati"/>
+				<item code="x" value="nije prihvatljivo"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="j" description="Vezivni delovi" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="#" value="Informacija nedostupna"/>
+				<item code="a" value="veze"/>
+				<item code="b" value="kopče"/>
+				<item code="c" value="zatvarači"/>
+				<item code="d" value="ispupčenje"/>
+				<item code="e" value="ukrasni metalni komadi"/>
+				<item code="f" value="ukruenjima"/>
+				<item code="u" value="nepoznati"/>
+				<item code="x" value="nije prihvatljivo"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="k" description="Ivice" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="#" value="Informacija nedostupna"/>
+				<item code="a" value="drvo"/>
+				<item code="b" value="papir"/>
+				<item code="c" value="karton"/>
+				<item code="u" value="nepoznati"/>
+				<item code="x" value="nije prihvatljivo"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="l" description="Doba" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="#" value="Informacija nedostupna"/>
+				<item code="a" value="pre 10. veka"/>
+				<item code="b" value="10. - 14. vek"/>
+				<item code="c" value="15. vek"/>
+				<item code="d" value="16. vek"/>
+				<item code="e" value="17. vek"/>
+				<item code="f" value="18. vek"/>
+				<item code="g" value="19. vek"/>
+				<item code="h" value="20. vek"/>
+				<item code="i" value="21. vek"/>
+				<item code="u" value="nepoznato"/>
+				<item code="z" value="ostalo"/>
+			</coder>
+		</subfield>
+		<subfield name="m" description="Vezivno stanje očuvanost - sprecifično" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="hemijska šteta"/>
+				<item code="b" value="poliveno kiselinom"/>
+				<item code="c" value="foxing"/>
+				<item code="d" value="biološka šteta"/>
+				<item code="e" value="crvotočine"/>
+				<item code="f" value="šteta glodara"/>
+				<item code="g" value="kalup"/>
+				<item code="h" value="fizička i/ili mehanička šteta"/>
+				<item code="i" value="vodena mrlja"/>
+				<item code="j" value="šteta od požara"/>
+				<item code="k" value="deformacija"/>
+				<item code="l" value="iscepani listovi"/>
+				<item code="u" value="nepoznato"/>
+				<item code="#" value="Informacija nije potrebna"/>
+			</coder>
+		</subfield>
+		<subfield name="n" description="Telo knjige specifične karakteristike -  ručne ilustracije" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="ilustracije"/>
+				<item code="b" value="ručno obojene ilustracije"/>
+				<item code="c" value="iluminacije"/>
+				<item code="d" value="olovkom ili hemijskom nacrtani ukrasi"/>
+				<item code="e" value="četkicom nacrtane ilustracije"/>
+				<item code="u" value="nepoznato"/>
+				<item code="#" value="Informacija nije potrebna"/>
+			</coder>
+		</subfield>
+		<subfield name="o" description="Znakovi u knjizi" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="anotirana kopija"/>
+				<item code="b" value="marginalne beleške"/>
+				<item code="c" value="manunclae"/>
+				<item code="d" value="potvrdne beleške"/>
+				<item code="e" value="knjižne ploče"/>
+				<item code="f" value="bivše lokacije"/>
+				<item code="g" value="rukom pisane indukacije"/>
+				<item code="h" value="ne-ukrasne slike ili crteži"/>
+				<item code="u" value="nepoznato"/>
+				<item code="#" value="Informacija nije potrebna"/>
+			</coder>
+		</subfield>
+		<subfield name="p" description="Telo knjige vezivno stanje - očuvanost - specifično" mandatory="false" repeatable="false" length="1">
+			<coder external="false">
+				<item code="a" value="hemijska šteta"/>
+				<item code="b" value="poliveno kiselinom"/>
+				<item code="c" value="foxing"/>
+				<item code="d" value="biološka šteta"/>
+				<item code="e" value="crvotočine"/>
+				<item code="f" value="šteta glodara"/>
+				<item code="g" value="kalup"/>
+				<item code="h" value="fizička i/ili mehanička šteta"/>
+				<item code="i" value="vodena mrlja"/>
+				<item code="j" value="šteta od požara"/>
+				<item code="k" value="deformacija"/>
+				<item code="l" value="iscepani listovi"/>
+				<item code="u" value="nepoznato"/>
+				<item code="#" value="Informacija nije potrebna"/>
+			</coder>
+		</subfield>
+	</field>
+	<!--  End -->
 	<field name="200" description="Stvarni naslov i podaci o odgovornosti" mandatory="true" repeatable="false" secondary="true">
 		<indicator index="1" description="Indikator važnosti glavnog stvarnog naslova" defaultValue="0">
 			<item code="0" value="Naslov nije značajan"/>
@@ -1836,15 +2298,15 @@
 		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="316" description="Napomena o opisivanom primerku" mandatory="false" repeatable="true" secondary="false">
-		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="5" description="Institucija za koju je polje od važnosti" mandatory="false" repeatable="false" length="0"/>
 	</field>	
 	<field name="317" description="Napomena o poreklu" mandatory="false" repeatable="true" secondary="false">
-		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="318" description="Napomena o postupku zaštite" mandatory="false" repeatable="true" secondary="false">
-		<subfield name="a" description="Postupak" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="a" description="Postupak" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="b" description="Identifikacija postupka" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="c" description="Vreme postupka" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="d" description="Interval" mandatory="false" repeatable="true" length="0"/>
@@ -2646,6 +3108,37 @@
 		<subfield name="z" description="Jezik predmetne odrednice" mandatory="false" repeatable="true" length="3">
 			<coder external="true" type="1"/>
 		</subfield>
+	</field>
+	<field name="620" description="Mesto i datum objavljivanja, nastup itd." mandatory="false" repeatable="true" secondary="false">
+		<indicator index="1" description="Tip podatka">
+			<item code="#" value="Izdavanje ili produkcija"/>
+			<item code="1" value="Nastup"/>
+			<item code="2" value="Prvi nastup"/>
+			<item code="3" value="Snimak"/>
+			<item code="4" value="Uživo snimanje"/>
+			<item code="5" value="Remaster"/>
+			<item code="0" value="Nije navedeno"/>
+		</indicator>
+		<indicator index="2" description="Prisutnost podataka u izvoru">
+			<item code="#" value="Nije prihvatljivo/nepoznato"/>
+			<item code="0" value="Podaci nisu prisutni u izvoru"/>
+			<item code="1" value="Podaci prisutni u izvoru"/>
+		</indicator>
+		<subfield name="a" description="Država" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="b" description="Država ili pokrajina" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="c" description="Politička nadležnost" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="d" description="Grad" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="e" description="Mesto" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="f" description="Datum" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="g" description="Godišnje doba" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="h" description="Prilika" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="i" description="Krajnji rok" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="k" description="Odeljak grada" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="m" description="Druga geografska područja ili osobine" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="n" description="Vanatmosferska oblast" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="o" description="Geografska područja npr. hemisfera, kontinent" mandatory="false" repeatable="true" length="0"/>
+		<subfield name="2" description="Sistemski kod" mandatory="true" repeatable="false" length="0"/>
+		<subfield name="3" description="Broj upravnog zapisa" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="626" description="Pristup tehničkim podacima (računarske datoteke)" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Model računara" mandatory="false" repeatable="false" length="0"/>
