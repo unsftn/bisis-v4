@@ -1715,9 +1715,8 @@
 		<subfield name="c" description="Kodirani pod: Kompjuterske datoteke-Boja" mandatory="false" repeatable="false" length="1">
 		</subfield>
 	</field>
-	<!--  Nova polja -->
 	<field name="140" description="Kodirani pod: Antikvarski - opšti" mandatory="false" repeatable="false" secondary="false">
-		<subfield name="a" description="Ilustracioni kodovi - knjige" mandatory="false" repeatable="false" length="1">
+		<subfield name="a" description="Ilustracije - knjige" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="a" value="ilustracioni (kada kod ilustracije nije specifično kodiran)"/>
 				<item code="b" value="iluminacija"/>
@@ -1738,7 +1737,7 @@
 				<item code="z" value="drugo"/>
 			</coder>
 		</subfield>
-		<subfield name="b" description="Ilustracioni kodovi - opširne stranice" mandatory="false" repeatable="false" length="1">
+		<subfield name="b" description="Ilustracije - opširne stranice" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="a" value="ilustracije"/>
 				<item code="g" value="ilustracija na početku knjige"/>
@@ -1754,7 +1753,7 @@
 				<item code="z" value="drugo"/>
 			</coder>
 		</subfield>
-		<subfield name="c" description="Ilustracioni kodovi - tehnike" mandatory="false" repeatable="false" length="1">
+		<subfield name="c" description="Ilustracije - tehnike" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="a" value="Duborez"/>
 				<item code="b" value="Litografija"/>
@@ -1766,7 +1765,7 @@
 				<item code="z" value="ostalo"/>
 			</coder>
 		</subfield>
-		<subfield name="d" description="Kod oblika sadržaja" mandatory="false" repeatable="false" length="2">
+		<subfield name="d" description="Oblik sadržaja" mandatory="false" repeatable="false" length="2">
 			<coder external="false">
 				<item code="aa" value="verski rad"/>
 				<item code="ab" value="katheizam"/>
@@ -1798,7 +1797,7 @@
 				<item code="zz" value="ostalo"/>
 			</coder>
 		</subfield>
-		<subfield name="e" description="Kod literature" mandatory="false" repeatable="false" length="2">
+		<subfield name="e" description="Vrsta literature" mandatory="false" repeatable="false" length="2">
 			<coder external="false">
 				<item code="aa" value="pozija"/>
 				<item code="ab" value="romansa"/>
@@ -1890,7 +1889,7 @@
 		</subfield>
 	</field>
 	<field name="141" description="Kodirani pod: kopija specifičnih podataka" mandatory="false" repeatable="true" secondary="false">
-		<subfield name="a" description="Kod vezivnoh materijala" mandatory="false" repeatable="false" length="1">
+		<subfield name="a" description="Vezivni materijal" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="a" value="pergament, velum"/>
 				<item code="b" value="koža"/>
@@ -1904,7 +1903,7 @@
 				<item code="j" value="ostali"/>
 			</coder>
 		</subfield>
-		<subfield name="b" description="Tip vezivnog koda" mandatory="false" repeatable="false" length="1">
+		<subfield name="b" description="Tip vezivanja" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="a" value="originalni povez tj. primarni"/>
 				<item code="b" value="neoriginalni povet (rebound)"/>
@@ -1920,13 +1919,13 @@
 				<item code="z" value="drugo"/>
 			</coder>
 		</subfield>
-		<subfield name="c" description="Vezan za kod" mandatory="false" repeatable="false" length="1">
+		<subfield name="c" description="Vezan sa" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="0" value="pojedinačna stavka"/>
 				<item code="1" value="vezan sa jednim ili više drugih"/>
 			</coder>
 		</subfield>
-		<subfield name="d" description="Stanje očuvanosti koda - opšti povez" mandatory="false" repeatable="false" length="1">
+		<subfield name="d" description="Stanje očuvanosti - opšti povez" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="a" value="odlično"/>
 				<item code="b" value="dobro"/>
@@ -1939,7 +1938,7 @@
 				<item code="z" value="drugo"/> 
 			</coder>
 		</subfield>
-		<subfield name="e" description="Stanje očuvanosti koda - telo knjige opšte" mandatory="false" repeatable="false" length="1">
+		<subfield name="e" description="Stanje očuvanosti - telo knjige opšte" mandatory="false" repeatable="false" length="1">
 			<coder external="false">
 				<item code="a" value="odlično"/>
 				<item code="b" value="dobro"/>
@@ -2176,7 +2175,6 @@
 			</coder>
 		</subfield>
 	</field>
-	<!--  End -->
 	<field name="200" description="Stvarni naslov i podaci o odgovornosti" mandatory="true" repeatable="false" secondary="true">
 		<indicator index="1" description="Indikator važnosti glavnog stvarnog naslova" defaultValue="0">
 			<item code="0" value="Naslov nije značajan"/>
@@ -2300,10 +2298,14 @@
 	<field name="316" description="Napomena o opisivanom primerku" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="5" description="Institucija za koju je polje od važnosti" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="0" description="Signatura" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Invertarni broj" mandatory="false" repeatable="false" length="0"/>
 	</field>	
 	<field name="317" description="Napomena o poreklu" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="0" description="Signatura" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Invertarni broj" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="318" description="Napomena o postupku zaštite" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Postupak" mandatory="false" repeatable="true" length="0"/>
@@ -2322,6 +2324,8 @@
 		<subfield name="p" description="Napomena koja nije javna" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="r" description="Javna napomena" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="5" description="Institucija za koju je polje od važnosti"  mandatory="false" repeatable="false" length="0"/>
+		<subfield name="0" description="Signatura" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Invertarni broj" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="320" description="Napomena o bibliografijama/registrima/sažecima" mandatory="false" repeatable="true" secondary="false">
 		<indicator index="1" description="Indikator o ispisu polja u kataloškim jedinicama">
