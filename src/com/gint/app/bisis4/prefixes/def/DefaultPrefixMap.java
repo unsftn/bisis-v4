@@ -94,6 +94,7 @@ public class DefaultPrefixMap implements PrefixMap {
     addToMap("DC", "675a");
     addToMap("DC", "675u");
     addToMap("DR", "328f");
+    addToMap("DS", "996t");
     addToMap("DT", "001c");
     addToMap("FC", "7008");
     addToMap("FC", "7018");
