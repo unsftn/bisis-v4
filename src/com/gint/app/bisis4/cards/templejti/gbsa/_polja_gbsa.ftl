@@ -1,20 +1,17 @@
 <#-- Popravljano polje 710 -->
-<#macro field001  field
-   ><#list field.sf as subField
-         ><#if (allSF?index_of("b")!=-1 || allSF?index_of("@")!=-1) && subField.name="b"    
-                      
-                    ><#assign val=val+subField.content
-        ></#if
-        ><#if (allSF?index_of("e")!=-1 || allSF?index_of("@")!=-1) && subField.name="e"    
-                      
-                    ><#assign val=val+subField.content
-        ></#if
-   ></#list
-></#macro
+<#macro field001  field>
+	<#list field.sf as subField>
+		<#if (allSF?index_of("b")!=-1 || allSF?index_of("@")!=-1) && subField.name="b">
+			<#assign val=val+subField.content>
+		</#if>
+			<#if (allSF?index_of("e")!=-1 || allSF?index_of("@")!=-1) && subField.name="e">
+				<#assign val=val+subField.content>
+			</#if>
+	</#list
+></#macro>
 
 
-
-><#macro field010 field
+<#macro field010 field
    ><#list field.sf as subField
          ><#if (allSF?index_of("a")!=-1 || allSF?index_of("@")!=-1) &&  subField.name="a"     
                        ><#assign val=val+subField.content         
@@ -116,8 +113,9 @@
       ></#if
 
   ></#list
-></#macro
-><#macro field205 field
+></#macro>
+
+<#macro field205 field
     ><#list field.sf as subField
 
       ><#if (allSF?index_of("a")!=-1 || allSF?index_of("@")!=-1) &&  subField.name="a"  && subField.content?exists
@@ -461,10 +459,25 @@
      ></#if
   ></#list
 
-></#macro
+></#macro>
 
 
-><#macro field321 field
+<#macro field316 field>
+	<#list field.sf as subField>
+		<#if (allSF?index_of("a")!=-1 || allSF?index_of("@")!=-1) &&  subField.name="a">
+			<#assign val=val+subField.content>
+    	</#if>
+    	<#if (allSF?index_of("0")!=-1 || allSF?index_of("@")!=-1) &&  subField.name="0">
+			<#assign val=val+"&nbsp;:&nbsp;"+subField.content+" ">
+    	</#if>
+    	<#if (allSF?index_of("5")!=-1 || allSF?index_of("@")!=-1) &&  subField.name="5">
+			<#assign val=val+"&nbsp;:&nbsp;"+subField.content>
+    	</#if>
+   </#list>
+</#macro>
+
+
+<#macro field321 field
 
   ><#list field.sf as subField
 

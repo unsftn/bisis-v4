@@ -1,9 +1,7 @@
-<#include "_polja_gbsa.ftl"
+<#include "_polja_gbsa.ftl">
+<#assign odr="">
 
-><#assign odr=""
-
-
-><#macro toRoman
+<#macro toRoman
 
      ><#assign roman=""
      ><#assign ost10=br % 10
@@ -707,8 +705,27 @@
                                   ><#assign nap=nap+val
                    ></#if
           ></#list
-   ></#if
-   ><#if f317?exists
+   ></#if>
+   <#if f316?exists>
+		<#list f316 as field>
+			<#assign val="">
+			<#assign allSF="a509">
+			<@field316 field/>
+			<#if val!="">
+				<#if nap!="">
+					<#if nap?ends_with(".")>
+						<#assign nap=nap+"&nbsp;-&nbsp;">
+					<#else>
+						<#assign nap=nap+".&nbsp;-&nbsp;">
+					</#if>
+				<#else>
+					<#assign nap="<BR><BR>">
+				</#if>
+				<#assign nap=nap+val>
+			</#if>
+		</#list>
+	</#if>   
+   <#if f317?exists
              ><#list f317 as field
                     ><#assign val=""       
                     ><#assign allSF="@" 
