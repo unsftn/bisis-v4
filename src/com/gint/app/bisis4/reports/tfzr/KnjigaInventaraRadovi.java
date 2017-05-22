@@ -155,7 +155,7 @@ public class KnjigaInventaraRadovi extends Report {
         cal.set(Integer.parseInt(godIzd), 1, 1);
         String part=settings.getParam("part");
         if(part==null){
-          key = settings.getParam("file") + getFilenameSuffix(cal.getTime());
+          key = settings.getParam("file") + getFilenameSuffix(p.getDatumInventarisanja());
         }else{ //ukoliko zelimo iventarnu knjigu od po npr 1000
         	   //parametar part odredjuje koliko je primeraka u jednom fajlu
           String invBroj=p.getInvBroj().substring(2);

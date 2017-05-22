@@ -159,7 +159,7 @@ public class KnjigaInventaraMonografske extends Report {
         String part=settings.getParam("part");
         String key;
         if(part==null){
-          key = settings.getParam("file") + getFilenameSuffix(date);
+          key = settings.getParam("file") + getFilenameSuffix(p.getDatumInventarisanja());
         }else{ //ukoliko zelimo iventarnu knjigu od po npr 1000
         	   //parametar part odredjuje koliko je primeraka u jednom fajlu
           String invBroj=p.getInvBroj().substring(2);
