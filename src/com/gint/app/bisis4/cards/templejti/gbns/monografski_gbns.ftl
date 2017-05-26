@@ -21,7 +21,7 @@
  <@brojUDC/>
  <@inventarni/>
  <#if saInventarnim
-	><#assign lm="<BISIS>"+brID+"<BR>"+sign+"<BR>"+odred+zag+"<BR>"+opis+nap+pril+isbnBR+"<BR>"+recUtil.getPredmetneOdrednice()+"<BR>"+brUDC+"<BR><BR>"+recUtil.getRaspodelaNSCirc()+"<BR><BR>"+inv+"</BISIS>"
+	><#assign lm="<BISIS>"+brID+"<BR>"+sign+"<BR>"+odred+zag+"<BR>"+opis+nap+pril+isbnBR+"<BR>"+recUtil.getPredmetneOdrednice()+"<BR>"+brUDC+"<BR><BR>"+recUtil.getRaspodelaNSCirc()+recUtil.getBrojPrimerakaSvezakaNS()+"<BR><BR>"+inv+"</BISIS>"
  ><#else
 	><#assign lm="<BISIS>"+odred+zag+"<BR>"+opis+nap+pril+isbnBR+"</BISIS>"
  ></#if	

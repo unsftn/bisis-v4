@@ -37,6 +37,27 @@ public class RecordUtilities {
 	 * publikacije, odnosno gledaju se samo primerci
 	 * 
 	 */
+	
+	//vraca broj primeraka odnsotno svezaka za tekuci record
+	public String getBrojPrimerakaSvezakaNS(){
+		StringBuffer retVal = new StringBuffer(); 
+		retVal.append(" = ");	
+		if(record.getPrimerci() != null && record.getPrimerci().size() > 0)
+			retVal.append(record.getPrimerci().size());	
+		else if(record.getGodine() != null){
+			int brSv = 0;
+			for(Godina g: record.getGodine())
+				brSv += g.getSveskeCount();
+			if( brSv > 0)
+				retVal.append(brSv);
+			else
+				return "";
+		}
+		retVal.append(" kom ");
+		
+		return retVal.toString();
+	}
+	
 	public String getRaspodelaNSCirc(){
 		int brojOgranaka = 50;
 		try{
@@ -99,7 +120,7 @@ public class RecordUtilities {
 					retVal.append(")");					
 				}				
 			}
-		}	
+		}
 		return retVal.toString();
 		}catch(Exception e){			
 			e.printStackTrace();
@@ -362,6 +383,16 @@ public class RecordUtilities {
 		StringBuffer val = new StringBuffer();
 		if(f.getSubfield('a')!=null && !f.getSubfieldContent('a').equals("")){
 			val.append(f.getSubfieldContent('a'));
+			val.append(getPododrednice(f));
+		}
+		if(f.getSubfield('b')!=null && !f.getSubfieldContent('b').equals("")){
+			val.append(", ");
+			val.append(f.getSubfieldContent('b'));
+			val.append(getPododrednice(f));
+		}
+		if(f.getSubfield('z')!=null && !f.getSubfieldContent('z').equals("")){
+			val.append(", ");
+			val.append(f.getSubfieldContent('z'));
 			val.append(getPododrednice(f));
 		}
 		

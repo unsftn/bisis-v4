@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import com.gint.app.bisis4.client.BisisApp;
 import com.gint.app.bisis4.records.Field;
 import com.gint.app.bisis4.records.Godina;
 import com.gint.app.bisis4.records.Primerak;
@@ -317,6 +318,21 @@ public class BriefFormatter implements RecordFormatter {
     return "";
   }
   
+  private String getSiglaForIN(Object pr){
+	  String retVal = "";
+	  
+	  if(pr != null && pr instanceof Primerak){
+		  if(((Primerak)pr).getOdeljenje()!= null && !((Primerak) pr).getInvBroj().substring(0, 2).equals(((Primerak)pr).getOdeljenje()))
+			  retVal += " <b>(" + ((Primerak)pr).getOdeljenje() + ")</b>";
+	  }
+	  if(pr != null && pr instanceof Godina){
+		  if(((Godina)pr).getOdeljenje() != null &&!((Godina) pr).getInvBroj().substring(0, 2).equals(((Godina)pr).getOdeljenje()))
+			  retVal += " <b>(" + ((Godina)pr).getOdeljenje() + ")</b>";
+	  }
+	  
+	  return retVal;
+  }
+  
   private String getInvNums(Record rec) {
     // TODO: ovo ne treba citati iz polja nego iz primeraka i svesaka!
     StringBuffer sb = new StringBuffer();
@@ -326,6 +342,9 @@ public class BriefFormatter implements RecordFormatter {
       if (sb.length() > 0)
         sb.append(", ");
       sb.append(p.getInvBroj());
+      if ("gbns".equals(BisisApp.getINIFile().getString("library","name"))){  
+    	  sb.append(getSiglaForIN(p)); //gbns zahteva oznaku presigliranih primeraka u levom prozoru pretrage
+      }
     }
     Iterator<Godina> it2 = rec.getGodine().iterator();
     while (it2.hasNext()) {

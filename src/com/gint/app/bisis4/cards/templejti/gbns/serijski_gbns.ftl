@@ -52,7 +52,7 @@ issnBR (@issn iz koncept_gbns) - issn broj iz 011
  			><#assign ls = ls+"<BR>"+nap430i440
  		></#if   	   			
   	></#if   
-	><#assign ls = ls + "<BR><BR>"+brUDC+"<BR>"+inv  
+	><#assign ls = ls + "<BR><BR>"+recUtil.getBrojPrimerakaSvezakaNS()+"<BR>"+brUDC+"<BR>"+inv  
 ></#macro 
  
 ><#macro napomene430i440
