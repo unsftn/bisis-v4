@@ -58,7 +58,10 @@
   <subfield name="140i"/> 
   <subfield name="140j"/> 
   <subfield name="140k"/> 
-  <subfield name="140l"/> 
+  <subfield name="140l"/>
+  <subfield name="1410"/> 
+  <subfield name="1415"/> 
+  <subfield name="1419"/>  
   <subfield name="141a"/> 
   <subfield name="141b"/> 
   <subfield name="141c"/> 
@@ -255,6 +258,7 @@
   <subfield name="4811"/>
   <subfield name="4813"/>
   <subfield name="4815"/>
+  <subfield name="4819"/>
   <subfield name="481a"/>
   <subfield name="481c"/>
   <subfield name="481d"/>
@@ -272,6 +276,7 @@
   <subfield name="4821"/>
   <subfield name="4823"/>
   <subfield name="4825"/>
+  <subfield name="4829"/>
   <subfield name="482a"/>
   <subfield name="482c"/>
   <subfield name="482d"/>

@@ -2174,6 +2174,9 @@
 				<item code="#" value="Informacija nije potrebna"/>
 			</coder>
 		</subfield>
+		<subfield name="5" description="Intitucija na kooju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="0" description="Identifikator sloga ID" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Inventarni broj na koji se odnosi polje" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="200" description="Stvarni naslov i podaci o odgovornosti" mandatory="true" repeatable="false" secondary="true">
 		<indicator index="1" description="Indikator važnosti glavnog stvarnog naslova" defaultValue="0">
@@ -2297,15 +2300,15 @@
 	</field>
 	<field name="316" description="Napomena o opisivanom primerku" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="true" length="0"/>
-		<subfield name="5" description="Institucija za koju je polje od važnosti" mandatory="false" repeatable="false" length="0"/>
-		<subfield name="0" description="Signatura" mandatory="false" repeatable="false" length="0"/>
-		<subfield name="9" description="Invertarni broj" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="5" description="Intitucija na kooju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="0" description="Identifikator sloga ID" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Inventarni broj na koji se odnosi polje" mandatory="false" repeatable="false" length="0"/>
 	</field>	
 	<field name="317" description="Napomena o poreklu" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Tekst napomene" mandatory="false" repeatable="true" length="0"/>
-		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
-		<subfield name="0" description="Signatura" mandatory="false" repeatable="false" length="0"/>
-		<subfield name="9" description="Invertarni broj" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="5" description="Intitucija na kooju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="0" description="Identifikator sloga ID" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Inventarni broj na koji se odnosi polje" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="318" description="Napomena o postupku zaštite" mandatory="false" repeatable="true" secondary="false">
 		<subfield name="a" description="Postupak" mandatory="false" repeatable="true" length="0"/>
@@ -2323,9 +2326,9 @@
 		<subfield name="o" description="Tip jedinice" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="p" description="Napomena koja nije javna" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="r" description="Javna napomena" mandatory="false" repeatable="true" length="0"/>
-		<subfield name="5" description="Institucija za koju je polje od važnosti"  mandatory="false" repeatable="false" length="0"/>
-		<subfield name="0" description="Signatura" mandatory="false" repeatable="false" length="0"/>
-		<subfield name="9" description="Invertarni broj" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="5" description="Intitucija na kooju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="0" description="Identifikator sloga ID" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Inventarni broj na koji se odnosi polje" mandatory="false" repeatable="false" length="0"/>
 	</field>
 	<field name="320" description="Napomena o bibliografijama/registrima/sažecima" mandatory="false" repeatable="true" secondary="false">
 		<indicator index="1" description="Indikator o ispisu polja u kataloškim jedinicama">
@@ -2753,7 +2756,8 @@
 		<subfield name="0" description="Identifikatior sloga ID" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="1" description="Broj taga" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="3" description="Broj normativnog zapisa" mandatory="false" repeatable="false" length="0"/>
-		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>		
+		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Inventarni broj na koji se odnosi polje" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="a" description="Autor" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="c" description="Mesto izdavanje" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="d" description="Godina izdavanja" mandatory="false" repeatable="false" length="0"/>
@@ -2776,7 +2780,8 @@
 		<subfield name="0" description="Identifikatior sloga ID" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="1" description="Broj taga" mandatory="false" repeatable="true" length="0"/>
 		<subfield name="3" description="Broj normativnog zapisa" mandatory="false" repeatable="false" length="0"/>
-		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>		
+		<subfield name="5" description="Institucija na koju se polje odnosi" mandatory="false" repeatable="false" length="0"/>
+		<subfield name="9" description="Inventarni broj na koji se odnosi polje" mandatory="false" repeatable="false" length="0"/>		
 		<subfield name="a" description="Autor" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="c" description="Mesto izdavanje" mandatory="false" repeatable="false" length="0"/>
 		<subfield name="d" description="Godina izdavanja" mandatory="false" repeatable="false" length="0"/>
