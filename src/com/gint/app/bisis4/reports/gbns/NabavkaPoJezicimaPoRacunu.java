@@ -203,7 +203,7 @@ public class NabavkaPoJezicimaPoRacunu extends Report {
 		public int odeljenje40;
 		public int odeljenje43;
 
-		//public int odeljenje44;
+		public int odeljenje44;
 		public int odeljenjeX;
 
 		public Item(String code) {
@@ -237,7 +237,7 @@ public class NabavkaPoJezicimaPoRacunu extends Report {
 			odeljenje31 = 0;
 			odeljenje40 = 0;
 			odeljenje43 = 0;
-			//odeljenje44 = 0;
+			odeljenje44 = 0;
 			odeljenjeX = 0;
 
 		}
@@ -252,7 +252,7 @@ public class NabavkaPoJezicimaPoRacunu extends Report {
 			odeljenje10 + odeljenje11 + odeljenje13 + odeljenje14 + odeljenje16 +
 			odeljenje17 + odeljenje18 + odeljenje19 + odeljenje20 + odeljenje21 +
 			odeljenje22 + odeljenje23 + odeljenje25 + odeljenje26 + odeljenje27 +
-			odeljenje28 + odeljenje31+odeljenje40+odeljenje43/*+odeljenje44*/;
+			odeljenje28 + odeljenje31+odeljenje40+odeljenje43+odeljenje44;
 		}
 
 		public int compareTo(Object o) {
@@ -346,9 +346,9 @@ public class NabavkaPoJezicimaPoRacunu extends Report {
 			case 43:
 				odeljenje43++;
 				break;
-			/*case 44:
+			case 44:
 				odeljenje44++;
-				break;*/
+				break;
 			default:
 				odeljenjeX++;
 			}
@@ -443,9 +443,9 @@ public class NabavkaPoJezicimaPoRacunu extends Report {
 			buff.append("<odeljenje43>");
 			buff.append(odeljenje43);
 			buff.append("</odeljenje43>\n");
-			/*buff.append("<odeljenje44>");
+			buff.append("<odeljenje44>");
 			buff.append(odeljenje44);
-			buff.append("</odeljenje44>\n");*/
+			buff.append("</odeljenje44>\n");
 			buff.append("<odeljenjeX>");
 			buff.append(odeljenjeX);
 			buff.append("</odeljenjeX>\n");
