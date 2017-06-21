@@ -3,6 +3,7 @@ package com.gint.app.bisis4.cards;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gint.app.bisis4.records.*;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.apache.commons.lang.SerializationUtils;
 import org.apache.derby.tools.sysinfo;
@@ -10,11 +11,6 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.search.TermQuery;
 
 import com.gint.app.bisis4.client.BisisApp;
-import com.gint.app.bisis4.records.Field;
-import com.gint.app.bisis4.records.Godina;
-import com.gint.app.bisis4.records.Primerak;
-import com.gint.app.bisis4.records.Record;
-import com.gint.app.bisis4.records.Subfield;
 import com.gint.app.bisis4.utils.Signature;
 import com.gint.util.string.StringUtils;
 
@@ -43,11 +39,22 @@ public class RecordUtilities {
 		StringBuffer retVal = new StringBuffer(); 
 		retVal.append(" = ");	
 		if(record.getPrimerci() != null && record.getPrimerci().size() > 0)
-			retVal.append(record.getPrimerci().size());	
+		{
+			int brSv = 0;
+			for(Primerak p: record.getPrimerci())
+			{
+				if (!p.getStatus().equals("9"))
+					brSv++;
+			}
+			retVal.append(brSv);
+		}
 		else if(record.getGodine() != null){
 			int brSv = 0;
-			for(Godina g: record.getGodine())
-				brSv += g.getSveskeCount();
+			for(Godina g: record.getGodine()) {
+				for(Sveska s:g.getSveske())
+					if(!s.getStatus().equals("9"))
+						brSv++;
+			}
 			if( brSv > 0)
 				retVal.append(brSv);
 			else

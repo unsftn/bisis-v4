@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="revers" pageWidth="421" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="365" leftMargin="28" rightMargin="28" topMargin="20" bottomMargin="20">
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-01T13:02:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="revers" pageWidth="421" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="365" leftMargin="28" rightMargin="28" topMargin="20" bottomMargin="20" uuid="5981f305-2fb1-46e8-9fb8-01e59722b87d">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="3.0"/>
@@ -18,9 +20,9 @@
 	<field name="Inv. broj" class="java.lang.String"/>
 	<field name="Autor" class="java.lang.String"/>
 	<field name="Naslov" class="java.lang.String"/>
-	<field name="Datum zaduženja" class="java.util.Date"/>
-	<field name="Datum produženja" class="java.util.Date"/>
-	<field name="Rok vraćanja" class="java.util.Date"/>
+	<field name="Datum zaduzenja" class="java.util.Date"/>
+	<field name="Datum produzenja" class="java.util.Date"/>
+	<field name="Rok vracanja" class="java.util.Date"/>
 	<field name="Signatura" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
@@ -28,7 +30,7 @@
 	<title>
 		<band height="55" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="0" y="1" width="338" height="14"/>
+				<reportElement key="textField" x="0" y="1" width="338" height="14" uuid="75fd5fb2-3999-4306-b288-ff58f7f1a78e"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -38,10 +40,10 @@
 				<textElement verticalAlignment="Top">
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{biblioteka}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{biblioteka}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-1" x="121" y="28" width="118" height="18"/>
+				<reportElement key="staticText-1" x="121" y="28" width="118" height="18" uuid="43394908-7df8-4852-a964-3c08811396fb"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -54,7 +56,7 @@
 				<text><![CDATA[REVERS]]></text>
 			</staticText>
 			<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="false">
-				<reportElement key="textField" x="0" y="43" width="340" height="11"/>
+				<reportElement key="textField" x="0" y="43" width="340" height="11" uuid="55178a4c-301b-4d57-96a5-bcb18f03de58"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -64,13 +66,13 @@
 				<textElement textAlignment="Left" verticalAlignment="Bottom">
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Potpisani potvrđuje da je dana "+DateFormat.getDateInstance().format(new java.util.Date())+" imao na zaduženju / zadužio:"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Potpisani potvrđuje da je dana "+DateFormat.getDateInstance().format(new java.util.Date())+" imao na zaduženju / zadužio:"]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-1" mode="Transparent" x="0" y="54" width="360" height="1" isPrintWhenDetailOverflows="true"/>
+				<reportElement key="line-1" mode="Transparent" x="0" y="54" width="360" height="1" isPrintWhenDetailOverflows="true" uuid="f33e162d-86cb-4759-84bb-5b0bfe52edcf"/>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="0" y="13" width="337" height="14"/>
+				<reportElement key="textField" x="0" y="13" width="337" height="14" uuid="cf8fddd8-e83e-4e29-970d-caca7e29ec21"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -80,10 +82,10 @@
 				<textElement>
 					<font size="8" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{adresa}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{adresa}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-8" x="271" y="2" width="93" height="18">
+				<reportElement key="textField-8" x="271" y="2" width="93" height="18" uuid="7a901926-3ce3-4927-97a0-9b4b44ca5eca">
 					<printWhenExpression><![CDATA[new Boolean($P{zaglavlje-broj}.equals("1"))]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -95,7 +97,7 @@
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{Inv. broj}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Inv. broj}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -108,7 +110,7 @@
 	<detail>
 		<band height="33" splitType="Stretch">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-1" x="0" y="2" width="359" height="10"/>
+				<reportElement key="textField-1" x="0" y="2" width="359" height="10" uuid="f981adaa-ea99-4010-aebe-66b7430be1e6"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -118,10 +120,10 @@
 				<textElement>
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Inventarni broj:"+$F{Inv. broj}+", Signatura:"+$F{Signatura}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Inventarni broj:"+$F{Inv. broj}+", Signatura:"+$F{Signatura}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-2" x="0" y="12" width="359" height="12"/>
+				<reportElement key="textField-2" x="0" y="12" width="359" height="12" uuid="fb800025-e4b7-42c3-8814-41db143aeeef"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -131,10 +133,10 @@
 				<textElement>
 					<font size="8" isItalic="true" pdfFontName="Helvetica-Oblique" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{Autor}+(!$F{Autor}.equals("") ? " , ": "")+$F{Naslov}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Autor}+(!$F{Autor}.equals("") ? " , ": "")+$F{Naslov}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-3" x="0" y="22" width="359" height="10"/>
+				<reportElement key="textField-3" x="0" y="22" width="359" height="10" uuid="a428c1b4-230c-48f1-817f-e569db00d577"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -144,10 +146,10 @@
 				<textElement>
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Datum zaduženja: "+DateFormat.getDateInstance().format($F{Datum zaduženja})+"; Datum produženja: "+($F{Datum produženja}==null ? "" : DateFormat.getDateInstance().format($F{Datum produženja}))+"; Rok vraćanja: "+($F{Rok vraćanja} == null ? "" : DateFormat.getDateInstance().format($F{Rok vraćanja}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Datum zaduženja: "+DateFormat.getDateInstance().format($F{Datum zaduzenja})+"; Datum produženja: "+($F{Datum produzenja}==null ? "" : DateFormat.getDateInstance().format($F{Datum produzenja}))+"; Rok vraćanja: "+($F{Rok vracanja} == null ? "" : DateFormat.getDateInstance().format($F{Rok vracanja}))]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-2" mode="Transparent" x="0" y="32" width="360" height="1" isPrintWhenDetailOverflows="true"/>
+				<reportElement key="line-2" mode="Transparent" x="0" y="32" width="360" height="1" isPrintWhenDetailOverflows="true" uuid="3679b862-b174-4a49-9207-ada9f6ab8c8e"/>
 			</line>
 		</band>
 	</detail>
@@ -160,7 +162,7 @@
 	<summary>
 		<band height="65" splitType="Stretch">
 			<staticText>
-				<reportElement key="staticText-4" x="0" y="6" width="200" height="12"/>
+				<reportElement key="staticText-4" x="0" y="6" width="200" height="12" uuid="23d68576-c3dc-4191-9105-b9a0ab5c1d53"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -173,7 +175,7 @@
 				<text><![CDATA[Broj članske karte, prezime, ime čitaoca, adresa:]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-4" x="0" y="18" width="206" height="12"/>
+				<reportElement key="textField-4" x="0" y="18" width="206" height="12" uuid="c8b8044b-d072-4c06-bf52-4c8f55259faa"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -183,10 +185,10 @@
 				<textElement>
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{korisnik}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{korisnik}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-5" x="293" y="6" width="65" height="12"/>
+				<reportElement key="staticText-5" x="293" y="6" width="65" height="12" uuid="6df171ae-2745-458d-93d2-93f917fe414c"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -199,7 +201,7 @@
 				<text><![CDATA[Bibliotekar]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-5" x="230" y="18" width="128" height="12"/>
+				<reportElement key="textField-5" x="230" y="18" width="128" height="12" uuid="cd1446a0-3ed0-4033-9af5-7b6aa8f0a6ce"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -209,10 +211,10 @@
 				<textElement textAlignment="Right">
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{bibliotekar}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{bibliotekar}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-6" x="0" y="28" width="206" height="12"/>
+				<reportElement key="textField-6" x="0" y="28" width="206" height="12" uuid="4bff22c3-b992-466b-bfb8-0490b82848a4"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -222,10 +224,10 @@
 				<textElement>
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{korisnik-adresa}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{korisnik-adresa}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-7" x="0" y="40" width="206" height="12"/>
+				<reportElement key="textField-7" x="0" y="40" width="206" height="12" uuid="17b9cd49-e87e-48db-af2d-669de4e83949"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -235,10 +237,10 @@
 				<textElement>
 					<font size="8" pdfEncoding="Cp1250"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{broj-indeksa}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{broj-indeksa}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="64" width="150" height="1"/>
+				<reportElement x="0" y="64" width="150" height="1" uuid="a337912c-adce-4935-9148-ea0cb5c0ef5f"/>
 			</line>
 		</band>
 	</summary>
