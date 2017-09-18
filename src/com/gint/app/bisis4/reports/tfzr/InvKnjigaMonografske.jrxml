@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-09-18T13:07:01 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InvKnjigaMonografske" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="2df3b35f-ec0e-4816-bacd-11053a3568d3">
 	<property name="com.jasperassistant.designer.Rulers" value="true"/>
 	<property name="com.jasperassistant.designer.GridWidth" value="3"/>
@@ -341,9 +343,9 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="70" splitType="Stretch">
+		<band height="83" splitType="Stretch">
 			<textField isStretchWithOverflow="true" evaluationTime="Auto">
-				<reportElement x="0" y="0" width="80" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="9d23069b-646d-498d-8f98-6dba07c73c1f"/>
+				<reportElement x="0" y="0" width="80" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="9d23069b-646d-498d-8f98-6dba07c73c1f"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -358,7 +360,7 @@
 				<textFieldExpression><![CDATA[$F{rbr}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto">
-				<reportElement x="80" y="0" width="70" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="532ccc20-916b-4b7a-a882-ac05875e2982"/>
+				<reportElement x="80" y="0" width="70" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="532ccc20-916b-4b7a-a882-ac05875e2982"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -373,7 +375,7 @@
 				<textFieldExpression><![CDATA[$F{datum}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto">
-				<reportElement x="150" y="0" width="200" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="dbd89377-71e1-4e97-8f89-9b14a28fc889"/>
+				<reportElement stretchType="RelativeToTallestObject" x="150" y="0" width="200" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="dbd89377-71e1-4e97-8f89-9b14a28fc889"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -382,13 +384,13 @@
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="DejaVu Sans"/>
-					<paragraph leftIndent="2"/>
+					<font fontName="DejaVu Sans" size="10"/>
+					<paragraph lineSpacingSize="1.0" leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{opis}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="350" y="0" width="80" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="9a9004c7-c6ab-4aba-a050-d0ce20678333"/>
+				<reportElement x="350" y="0" width="80" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="9a9004c7-c6ab-4aba-a050-d0ce20678333"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -403,7 +405,7 @@
 				<textFieldExpression><![CDATA[$F{povez}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="430" y="0" width="55" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="625c3d2c-0a5f-407a-9368-cc590399e3d9"/>
+				<reportElement x="430" y="0" width="55" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="625c3d2c-0a5f-407a-9368-cc590399e3d9"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -418,7 +420,7 @@
 				<textFieldExpression><![CDATA[$F{dim}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="485" y="0" width="90" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ba7bab99-9cd9-4bec-9624-2750ac1f0ac6"/>
+				<reportElement x="485" y="0" width="90" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ba7bab99-9cd9-4bec-9624-2750ac1f0ac6"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -433,7 +435,7 @@
 				<textFieldExpression><![CDATA[$F{nabavka}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="575" y="0" width="50" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="c952c3e1-4bd6-4ebd-bd1a-cc907b2ae1cb"/>
+				<reportElement x="575" y="0" width="50" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="c952c3e1-4bd6-4ebd-bd1a-cc907b2ae1cb"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -448,7 +450,7 @@
 				<textFieldExpression><![CDATA[$F{cena}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="625" y="0" width="90" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="2356dc82-a237-4c11-9f2e-9949748c5d00"/>
+				<reportElement x="625" y="0" width="90" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="2356dc82-a237-4c11-9f2e-9949748c5d00"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -463,7 +465,7 @@
 				<textFieldExpression><![CDATA[$F{signatura}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="715" y="0" width="70" height="70" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="3514a1da-4fcf-4d32-9717-7647594ae694"/>
+				<reportElement x="715" y="0" width="70" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="3514a1da-4fcf-4d32-9717-7647594ae694"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
