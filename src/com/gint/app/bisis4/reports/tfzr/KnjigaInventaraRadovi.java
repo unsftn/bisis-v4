@@ -149,6 +149,7 @@ public class KnjigaInventaraRadovi extends Report {
           FormatBigDecimal.format(p.getCena(), 2).toPlainString();
         i.sig = sig;
         i.napomena = p.getNapomene();
+        i.vrsta = getVrstaRada(rec);
         Calendar cal=Calendar.getInstance();
         String key;
        try{
@@ -179,7 +180,11 @@ public class KnjigaInventaraRadovi extends Report {
 	      itemMap.put(key, list);
 	    }
 	    return list;
-  }    
+  }   
+    
+  public String getVrstaRada(Record rec){
+	  return rec.getSubfieldContent("200h");
+  }
   
   public String getAutor(Record rec) {
     if (rec.getField("700") != null) {
@@ -230,6 +235,7 @@ public class KnjigaInventaraRadovi extends Report {
 	    public String sig;
 	    public String napomena;
 	    public String ogr;
+	    public String vrsta;
 	    
 	    public int compareTo(Object o) {
 	      if (o instanceof Item) {
@@ -259,8 +265,10 @@ public class KnjigaInventaraRadovi extends Report {
 		      buf.append(sig == null ? "" : StringUtils.adjustForHTML(sig));
 		      buf.append("</signatura>\n    <napomena>");
 		      buf.append(napomena == null ? "" : StringUtils.adjustForHTML(napomena));
-		      buf.append("</napomena>\n");
-		      buf.append ("<sortinv>");
+		      buf.append("</napomena>\n    <vrsta>");
+		      buf.append(vrsta == null ? "" : StringUtils.adjustForHTML(vrsta));
+		      buf.append("</vrsta>\n");
+		      buf.append ("    <sortinv>");
 		      buf.append(invbr.substring(4));
 		      buf.append("</sortinv>\n    </item>");
 		      return buf.toString();
