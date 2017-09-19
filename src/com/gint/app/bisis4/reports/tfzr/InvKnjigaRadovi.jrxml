@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-09-19T12:31:52 -->
+<!-- 2017-09-19T13:03:15 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InvKnjigaMonografske" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="2df3b35f-ec0e-4816-bacd-11053a3568d3">
 	<property name="com.jasperassistant.designer.Rulers" value="true"/>
 	<property name="com.jasperassistant.designer.GridWidth" value="3"/>
@@ -367,13 +367,13 @@
 						</jr:columnHeader>
 						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
 					</jr:column>
-					<jr:column width="80" uuid="000b86ce-bfa1-42b9-84bd-08ed7c864110">
+					<jr:column width="90" uuid="000b86ce-bfa1-42b9-84bd-08ed7c864110">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 							<staticText>
-								<reportElement x="0" y="0" width="80" height="30" uuid="c739100d-6c0c-4a7b-a317-21befce577a5"/>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c739100d-6c0c-4a7b-a317-21befce577a5"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="DejaVu Serif"/>
 								</textElement>
@@ -447,14 +447,16 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{povez}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="425" y="0" width="55" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="625c3d2c-0a5f-407a-9368-cc590399e3d9"/>
+				<reportElement x="425" y="0" width="51" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="625c3d2c-0a5f-407a-9368-cc590399e3d9">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -462,14 +464,18 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dim}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="480" y="0" width="90" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ba7bab99-9cd9-4bec-9624-2750ac1f0ac6"/>
+				<reportElement x="476" y="0" width="84" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ba7bab99-9cd9-4bec-9624-2750ac1f0ac6">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -484,7 +490,9 @@
 				<textFieldExpression><![CDATA[$F{nabavka}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="570" y="0" width="50" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="c952c3e1-4bd6-4ebd-bd1a-cc907b2ae1cb"/>
+				<reportElement x="560" y="0" width="44" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="c952c3e1-4bd6-4ebd-bd1a-cc907b2ae1cb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="0.5"/>
@@ -499,7 +507,7 @@
 				<textFieldExpression><![CDATA[$F{cena}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="620" y="0" width="80" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="2356dc82-a237-4c11-9f2e-9949748c5d00">
+				<reportElement x="604" y="0" width="68" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="2356dc82-a237-4c11-9f2e-9949748c5d00">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<box>
@@ -516,7 +524,7 @@
 				<textFieldExpression><![CDATA[$F{signatura}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" isBlankWhenNull="true">
-				<reportElement x="700" y="0" width="60" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="3514a1da-4fcf-4d32-9717-7647594ae694">
+				<reportElement x="672" y="0" width="55" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="3514a1da-4fcf-4d32-9717-7647594ae694">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<box>
@@ -533,7 +541,7 @@
 				<textFieldExpression><![CDATA[$F{napomena}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" evaluationTime="Auto" pattern="" isBlankWhenNull="true">
-				<reportElement x="760" y="0" width="56" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ecfd4376-deaf-4e73-8479-bd73f7d3dc0c">
+				<reportElement x="727" y="0" width="90" height="83" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ecfd4376-deaf-4e73-8479-bd73f7d3dc0c">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<box>
@@ -543,7 +551,7 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans"/>
 					<paragraph leftIndent="2"/>
 				</textElement>

@@ -14,6 +14,7 @@
 			  <cena><xsl:value-of select="cena"/></cena>
 			  <signatura><xsl:value-of select="signatura"/></signatura>
 			  <napomena><xsl:value-of select="napomena"/></napomena>
+			  <vrsta><xsl:value-of select="vrsta"/></vrsta>
 			</item>
 				
 			</xsl:for-each>
