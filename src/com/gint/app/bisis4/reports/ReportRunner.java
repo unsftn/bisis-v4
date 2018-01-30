@@ -106,7 +106,7 @@ public class ReportRunner {
 						log.warn(ex);
 					}
 					if (count % 1000 == 0) {
-						System.out.println("Records processed: " + count);
+						System.out.println("Records processed (" + r.getName() + "): " + count);
 					}
 				}
 			}
@@ -231,7 +231,7 @@ public class ReportRunner {
 						ex.printStackTrace();
 					}
 					if (count % 1000 == 0) {
-						System.out.println("Records processed: " + count);
+						System.out.println("Records processed" + count);
 					}
 				}
 

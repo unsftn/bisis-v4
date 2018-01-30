@@ -1,6 +1,7 @@
 package com.gint.app.bisis4.barcode.epl2;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -8,6 +9,7 @@ import java.io.PrintWriter;
 public class Printer implements IPrinter {
   public static Printer LINUX_USB = new Printer("/dev/usb/lp0");
   public static Printer LINUX_LPT = new Printer("/dev/lp0");
+  public static Printer LINUX_GEN = new Printer("/dev/barcode");
   public static Printer WINDOWS = new Printer("LPT1");
   public static Printer DEBUG = new Printer(System.getProperty("user.home") + 
       "/printer.out");
@@ -18,6 +20,9 @@ public class Printer implements IPrinter {
     String os = System.getProperty("os.name");
     
     if ("Linux".equals(os)){
+    	if (new File("/dev/barcode").exists())
+    		return LINUX_GEN;
+    	
     	if("lpt".equals(port))
     		return LINUX_LPT;
     	return LINUX_USB;
