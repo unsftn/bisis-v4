@@ -1,47 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"  ?>
-<!-- Created with iReport - A designer for JasperReports -->
-<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-<jasperReport
-		 name="KnjigaInventaraSerijske"
-		 columnCount="1"
-		 printOrder="Vertical"
-		 orientation="Landscape"
-		 pageWidth="842"
-		 pageHeight="595"
-		 columnWidth="802"
-		 columnSpacing="0"
-		 leftMargin="20"
-		 rightMargin="20"
-		 topMargin="30"
-		 bottomMargin="30"
-		 whenNoDataType="NoPages"
-		 isTitleNewPage="false"
-		 isSummaryNewPage="false">
-	<property name="com.jasperassistant.designer.Rulers" value="true" />
-	<property name="com.jasperassistant.designer.GridWidth" value="3" />
-	<property name="com.jasperassistant.designer.GridHeight" value="3" />
-	<property name="com.jasperassistant.designer.SnapToGrid" value="true" />
-	<property name="com.jasperassistant.designer.Margins" value="true" />
-	<property name="com.jasperassistant.designer.Grid" value="true" />
-	<property name="com.jasperassistant.designer.SnapToGuides" value="true" />
-	<property name="ireport.scriptlethandling" value="0" />
-	<property name="ireport.encoding" value="UTF-8" />
-	<import value="java.util.*" />
-	<import value="net.sf.jasperreports.engine.*" />
-	<import value="net.sf.jasperreports.engine.data.*" />
-
-	<style 
-		name="font"
-		isDefault="true"
-		fontName="Arial"
-		pdfFontName="ARIALUNI.TTF"
-		pdfEncoding="Identity-H"
-		isPdfEmbedded="true"
-	>
-	</style>
-
-	<parameter name="period" isForPrompting="true" class="java.lang.String"/>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="KnjigaInventaraSerijske" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoPages" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="16dfc801-b751-4666-af40-ae02e831463e">
+	<property name="com.jasperassistant.designer.Rulers" value="true"/>
+	<property name="com.jasperassistant.designer.GridWidth" value="3"/>
+	<property name="com.jasperassistant.designer.GridHeight" value="3"/>
+	<property name="com.jasperassistant.designer.SnapToGrid" value="true"/>
+	<property name="com.jasperassistant.designer.Margins" value="true"/>
+	<property name="com.jasperassistant.designer.Grid" value="true"/>
+	<property name="com.jasperassistant.designer.SnapToGuides" value="true"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="period" class="java.lang.String"/>
 	<field name="rbr" class="java.lang.String">
 		<fieldDescription><![CDATA[rbr]]></fieldDescription>
 	</field>
@@ -78,743 +51,408 @@
 	<field name="povez" class="java.lang.String">
 		<fieldDescription><![CDATA[povez]]></fieldDescription>
 	</field>
-
-		<background>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</background>
-		<title>
-			<band height="53"  isSplitAllowed="true" >
-				<staticText>
-					<reportElement
-						x="0"
-						y="15"
-						width="802"
-						height="19"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="0" y="15" width="802" height="19" uuid="3f08d1b6-756b-464f-a647-8b3e13a4c290"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="12" isBold="false"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="false"/>
+				</textElement>
 				<text><![CDATA[Инвентарна књига за серијске публикације]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="333"
-						y="35"
-						width="110"
-						height="18"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="333" y="35" width="110" height="18" uuid="861be8bb-5207-415c-b190-058dfd14b2ce"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="10"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$P{period}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="dd/MM/yy" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="691"
-						y="34"
-						width="100"
-						height="18"
-						key="textField"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="54" y="0" width="76" height="30" uuid="19549b6c-8ab8-4666-89fe-6b0746c703c9"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-			</band>
-		</title>
-		<pageHeader>
-			<band height="30"  isSplitAllowed="true" >
-				<staticText>
-					<reportElement
-						x="54"
-						y="0"
-						width="76"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Редни
 број]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="130"
-						y="0"
-						width="51"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="130" y="0" width="51" height="30" uuid="8a0b57f3-d851-45c7-9ab5-be830b962716"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Датум]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="184"
-						y="0"
-						width="136"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="184" y="0" width="136" height="30" uuid="2398e07d-ceae-4fc6-a07d-a57f83373f07"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Наслов, поднаслов,
 место издавања,
 држава]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="735"
-						y="0"
-						width="65"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="735" y="0" width="65" height="30" uuid="777c5e1d-42af-477a-9264-a8fd5c035e66"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Напомена]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="515"
-						y="0"
-						width="95"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="515" y="0" width="95" height="30" uuid="83e3cb1e-0d24-48e0-820f-b4b025c3445f"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Начин набавке]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="610"
-						y="0"
-						width="50"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="610" y="0" width="50" height="30" uuid="17f0e55a-5086-470e-a4b7-2ab035df438c"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Цена]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="410"
-						y="0"
-						width="50"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="410" y="0" width="50" height="30" uuid="defe5a9c-fbee-477b-840e-0a2451ba6816"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Димензије]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="321"
-						y="0"
-						width="49"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="321" y="0" width="49" height="30" uuid="7ff27c46-5256-4a3b-a841-3bd1e8809a86"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Годиште,
 година,
 свеска, том]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="660"
-						y="0"
-						width="75"
-						height="30"
-						key="staticText"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" positionType="Float" x="660" y="0" width="75" height="30" uuid="3e934ebd-1805-4cad-9f5e-cbb2997d45c9"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Сигнатура]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						style="font"
-						x="370"
-						y="0"
-						width="40"
-						height="30"
-						key="staticText-1"/>
-					<box></box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" x="370" y="0" width="40" height="30" uuid="cd0b539b-9ff4-41a1-8ea4-09d388a4ca47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Број 
 свесака]]></text>
-				</staticText>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="370"
-						y="1"
-						width="0"
-						height="29"
-						key="line-2"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="411"
-						y="1"
-						width="0"
-						height="29"
-						key="line-3"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<staticText>
-					<reportElement
-						style="font"
-						x="462"
-						y="0"
-						width="50"
-						height="30"
-						key="staticText-2"/>
-					<box></box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
+			</staticText>
+			<line>
+				<reportElement key="line-2" x="370" y="1" width="1" height="29" uuid="a9771a1d-cedf-4b2c-b271-cef89c2e1a79"/>
+			</line>
+			<line>
+				<reportElement key="line-3" x="411" y="1" width="1" height="29" uuid="df5f8caa-cdb8-45ae-ab82-4a21f4961c67"/>
+			</line>
+			<staticText>
+				<reportElement key="staticText-2" x="462" y="0" width="50" height="30" uuid="1cc7ec3f-bfe5-4f6a-80ad-07976fe0495d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
 				<text><![CDATA[Повез]]></text>
-				</staticText>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="55"
-						y="1"
-						width="746"
-						height="0"
-						key="line-6"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="56"
-						y="29"
-						width="745"
-						height="0"
-						key="line-7"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="55"
-						y="1"
-						width="0"
-						height="29"
-						key="line-8"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="320"
-						y="1"
-						width="0"
-						height="29"
-						key="line-9"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="182"
-						y="1"
-						width="0"
-						height="28"
-						key="line-10"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="130"
-						y="1"
-						width="0"
-						height="28"
-						key="line-11"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="460"
-						y="1"
-						width="0"
-						height="28"
-						key="line-12"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="514"
-						y="1"
-						width="0"
-						height="28"
-						key="line-13"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="609"
-						y="1"
-						width="0"
-						height="28"
-						key="line-14"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="660"
-						y="2"
-						width="0"
-						height="28"
-						key="line-15"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="735"
-						y="2"
-						width="0"
-						height="28"
-						key="line-16"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="800"
-						y="1"
-						width="0"
-						height="28"
-						key="line-17"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-			</band>
-		</pageHeader>
-		<columnHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnHeader>
-		<detail>
-			<band height="32"  isSplitAllowed="true" >
-				<line direction="TopDown">
-					<reportElement
-						x="54"
-						y="31"
-						width="746"
-						height="1"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="130"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="182"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="320"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="514"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="460"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="800"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="735"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="660"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						x="609"
-						y="0"
-						width="1"
-						height="32"
-						key="line"
-						positionType="Float"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="59"
-						y="0"
-						width="69"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</staticText>
+			<line>
+				<reportElement key="line-6" x="55" y="1" width="746" height="1" uuid="dc38992f-14cf-4aed-a77c-3136c870e6bc"/>
+			</line>
+			<line>
+				<reportElement key="line-7" x="56" y="29" width="745" height="1" uuid="56ab4b8f-8074-47bb-b6d2-f6221a01e82d"/>
+			</line>
+			<line>
+				<reportElement key="line-8" x="55" y="1" width="1" height="29" uuid="7e0ac527-5990-4fc7-8d54-7ffaf3ada85a"/>
+			</line>
+			<line>
+				<reportElement key="line-9" x="320" y="1" width="1" height="29" uuid="238ef4bd-a9f9-4065-98ef-aeeb426cf365"/>
+			</line>
+			<line>
+				<reportElement key="line-10" x="182" y="1" width="1" height="28" uuid="5712c3fb-3a70-48d1-bdb0-d9eb148010c6"/>
+			</line>
+			<line>
+				<reportElement key="line-11" x="130" y="1" width="1" height="28" uuid="3c3bcf9e-5042-4f49-a6b4-49cecd277949"/>
+			</line>
+			<line>
+				<reportElement key="line-12" x="460" y="1" width="1" height="28" uuid="8c2def9c-4b64-4f5b-93dd-a8c3f30a228b"/>
+			</line>
+			<line>
+				<reportElement key="line-13" x="514" y="1" width="1" height="28" uuid="e84bf7bb-1dbc-4f33-a977-65630c14a011"/>
+			</line>
+			<line>
+				<reportElement key="line-14" x="609" y="1" width="1" height="28" uuid="bcec22ac-99fe-4a18-a1a8-ccfc08dd5dc8"/>
+			</line>
+			<line>
+				<reportElement key="line-15" x="660" y="2" width="1" height="28" uuid="a43867a5-43a9-4626-a3c0-80dd5e9c3d8f"/>
+			</line>
+			<line>
+				<reportElement key="line-16" x="735" y="2" width="1" height="28" uuid="5b1b8666-7ba6-4b48-b09d-5d1c9a0d8c30"/>
+			</line>
+			<line>
+				<reportElement key="line-17" x="800" y="1" width="1" height="28" uuid="32a54729-d36e-424a-aa80-b37822f9cd9a"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<line>
+				<reportElement key="line" positionType="Float" x="54" y="31" width="746" height="1" uuid="226f5ce9-6405-483b-bb00-020860b8389e"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="130" y="0" width="1" height="32" uuid="612539c7-c0e0-420a-aa77-b9b5c0d7999b"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="182" y="0" width="1" height="32" uuid="8d8ba505-5bc3-4595-95a9-0d854b2f14a1"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="320" y="0" width="1" height="32" uuid="7cbbea4c-6c9d-4755-9836-071b56911182"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="514" y="0" width="1" height="32" uuid="f06b6351-f62d-4a14-9302-5f806f2bce00"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="460" y="0" width="1" height="32" uuid="ec845362-7462-4e10-9ea9-b5daed4a7408"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="800" y="0" width="1" height="32" uuid="e9042e17-f3ea-460a-86d3-0e0ad2dfdef8"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="735" y="0" width="1" height="32" uuid="3abd9b99-2199-4bfe-8028-6ead09582fda"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="660" y="0" width="1" height="32" uuid="633d5847-a2e3-404a-a773-32b079e87eca"/>
+			</line>
+			<line>
+				<reportElement key="line" positionType="Float" x="609" y="0" width="1" height="32" uuid="76fb745c-29f4-4af9-90d4-85c657277f34"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="59" y="0" width="69" height="32" uuid="739dcafd-663d-468f-acb6-62761bba01a9"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{rbr}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="130"
-						y="0"
-						width="50"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box leftPadding="1">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rbr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="130" y="1" width="50" height="31" uuid="10b0867f-486e-4565-a024-ed1a8a78a342"/>
+				<box leftPadding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{datum}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="190"
-						y="0"
-						width="131"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="190" y="1" width="131" height="31" uuid="84931a3a-7ca2-4867-9f5f-49482b37c62a"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{opis}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="321"
-						y="0"
-						width="49"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{opis}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="321" y="0" width="49" height="32" uuid="44b0f0b2-7b23-4fb2-8460-e6834ce64eb2"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{god}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="411"
-						y="0"
-						width="49"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{god}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="411" y="0" width="49" height="32" uuid="bb0234c6-be30-4153-bf58-fe1c4e4b6435"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{dim}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="517"
-						y="0"
-						width="92"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dim}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="517" y="0" width="92" height="32" uuid="ca833f34-ea1f-4bdb-adac-097c21168168"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nabavka}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="611"
-						y="0"
-						width="48"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box rightPadding="1">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nabavka}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="611" y="0" width="48" height="32" uuid="43439de7-6ff1-4ace-93db-5976a5777d95"/>
+				<box rightPadding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{cena}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="665"
-						y="0"
-						width="70"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cena}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="665" y="0" width="70" height="32" uuid="5475d51f-bd56-4503-b0d3-691eaedebda2"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{signatura}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="739"
-						y="0"
-						width="61"
-						height="32"
-						key="textField"
-						positionType="Float"/>
-					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{signatura}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" positionType="Float" x="739" y="0" width="61" height="32" uuid="5e893fc9-3c5a-4092-a6bd-f2a266453fcc"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{napomena}]]></textFieldExpression>
-				</textField>
-				<line direction="TopDown">
-					<reportElement
-						x="55"
-						y="0"
-						width="0"
-						height="31"
-						key="line-1"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="370"
-						y="1"
-						width="0"
-						height="30"
-						key="line-4"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<line direction="TopDown">
-					<reportElement
-						style="font"
-						x="411"
-						y="0"
-						width="0"
-						height="31"
-						key="line-5"/>
-					<graphicElement stretchType="NoStretch"/>
-				</line>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="370"
-						y="1"
-						width="40"
-						height="30"
-						key="textField"/>
-					<box></box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{brSv}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="462"
-						y="7"
-						width="50"
-						height="20"
-						key="textField"/>
-					<box></box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{povez}]]></textFieldExpression>
-				</textField>
-			</band>
-		</detail>
-		<columnFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnFooter>
-		<pageFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageFooter>
-		<summary>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</summary>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{napomena}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="55" y="0" width="1" height="31" uuid="b515184a-e97a-44e2-b2fa-c72a8dbc59e5"/>
+			</line>
+			<line>
+				<reportElement key="line-4" x="370" y="1" width="1" height="30" uuid="a688786f-19b2-40a8-996c-eba3f1a76b63"/>
+			</line>
+			<line>
+				<reportElement key="line-5" x="411" y="0" width="1" height="31" uuid="efc0a56b-ae3c-4434-9c40-0c47c1bb49ee"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="370" y="-2" width="40" height="32" uuid="93a1ff6b-f1a4-4dfb-8d85-43d9311c2ac5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brSv}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="462" y="1" width="50" height="30" uuid="a48adfe5-4414-4d85-810a-20572cbf7b87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{povez}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
 </jasperReport>
