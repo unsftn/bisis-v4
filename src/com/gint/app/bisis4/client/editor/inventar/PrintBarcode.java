@@ -131,10 +131,12 @@ public class PrintBarcode {
 
     label.appendBlankLine();
     if (sigfont > 4) {
-      label.appendText(Signature.format(p).toUpperCase().replace("\"", " "), sigfont);
+      //razmaci su dodati iz razloga sto su neki stampaci imali problem sa stampanjem signatura razlicitih duzina
+      //ako se odstampa signatura vece pa krace duzine pamtio je ostatak od vece i lepio ga na kracu....	
+      label.appendText(Signature.format(p).toUpperCase().replace("\"", " ") + "                     ", sigfont);
       label.appendBlankLine();
     } else {
-      label.appendText(Signature.format(p).replace("\"", " "), sigfont);
+      label.appendText(Signature.format(p).replace("\"", " ") + "                       ", sigfont);
     }
     label.appendBlankLine();
     label.appendCode128("P" + p.getInvBroj());
