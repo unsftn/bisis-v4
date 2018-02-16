@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @see RecordParser
  * @author mbranko@uns.ns.ac.yu
  */ 
-public class PrefixValue implements Serializable, Comparable {
+public class PrefixValue implements Serializable, Comparable<PrefixValue> {
   
   /** Konstruise PrefixPair objekat.
     * @param prefName naziv prefiksa
@@ -29,10 +29,7 @@ public class PrefixValue implements Serializable, Comparable {
     value = "";
   }
   
-  public int compareTo(Object o) {
-    if (!(o instanceof PrefixValue))
-      return 0;
-    PrefixValue pv = (PrefixValue)o;
+  public int compareTo(PrefixValue pv) {
     return prefName.compareTo(pv.prefName);
   }
   
@@ -41,4 +38,6 @@ public class PrefixValue implements Serializable, Comparable {
   
   /** Sadrzaj prefiksa */
   public String value;
+  
+  private static final long serialVersionUID = 2245228738370868367L;  
 }

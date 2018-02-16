@@ -248,4 +248,7 @@ public class Primerak implements Serializable {
         getNacinNabavke(),getOdeljenje(), getStatus(), getDatumStatusa(),
         getDostupnost(), getNapomene(), getStanje(),getInventator());
   }
+
+  private static final long serialVersionUID = 1612316022074079996L;
 }
+
