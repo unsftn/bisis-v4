@@ -9,7 +9,6 @@ import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.lucene.analysis.SimpleAnalyzer;
 import org.apache.lucene.analysis.WhitespaceAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -63,53 +62,54 @@ public class Indexer {
     return true;
   }
   
-  public boolean addField(String recID, String prefix, String value){
-	   try {
-		   Searcher searcher = new IndexSearcher(indexPath);
-		   Query q=new TermQuery(new Term("ID",recID));
-		   Hits hits=searcher.search(q);
-		   if ((hits==null)||(hits.length()!=1)){
-			   return false;
-		   }   
-		   Document doc=hits.doc(0);
-		   IndexWriter iw = getIndexWriter(); 
-		   Field f=new Field(prefix,value, Field.Store.YES, Field.Index.UN_TOKENIZED, Field.TermVector.NO);
-		   doc.add(f);
-		   iw.updateDocument(new Term("ID", recID), doc);
-		   iw.close();
-		} catch (IOException ex) {
-		   log.fatal(ex);
-		   return false;
-		 }
-		 return true;
+  public boolean addField(String recID, String prefix, String value) {
+    try {
+      Searcher searcher = new IndexSearcher(indexPath);
+      Query q = new TermQuery(new Term("ID", recID));
+      Hits hits = searcher.search(q);
+      if ((hits == null) || (hits.length() != 1)) {
+        return false;
+      }
+      Document doc = hits.doc(0);
+      IndexWriter iw = getIndexWriter();
+      Field f = new Field(prefix, value, Field.Store.YES, Field.Index.UN_TOKENIZED, Field.TermVector.NO);
+      doc.add(f);
+      iw.updateDocument(new Term("ID", recID), doc);
+      iw.close();
+    } catch (IOException ex) {
+      log.fatal(ex);
+      return false;
+    }
+    return true;
   }
   
-  public void deleteField(String recID, String prefix, String value){
-	   try {
-		   Searcher searcher = new IndexSearcher(indexPath);
-		   Query q=new TermQuery(new Term("ID",recID));
-		   Hits hits=searcher.search(q);
-		   if ((hits==null)||(hits.length()!=1)){
-			   log.fatal("greska pri brisanju polja. Zapis: "+recID);
-			   return ;   
-		   }   
-		   
-		   Document doc=hits.doc(0);
-		   Field [] fields=doc.getFields(prefix);
-		   IndexWriter iw = getIndexWriter(); 
-		   doc.removeFields(prefix);
-		   for(int i=0;i<fields.length;i++){
-			   if(!fields[i].stringValue().equals(value)){
-				   doc.add(fields[i]);
-			   } 
-		   }
-		   iw.updateDocument(new Term("ID", recID), doc);
-		   iw.close();
-		} catch (IOException ex) {
-		   log.fatal(ex);
-		 }
-		 
- }
+  public void deleteField(String recID, String prefix, String value) {
+    try {
+      Searcher searcher = new IndexSearcher(indexPath);
+      Query q = new TermQuery(new Term("ID", recID));
+      Hits hits = searcher.search(q);
+      if ((hits == null) || (hits.length() != 1)) {
+        log.fatal("greska pri brisanju polja. Zapis: " + recID);
+        return;
+      }
+
+      Document doc = hits.doc(0);
+      Field[] fields = doc.getFields(prefix);
+      IndexWriter iw = getIndexWriter();
+      doc.removeFields(prefix);
+      for (int i = 0; i < fields.length; i++) {
+        if (!fields[i].stringValue().equals(value)) {
+          doc.add(fields[i]);
+        }
+      }
+      iw.updateDocument(new Term("ID", recID), doc);
+      iw.close();
+    } catch (IOException ex) {
+      log.fatal(ex);
+    }
+
+  }
+
   /**
    * Updates a record in the index
    * @param rec Record to update
@@ -170,61 +170,50 @@ public class Indexer {
    */
   protected Document getDocument(Record rec, String stRashod) {
     Document doc = new Document();
-    Field id=new Field("ID",
-    		    Integer.toString(rec.getRecordID()), 
-    	        Field.Store.YES, 
-    	        Field.Index.UN_TOKENIZED, 
-    	        Field.TermVector.NO);
-    
+    Field id = new Field("ID", Integer.toString(rec.getRecordID()), Field.Store.YES, 
+        Field.Index.UN_TOKENIZED, Field.TermVector.NO);
+
     doc.add(id);
-    
+
     Set<String> sortPrefixes = PrefixConfigFactory.getPrefixConfig().getSortPrefixes();
-    Iterator prefixes = PrefixConverter.toPrefixes(rec, stRashod).iterator();
+    Iterator<PrefixValue> prefixes = PrefixConverter.toPrefixes(rec, stRashod).iterator();
     while (prefixes.hasNext()) {
-      PrefixValue pref = (PrefixValue)prefixes.next();
+      PrefixValue pref = prefixes.next();
       String value = LatCyrUtils.toLatin(pref.value);
-      String valueWithOutAccent=LatCyrUtils.removeAccents(value);
+      String valueWithOutAccent = LatCyrUtils.removeAccents(value);
       Field f = null;
-      if(nontokenized.contains(pref.prefName)){
-        f=new Field(pref.prefName, valueWithOutAccent.toLowerCase(),
-            Field.Store.YES, 
-            Field.Index.UN_TOKENIZED, 
-            Field.TermVector.NO);      
-      } else if(isbnList.contains(pref.prefName)){ //zbog ISBN
-    	  valueWithOutAccent=StringUtils.clearDelimiters(valueWithOutAccent, delims);
-    	  valueWithOutAccent=valueWithOutAccent.replace(" ", "");
-    	  f=new Field(pref.prefName, "0start0 " + valueWithOutAccent.toLowerCase() + " 0end0", 
-    	            Field.Store.YES, 
-    	            Field.Index.TOKENIZED, 
-    	            Field.TermVector.WITH_POSITIONS_OFFSETS); 
-    	  
-      }else {
-    	  valueWithOutAccent=StringUtils.clearDelimiters(valueWithOutAccent, delims);// da bi izbacio sve znakove interpukcije osim za UDK,ISBN, ISSN
-          f=new Field(pref.prefName, "0start0 " + valueWithOutAccent.toLowerCase() + " 0end0", 
-          Field.Store.YES, 
-          Field.Index.TOKENIZED, 
-          Field.TermVector.WITH_POSITIONS_OFFSETS);
-          
-    	  value=StringUtils.clearDelimiters(value, delims);// cuvamo i orginalnu verziju terma ali ne indeksiramo
-    	  Field  f1=new Field(pref.prefName, "0start0 " + value.toLowerCase() + " 0end0", 
-          Field.Store.YES, 
-          Field.Index.NO, 
-          Field.TermVector.NO);
-          doc.add(f1);
+      if (nontokenized.contains(pref.prefName)) {
+        f = new Field(pref.prefName, valueWithOutAccent.toLowerCase(), Field.Store.YES, Field.Index.UN_TOKENIZED,
+            Field.TermVector.NO);
+      } else if (isbnList.contains(pref.prefName)) { // zbog ISBN
+        valueWithOutAccent = StringUtils.clearDelimiters(valueWithOutAccent, delims);
+        valueWithOutAccent = valueWithOutAccent.replace(" ", "");
+        f = new Field(pref.prefName, "0start0 " + valueWithOutAccent.toLowerCase() + " 0end0", Field.Store.YES,
+            Field.Index.TOKENIZED, Field.TermVector.WITH_POSITIONS_OFFSETS);
+
+      } else {
+        // da bi izbacio sve znakove interpunkcije osim za UDK, ISBN, ISSN
+        valueWithOutAccent = StringUtils.clearDelimiters(valueWithOutAccent, delims);
+        f = new Field(pref.prefName, "0start0 " + valueWithOutAccent.toLowerCase() + " 0end0", Field.Store.YES,
+            Field.Index.TOKENIZED, Field.TermVector.WITH_POSITIONS_OFFSETS);
+
+        // cuvamo i originalnu verziju terma ali ne indeksiramo
+        value = StringUtils.clearDelimiters(value, delims);
+
+        Field f1 = new Field(pref.prefName, "0start0 " + value.toLowerCase() + " 0end0", Field.Store.YES,
+            Field.Index.NO, Field.TermVector.NO);
+        doc.add(f1);
       }
       doc.add(f);
-      
+
       if (sortPrefixes.contains(pref.prefName)) {
-        if (doc.getField(pref.prefName+"_sort") == null)
-          doc.add(new Field(pref.prefName+"_sort", value.toLowerCase(), 
-              Field.Store.YES, 
-              Field.Index.UN_TOKENIZED, 
+        if (doc.getField(pref.prefName + "_sort") == null)
+          doc.add(new Field(pref.prefName + "_sort", value.toLowerCase(), Field.Store.YES, Field.Index.UN_TOKENIZED,
               Field.TermVector.NO));
       }
     }
     return doc;
-  }
-  
+  }  
   
   /**
    * Returns a new Lucene index writer. Creates the index if necessary.  
@@ -248,28 +237,27 @@ public class Indexer {
   }
   
   protected String indexPath;
-  private static List<String> nontokenized=new ArrayList<String>();
-  private static List<String> isbnList=new ArrayList<String>();
-  static{
-	  nontokenized.add("DC");
-	 // nontokenized.add("SN"); //za isbn i issn izbacujemo crtice
-	 // nontokenized.add("SP");
-	//  nontokenized.add("SC");
-	//  nontokenized.add("BN");
-	  nontokenized.add("675a");
-	//  nontokenized.add("010a");
-	//  nontokenized.add("011a");
-	  nontokenized.add("IN");
-	
-  }
-  static{
+  private static List<String> nontokenized = new ArrayList<>();
+  private static List<String> isbnList = new ArrayList<>();
 
-	  isbnList.add("SN"); //za isbn i issn izbacujemo crtice
-	  isbnList.add("SP");
-	  isbnList.add("SC");
-	  isbnList.add("BN");;
-	  isbnList.add("010a");
-	  isbnList.add("011a");	
+  static {
+	  nontokenized.add("DC");
+	  nontokenized.add("675a");
+	  nontokenized.add("IN");
+    // nontokenized.add("SN"); //za isbn i issn izbacujemo crtice
+    // nontokenized.add("SP");
+	  // nontokenized.add("SC");
+	  // nontokenized.add("BN");
+	  // nontokenized.add("010a");
+	  // nontokenized.add("011a");
+	
+	  // za isbn i issn izbacujemo crtice
+	  isbnList.add("SN"); 
+    isbnList.add("SP");
+    isbnList.add("SC");
+    isbnList.add("BN");;
+    isbnList.add("010a");
+    isbnList.add("011a"); 
   }
   
   private static String delims = "*?,;:\"()[]{}+/.!-" ;

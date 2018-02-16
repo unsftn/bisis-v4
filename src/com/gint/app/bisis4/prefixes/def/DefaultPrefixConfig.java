@@ -19,7 +19,7 @@ import com.gint.app.bisis4.prefixes.PrefixValue;
 /**
  * Implements a default prefix configuration.
  * 
- * @author mbranko@uns.ns.ac.yu
+ * @author mbranko@uns.ac.rs
  */
 public class DefaultPrefixConfig implements PrefixConfig {
 
@@ -67,8 +67,8 @@ public class DefaultPrefixConfig implements PrefixConfig {
   public DefaultPrefixConfig() {
     prefixHandler = new DefaultPrefixHandler();
     prefixMap = new DefaultPrefixMap();
-    allPrefixes = new HashSet();
-    sortPrefixes = new HashSet();
+    allPrefixes = new HashSet<String>();
+    sortPrefixes = new HashSet<String>();
     allPrefixes.add("AB");
     allPrefixes.add("AM");
     allPrefixes.add("AN");
@@ -142,6 +142,12 @@ public class DefaultPrefixConfig implements PrefixConfig {
     allPrefixes.add("SS");
     allPrefixes.add("ST");
     allPrefixes.add("SU");
+    allPrefixes.add("SF");
+    allPrefixes.add("SL");
+    allPrefixes.add("SW");
+    allPrefixes.add("SX");
+    allPrefixes.add("SY");
+    allPrefixes.add("SZ");
     allPrefixes.add("TA");
     allPrefixes.add("TI");
     allPrefixes.add("TN");
@@ -157,12 +163,12 @@ public class DefaultPrefixConfig implements PrefixConfig {
     sortPrefixes.add("AU");
     sortPrefixes.add("TI");
     sortPrefixes.add("PY");
-    prefixNameLists = new HashMap();
+    prefixNameLists = new HashMap<>();
     prefixNameLists.put(null, initPrefixNameList(null));
   }
   
   private List<PrefixValue> initPrefixNameList(Locale locale) {
-    List<PrefixValue> retVal = new ArrayList<PrefixValue>();
+    List<PrefixValue> retVal = new ArrayList<>();
     ResourceBundle rb = null;
     if (locale == null)
       rb = PropertyResourceBundle.getBundle(
@@ -172,15 +178,15 @@ public class DefaultPrefixConfig implements PrefixConfig {
           "com.gint.app.bisis4.prefixes.def.PrefixNames", locale);
     if (rb == null)
       return retVal;
-    Enumeration keys = rb.getKeys();
+    Enumeration<String> keys = rb.getKeys();
     while (keys.hasMoreElements()) {
-      String key = (String)keys.nextElement();
+      String key = keys.nextElement();
       String value = rb.getString(key);
       retVal.add(new PrefixValue(key.toUpperCase(), value));
     }
     Collections.sort(retVal);
 
-    List<PrefixValue> temp = new ArrayList<PrefixValue>();
+    List<PrefixValue> temp = new ArrayList<>();
     if (locale == null)
       rb = PropertyResourceBundle.getBundle(
           "com.gint.app.bisis4.prefixes.def.SubfieldNames");
