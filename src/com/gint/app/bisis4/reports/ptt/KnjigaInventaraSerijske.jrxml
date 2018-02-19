@@ -82,6 +82,13 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="201" height="21" uuid="66b048b1-1cda-4e22-ac49-1b58ee05ee58"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[Библиотека ПТТ музеја]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
