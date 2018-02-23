@@ -183,7 +183,6 @@ public class KnjigaInventaraSerijske extends Report {
       String godiste=p.getGodiste();
       if (godiste == null)
     	  godiste = " ";
-      brSv = godiste+","+brSv;
       sig = Signature.format(p.getSigDublet(), p.getSigPodlokacija(), 
           p.getSigIntOznaka(), p.getSigFormat(), p.getSigNumerusCurens(), 
           p.getSigUDK());
