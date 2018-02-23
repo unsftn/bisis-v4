@@ -183,6 +183,10 @@ public class KnjigaInventaraSerijske extends Report {
       String brSv = Integer.toString(p.getSveskeCount());
       if (brSv == null)
       	brSv = " ";
+      String godiste=p.getGodiste();
+      if (godiste == null)
+    	  godiste = " ";
+      brSv = godiste+","+brSv;
       sig = Signature.format(p.getSigDublet(), p.getSigPodlokacija(), 
           p.getSigIntOznaka(), p.getSigFormat(), p.getSigNumerusCurens(), 
           p.getSigUDK());
@@ -201,7 +205,7 @@ public class KnjigaInventaraSerijske extends Report {
         	  i.povez= LatCyrUtils.toCyrillic(temppovez.substring(0,zagrada)); 
           }
       }else{
-      i.povez=temppovez;
+      i.povez="";
       }
       i.nepovez ="";
       i.dim = dim;
@@ -232,12 +236,13 @@ public class KnjigaInventaraSerijske extends Report {
           key = settings.getParam("file") + getFilenameSuffix(p.getDatumInventarisanja());
         }else{ //ukoliko zelimo iventarnu knjigu od po npr 1000
         	   //parametar part odredjuje koliko je primeraka u jednom fajlu
-          String invBroj=p.getInvBroj().substring(2);
+          String invBroj=p.getInvBroj().substring(4);
+          String pref=p.getInvBroj().substring(0,4);
           int partBr=Integer.parseInt(part);
           int ceo=Integer.parseInt(invBroj)/partBr;
           int odBr=ceo*partBr;
           int doBr=ceo*partBr + partBr;
-          key = settings.getParam("file") +"-"+odBr+"do"+doBr;
+          key = settings.getParam("file") +"-"+odBr+"_do_"+doBr;
         }
       getList(key).add(i);
       

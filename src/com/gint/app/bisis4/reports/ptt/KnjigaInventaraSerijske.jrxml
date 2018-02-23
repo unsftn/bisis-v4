@@ -70,7 +70,7 @@
 				<text><![CDATA[Инвентарна књига за серијске публикације]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField" positionType="Float" x="333" y="35" width="110" height="18" uuid="861be8bb-5207-415c-b190-058dfd14b2ce"/>
+				<reportElement key="textField" positionType="Float" x="260" y="35" width="320" height="18" uuid="861be8bb-5207-415c-b190-058dfd14b2ce"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -336,7 +336,7 @@
 				<textFieldExpression><![CDATA[$F{datum}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField" positionType="Float" x="190" y="1" width="131" height="31" uuid="84931a3a-7ca2-4867-9f5f-49482b37c62a"/>
+				<reportElement key="textField" positionType="Float" x="190" y="1" width="131" height="31" isPrintWhenDetailOverflows="true" uuid="84931a3a-7ca2-4867-9f5f-49482b37c62a"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>

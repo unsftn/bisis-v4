@@ -67,7 +67,7 @@
 				<text><![CDATA[Библиотека ПТТ музеја]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField" positionType="Float" x="333" y="37" width="110" height="18" uuid="27e7fee0-5fba-4670-a1d3-e0c1e9b1b70b"/>
+				<reportElement key="textField" positionType="Float" x="182" y="37" width="388" height="18" uuid="27e7fee0-5fba-4670-a1d3-e0c1e9b1b70b"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -300,7 +300,7 @@
 				<textFieldExpression><![CDATA[$F{datum}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" positionType="Float" x="185" y="0" width="240" height="45" uuid="ce94909f-959d-4197-9acf-799eb4012aa3"/>
+				<reportElement key="textField" positionType="Float" x="185" y="0" width="240" height="45" isPrintWhenDetailOverflows="true" uuid="ce94909f-959d-4197-9acf-799eb4012aa3"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
