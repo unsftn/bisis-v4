@@ -165,10 +165,7 @@ public class KnjigaInventaraSerijske extends Report {
       opis.append(", ");
     opis.append(drzava);
    
-    String god = rec.getSubfieldContent("207a");
-    if (god == null)
-    	god = " ";
-    
+
     String dim = rec.getSubfieldContent("215d");
     if (dim == null)
       dim = " ";
@@ -203,9 +200,11 @@ public class KnjigaInventaraSerijske extends Report {
     	  int zagrada=temppovez.indexOf("(");
           if(zagrada !=-1){
         	  i.povez= LatCyrUtils.toCyrillic(temppovez.substring(0,zagrada)); 
+          }else {
+        	  i.povez=temppovez;
           }
       }else{
-      i.povez="";
+      i.povez=" ";
       }
       i.nepovez ="";
       i.dim = dim;
@@ -223,8 +222,8 @@ public class KnjigaInventaraSerijske extends Report {
       if (brRac!="" && brRac!=" ")
         nabavka += ", " + brRac;
 
-      brSv=String.valueOf(p.getSveske().size());
-      i.brSv=brSv;
+      i.brSv = brSv;
+      i.god = godiste;
       i.cena = p.getCena() == null ? " " : 
         FormatBigDecimal.format(p.getCena(), 2).toPlainString();
       i.signatura = sig;
