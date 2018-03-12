@@ -93,6 +93,7 @@ public static String make(Record rec, String typeCode, String language){
 		root.put("slobodniR",Messages.get("FREE_COPY",language));
 		root.put("invbrojR",Messages.get("INV_NUM",language));
     	root.put("dostupnost","Dostupnost primeraka");
+    	root.put("inventar","Inventar");
     	root.put("url","URL");
     return root;
 	}

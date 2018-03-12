@@ -19,6 +19,35 @@ public class Utils {
 		this.rec = rec;
 	}
 	
+	public List<String[]> getInvSigList(){
+		List<String[]> retVal = new ArrayList();
+		
+		if(rec == null)
+			return null;
+		
+		if (this.rec.getPrimerci() != null && this.rec.getPrimerci().size() > 0)
+			for (Primerak p: this.rec.getPrimerci()) {
+				String[] invSig = new String[2];
+				if (p.getInvBroj() != null && !p.getInvBroj().equals("")) {
+					invSig[0] = p.getInvBroj();
+					invSig[1] = Signature.format(p);
+				}
+				retVal.add(invSig);
+			}
+		
+		if (this.rec.getGodine() != null && this.rec.getGodine().size() > 0)
+			for (Godina g: this.rec.getGodine()) {
+				String[] invSig = new String[2];
+				if (g.getInvBroj() != null && !g.getInvBroj().equals("")) {
+					invSig[0] = g.getInvBroj();
+					invSig[1] = Signature.format(g);
+				}
+				retVal.add(invSig);
+			}
+			
+		return retVal;
+	}
+	
 	 public String getSignatura(){
 	    if (rec == null)
 	      return "";
@@ -150,5 +179,6 @@ public class Utils {
 	    	return null;
 	    }
 	 }
+	
 
 }
