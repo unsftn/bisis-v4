@@ -47,6 +47,7 @@ import com.gint.app.bisis4.format.UIndicator;
 import com.gint.app.bisis4.format.USubfield;
 import com.gint.app.bisis4.format.UValidatorException;
 import com.gint.app.bisis4.records.Subfield;
+import com.gint.app.bisis4.utils.CCPUtil;
 
 public class RecordTreeCellEditor extends DefaultTreeCellEditor{
 	
@@ -75,6 +76,7 @@ public class RecordTreeCellEditor extends DefaultTreeCellEditor{
 	public RecordTreeCellEditor(RecordTree tree,DefaultTreeCellRenderer renderer) {
 		super(tree,renderer);		
 		cellEditor = new JTextArea();
+		cellEditor.setComponentPopupMenu(CCPUtil.getCCPPopupMenu());
 		codedCellEditor = new JTextField();
 		label = new JLabel();	
 		coder = new JButton(new ImageIcon(getClass().getResource(
