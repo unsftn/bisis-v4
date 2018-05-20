@@ -173,7 +173,7 @@ public class DefaultPrefixConfig implements PrefixConfig {
     ResourceBundle rb = null;
     if (locale == null)
       rb = PropertyResourceBundle.getBundle(
-          "com.gint.app.bisis4.prefixes.def.PrefixNames");
+          "com.gint.app.bisis4.prefixes.def.PrefixNames_sr");
     else
       rb = PropertyResourceBundle.getBundle(
           "com.gint.app.bisis4.prefixes.def.PrefixNames", locale);
