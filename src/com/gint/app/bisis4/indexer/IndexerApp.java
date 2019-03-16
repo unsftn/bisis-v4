@@ -48,8 +48,8 @@ public class IndexerApp {
 	public static Connection conn;
 	
 	public static void main(String[] args) throws Exception {
-		if (args.length < 5  ||
-			 (args.length==6 && 
+		if (args.length < 6  ||
+			 (args.length==7 && 
 					(!args[5].equals("im")   &&
 					 !args[5].equals("ns")   &&
 					 !args[5].equals("pa")   &&
@@ -79,16 +79,20 @@ public class IndexerApp {
 					 !args[5].equals("tf")
 					 ))) {			
 			System.out
-					.println("index: <address> <database> <user> <password> <recordpath> [tf] [line-count]");			
+					.println("index: <address> <database> <user> <password> <recordpath> [tf] [lib-department(first sublocation)] [line-count]");			
 			return;
 		}		
+		if (args.length != 7) {
+			System.out.println("index: <address> <database> <user> <password> <recordpath> [tf] [lib-department(first sublocation)] [line-count]");
+		}
 		String address = args[0];
 		String database = args[1];
 		String user = args[2];
 		String password = args[3];
 		String recordpath = args[4];		
 		String library = "";
-		if(args.length==6){
+		String libDepartment = args[6];
+		if(args.length>=6){
 			library = args[5];
 			PrepisReport.setLocaleStr(library);
 		}else		
@@ -112,8 +116,8 @@ public class IndexerApp {
 		RandomAccessFile in = new RandomAccessFile(recordpath, "r");
 
     int totalCount = 0;
-		if (args.length > 6) {
-		  totalCount = Integer.parseInt(args[6]);
+		if (args.length > 7) {
+		  totalCount = Integer.parseInt(args[7]);
 		} else {
 	    System.out.println("Counting records...");
 	    while (in.readLine() != null) {
@@ -191,7 +195,7 @@ public class IndexerApp {
 					rec = PrepisIB.prepisiZapis(RecordFactory.fromUNIMARC(0, line));				
 					rec.setRN(storage.getNewID(conn,"RN"));					
 				}else if(library.equals("bg")){
-					rec = PrepisBGB.prepisiZapis(RecordFactory.fromUNIMARC(0, line));								
+					rec = PrepisBGB.prepisiZapis(RecordFactory.fromUNIMARC(0, line, libDepartment));								
 				}else if(library.equals("ftn-bisis")){					
 					rec = RecordFactory.fromUNIMARC(0, line);				
 					rec.setRN(storage.getNewID(conn,"RN"));
@@ -314,8 +318,8 @@ public class IndexerApp {
 		System.out.println("  progress:       "
 				+ percent(lineCount, totalCount));
 		System.out.println("Bad record count: " + badCount);
-    System.out.println("Bad primerci count: " + badCountP);
-    System.out.println("Bad godine count: " + badCountG);
+	    System.out.println("Bad primerci count: " + badCountP);
+	    System.out.println("Bad godine count: " + badCountG);
 		System.out.println("Time elapsed:     " + timeToString(timeElapsed));
 		System.out.println("Time remaining:   " + timeToString(timeRemaining));
 	}

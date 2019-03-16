@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.logging.Log;
@@ -58,6 +59,9 @@ public class StanjeFondaPoJezicima extends Report {
 	    }
 	    List<Primerak> primerci = rec.getPrimerci(); 
 	    for(Primerak p:primerci){
+	    	Matcher matcher = pattern.matcher(p.getInvBroj());
+	        if (!matcher.matches())
+	          continue;
 	    	 String key = settings.getParam("file") + getFilenameSuffix(p.getDatumInventarisanja());
 	         Item item=getItem(getList(key),code);
 	         if (item == null ){

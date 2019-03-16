@@ -112,6 +112,13 @@ public class RecordFactory {
       .polje000UMetapodatke();
   }
   
+  public static Record fromUNIMARC(int pubType, String unimarc, String libDepratment) {
+	    return UnimarcSerializer.fromUNIMARC(pubType, unimarc, true)
+	      .poljaUPrimerke(libDepratment)
+	      .poljaUGodine()
+	      .polje000UMetapodatke();
+	  }
+    
  /* public static String toUNIMARC(int pubType, Record rec) {
     return UnimarcSerializer.toUNIMARC(pubType, 
         rec.primerciUPolja().godineUPolja().polje000UMetapodatke(), true);

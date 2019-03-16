@@ -5,7 +5,9 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -124,7 +126,7 @@ public class PrimerakSerializer {
       if (cena != null) {
         cena = cena.replace(',', '.');
         BigDecimal num = new BigDecimal(cena);
-        if (num.precision() <= 12 && 0 <= num.scale() && num.scale() <= 5){
+        if (num.precision() <= 10 && 0 <= num.scale() && num.scale() <= 5){
           p.setCena(num);
         }else{
           p.setCena(null);
@@ -138,12 +140,25 @@ public class PrimerakSerializer {
       log.warn("Neispravna cena(exception) : " + cena);
       toLog = true;
     }
+    
+    String fdi = getSubsubfieldContent(f, 'd', 'i');
+    String fdl = getSubsubfieldContent(f, 'd', 'l');
+//    
+    if (fdi != null && fdi != null)
+    	System.out.println("ima oba za ");
+//    
+    if (fdi != null ) {
+    	p.setSigIntOznaka(fdi);
+    }
+    if (fdl != null )
+    	p.setSigIntOznaka(fdl);
+    
     p.setFinansijer(getSubfieldContent(f, '4'));
     p.setUsmeravanje(getSubfieldContent(f, '5'));
     p.setSigDublet(getSubsubfieldContent(f, 'd', 'd'));
     p.setSigFormat(getSubsubfieldContent(f, 'd', 'f'));   
-    p.setSigIntOznaka(getSubsubfieldContent(f, 'd', 'i'));
-    p.setSigPodlokacija(getSubsubfieldContent(f, 'd', 'l'));
+    // p.setSigIntOznaka(getSubsubfieldContent(f, 'd', 'i'));
+    p.setSigPodlokacija(mapSublocation(getSubfieldContent(f, 'w')));
     p.setSigNumerusCurens(getSubsubfieldContent(f, 'd', 'n'));
     p.setSigUDK(getSubsubfieldContent(f, 'd', 'u'));
     p.setInvBroj(getSubfieldContent(f, 'f'));
@@ -164,7 +179,7 @@ public class PrimerakSerializer {
     p.setNapomene(getSubfieldContent(f, 'r'));
     p.setPovez(getSubfieldContent(f, 's'));
     p.setNacinNabavke(getSubfieldContent(f, 'v'));
-    p.setOdeljenje(getSubfieldContent(f, 'w'));
+    p.setOdeljenje(mapSublocation(getSubfieldContent(f, 'w')).substring(0, 2));
     p.setDostupnost(getSubfieldContent(f, 'p'));
     try{
     if (getSubfieldContent(f, '9') != null){
@@ -278,6 +293,160 @@ public class PrimerakSerializer {
     return f;
   }
   
+  //pri svakom prepisu dopuniti mapu
+  public static String mapSublocation(String oldW) {
+	  
+	  if (oldW == null)
+		  return libDep;
+	  
+	  Map<String, String> sublocationMap = new HashMap<>();
+	  
+	  if (libDep.startsWith("01")) {
+	  // Periodika - 01 jedini slucaj da prepisujemo iz BISIS3!
+	  sublocationMap.put("01", "0105");
+	  }
+	  
+	  if (libDep.startsWith("02")) {
+	  // Vozdovac - 02
+	  sublocationMap.put("01", "0201");
+	  sublocationMap.put("02", "0202");
+	  sublocationMap.put("03", "0203");
+	  sublocationMap.put("04", "0204");
+	  sublocationMap.put("05", "0205");
+	  sublocationMap.put("06", "0206");
+	  }
+	  
+	  if (libDep.startsWith("03")) {
+	  // Vracar - 03
+	  sublocationMap.put("020", "0320");
+	  sublocationMap.put("021", "0321");
+	  sublocationMap.put("022", "0322");
+	  sublocationMap.put("023", "0323");
+	  sublocationMap.put("024", "0324");
+	  }
+
+	  if (libDep.startsWith("04")) {
+	  // Zvezdara - 04 
+	  sublocationMap.put("025", "0425");
+	  sublocationMap.put("026", "0426");
+	  sublocationMap.put("027", "0427");
+	  sublocationMap.put("028", "0428");
+	  sublocationMap.put("029", "0429");
+	  sublocationMap.put("030", "0430");
+	  sublocationMap.put("031", "0431");
+	  sublocationMap.put("032", "0432");
+	  }
+	  
+	  if (libDep.startsWith("05")) {
+	  // Cukarica - 05
+	  sublocationMap.put("01", "0501");
+	  sublocationMap.put("02", "0502");
+	  sublocationMap.put("03", "0503");
+	  sublocationMap.put("04", "0504");
+	  sublocationMap.put("05", "0505");
+	  sublocationMap.put("06", "0506");
+	  sublocationMap.put("07", "0507");
+	  sublocationMap.put("08", "0508");
+	  sublocationMap.put("09", "0509");
+	  sublocationMap.put("10", "0510");
+	  }
+	  
+	  if (libDep.startsWith("06")) {
+	  // Rakovica - 06
+	  sublocationMap.put("01", "0601");
+	  sublocationMap.put("02", "0602");
+	  sublocationMap.put("03", "0603");
+	  sublocationMap.put("04", "0604");
+	  sublocationMap.put("05", "0605");
+	  sublocationMap.put("06", "0606");
+	  }
+	  
+	  if (libDep.startsWith("07")) {
+	  // Barajevo - 07
+	  sublocationMap.put("01", "0701");
+	  sublocationMap.put("02", "0702");
+	  }
+	  
+	  if (libDep.startsWith("08")) {
+	  // Mladenovac - 08
+	  sublocationMap.put("21", "0821");
+	  sublocationMap.put("20", "0820");
+	  sublocationMap.put("55", "0855");
+	  sublocationMap.put("51", "0851");
+	  sublocationMap.put("30", "0830");
+	  }
+	  
+	  if (libDep.startsWith("09")) {
+	  // Savski venac - 09
+	  sublocationMap.put("090", "0990");
+	  sublocationMap.put("091", "0991");
+	  sublocationMap.put("092", "0992");
+	  sublocationMap.put("093", "0993");
+	  sublocationMap.put("094", "0994");
+	  sublocationMap.put("095", "0995");
+	  sublocationMap.put("096", "0996");
+	  sublocationMap.put("097", "0997");
+	  sublocationMap.put("098", "0998");
+	  sublocationMap.put("099", "0999");
+	  }
+	  
+	  if (libDep.startsWith("10")) {
+	  // Stari grad - 10
+	  sublocationMap.put("10", "1010");
+	  sublocationMap.put("11", "1011");
+	  sublocationMap.put("12", "1012");
+	  }
+	  
+	  if (libDep.startsWith("11")) {
+	  // Zemun - 11
+	  sublocationMap.put("01", "1101");
+	  sublocationMap.put("02", "1102");
+	  sublocationMap.put("03", "1103");
+	  sublocationMap.put("05", "1105");
+	  sublocationMap.put("06", "1106");
+	  sublocationMap.put("07", "1107");
+	  sublocationMap.put("10", "1110");
+	  sublocationMap.put("12", "1112");
+	  sublocationMap.put("13", "1113");
+	  sublocationMap.put("15", "1115");
+	  sublocationMap.put("19", "1119");
+	  sublocationMap.put("20", "1120");
+	  }
+	  
+	  if (libDep.startsWith("12")) {
+	  // Novi Beograd - 12
+	  sublocationMap.put("01", "1201");
+	  sublocationMap.put("02", "1202");
+	  sublocationMap.put("03", "1203");
+	  sublocationMap.put("04", "1204");
+	  sublocationMap.put("05", "1205");
+	  sublocationMap.put("06", "1206");
+	  sublocationMap.put("07", "1207");
+	  sublocationMap.put("08", "1208");
+	  sublocationMap.put("09", "1209");
+	  sublocationMap.put("10", "1210");
+	  }
+	  
+	  if (libDep.startsWith("13")) {
+	  // Grocka - 13
+	  sublocationMap.put("01", "1301");
+	  sublocationMap.put("02", "1302");
+	  sublocationMap.put("03", "1303");
+	  sublocationMap.put("04", "1304");
+	  }
+	  
+	  if (libDep.startsWith("15")) {
+	  // Sopot - 15
+	  sublocationMap.put("01", "1501");
+	  sublocationMap.put("02", "1502");
+	  sublocationMap.put("03", "1503");
+	  sublocationMap.put("04", "1504");
+	  }
+	  
+	  
+	  return sublocationMap.get(oldW) != null ? sublocationMap.get(oldW) : libDep;
+  }
+  
   public static Godina getGodina(Field f) {  	
     if (!f.getName().equals("997"))
       return null;
@@ -316,7 +485,8 @@ public class PrimerakSerializer {
     g.setSigDublet(getSubsubfieldContent(f, 'd', 'd'));
     g.setSigFormat(getSubsubfieldContent(f, 'd', 'f'));
     g.setSigIntOznaka(getSubsubfieldContent(f, 'd', 'i'));
-    g.setSigPodlokacija(getSubsubfieldContent(f, 'd', 'l'));
+//    g.setSigPodlokacija(getSubsubfieldContent(f, 'd', 'l'));
+    g.setSigPodlokacija(mapSublocation(getSubfieldContent(f, 'w')));
     g.setSigNumerusCurens(getSubsubfieldContent(f, 'd', 'n'));
     g.setSigNumeracija(getSubsubfieldContent(f, 'd', 's'));
     g.setSigUDK(getSubsubfieldContent(f, 'd', 'u'));
@@ -340,7 +510,7 @@ public class PrimerakSerializer {
     g.setNapomene(getSubfieldContent(f, 'r'));
     g.setPovez(getSubfieldContent(f, 's'));
     g.setNacinNabavke(getSubfieldContent(f, 'v'));
-    g.setOdeljenje(getSubfieldContent(f, 'w'));
+    g.setOdeljenje(mapSublocation(getSubfieldContent(f, 'w')).substring(0, 2));
     g.setDostupnost(getSubfieldContent(f, 'p'));
     if (toLog){
       log.warn("Godina: "+ g.toString());
@@ -592,9 +762,14 @@ public class PrimerakSerializer {
     return cnt;
   }
   
+  public static void setLibDep(String ld) {
+	  libDep = ld;
+  }
+  
   private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
   private static SimpleDateFormat dateFormat2 = new SimpleDateFormat("ddMMyy");
   private static Log log = LogFactory.getLog(PrimerakSerializer.class);
+  private static String libDep = "";
   
   
 }

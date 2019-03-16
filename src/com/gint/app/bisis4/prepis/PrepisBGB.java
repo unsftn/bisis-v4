@@ -33,12 +33,12 @@ public class PrepisBGB {
 				p.setSigFormat(p.getSigFormat().toUpperCase());
 			if(p.getStatus()!=null && p.getStatus().equals("Ps"))
 				p.setStatus("P");
-			if(p.getOdeljenje()!=null){
-				if(p.getOdeljenje().equals("03"))
-					p.setSigPodlokacija("002");
-				if(p.getOdeljenje().equals("04"))
-					p.setSigPodlokacija("003");
-			}
+//			if(p.getOdeljenje()!=null){
+//				if(p.getOdeljenje().equals("03"))
+//					p.setSigPodlokacija("002");
+//				if(p.getOdeljenje().equals("04"))
+//					p.setSigPodlokacija("003");
+//			}
 			if(p.getInvBroj()!=null && p.getInvBroj().length()>2){
 				p.setOdeljenje(p.getInvBroj().substring(0,2));			
 			}

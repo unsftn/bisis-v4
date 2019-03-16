@@ -262,6 +262,11 @@ public class Record implements Serializable {
     return PrimerakSerializer.poljaUPrimerke(this);
   }
   
+  public Record poljaUPrimerke(String libDepartment) {
+	  	PrimerakSerializer.setLibDep(libDepartment);
+	    return PrimerakSerializer.poljaUPrimerke(this);
+	  }
+  
   public Record godineUPolja() {
     return PrimerakSerializer.godineUPolja(this);
   }

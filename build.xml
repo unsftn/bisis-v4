@@ -129,6 +129,21 @@
     </jar>
     <delete dir="temp" />
   </target>
+	
+	<!--sifarnici-->
+	  <target name="sifarnici" depends="compile">
+	    <mkdir dir="temp" />
+	  	<unjar src="${libs}/commons-logging-1.1.jar" dest="temp" />
+	  	<unjar src="${libs}/gint-utils.jar" dest="temp" />
+	  	<unjar src="${libs}/log4j-1.2.11.jar" dest="temp" />
+	    <unjar src="${libs}/commons-lang-2.2.jar" dest="temp" />
+	    <jar destfile="jars/bisis-sifarnici.jar" manifest="manifests/sifarnici.mf">
+	      <fileset dir="temp" includes="**" />
+	      <fileset dir="bin" includes="**" />
+	      <include name="log4j.properties" />
+	    </jar>
+	    <delete dir="temp" />
+	  </target>
 
   <!--index and store records-->
   <target name="indexer" depends="compile">

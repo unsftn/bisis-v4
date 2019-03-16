@@ -176,9 +176,9 @@ public class InvKnjigaMonografske extends Report {
     	
       if(p.getInvBroj()==null)
     	  continue;
-   /*   Matcher matcher = pattern.matcher(p.getInvBroj());
+      Matcher matcher = pattern.matcher(p.getInvBroj());
       if (!matcher.matches())
-        continue;*/
+        continue;
 
       sig = Signature.format(p.getSigDublet(), p.getSigPodlokacija(), 
           p.getSigIntOznaka(), p.getSigFormat(), p.getSigNumerusCurens(), 

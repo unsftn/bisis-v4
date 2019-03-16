@@ -42,7 +42,7 @@ create table Godine
    godina_id                      int                            not null,
    povez_id                       char(2) BINARY,
    odeljenje_id                   char(2),
-   IntOzn_id                      char(4) BINARY,
+   IntOzn_id                      char(16) BINARY,
    record_id                      int                            not null,
    nacin_id                       char(1),
    dostupnost_id				  char(4),	
@@ -137,7 +137,7 @@ create index Godine_index1 on Godine
 /*==============================================================*/
 create table Interna_oznaka
 (
-   IntOzn_id                      char(4) BINARY                 not null,
+   IntOzn_id                      char(16) BINARY                 not null,
    IntOzn_opis                    varchar(255)                   not null,
    primary key (IntOzn_id)
 )
@@ -218,7 +218,7 @@ create table Primerci
    podlokacija_id                 char(10) BINARY,
    SigFormat_ID                   char(10) BINARY,
    odeljenje_id                   char(2),
-   IntOzn_id                      char(4) BINARY,
+   IntOzn_id                      char(16) BINARY,
    status_id                      char(1) BINARY,
    datum_statusa				  date,	
    record_id                      int                            not null,

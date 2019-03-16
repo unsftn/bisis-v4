@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.logging.Log;
@@ -62,6 +63,9 @@ public class NabavkaPoUDK extends Report {
 	  if (rec == null)
 	      return;   	    
 	  for (Primerak p : rec.getPrimerci()) {
+		  Matcher matcher = pattern.matcher(p.getInvBroj());
+	      if (!matcher.matches())
+	        continue;
 	      String invbr = p.getInvBroj();		      
 	      if (invbr == null || invbr.equals("")) {	                
 	        continue;
@@ -314,6 +318,7 @@ public class NabavkaPoUDK extends Report {
 	      return ' ';
 	    return s.charAt(pos);
 	  }
+  
   SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
   private Pattern pattern;
   private Map<String, List<Item>> itemMap = new HashMap<String, List<Item>>();
