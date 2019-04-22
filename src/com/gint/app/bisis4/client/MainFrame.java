@@ -12,6 +12,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import com.gint.app.bisis4.client.searchNetBisiV5.net.NetHitListFrameBisis5;
 import net.sf.jasperreports.engine.JasperPrint;
 
 import com.gint.app.bisis4.client.admin.coders.CoderFrame;
@@ -92,20 +93,8 @@ public class MainFrame extends JFrame {
    }
  }
   
-  public void addHitListFrame(String query, Result queryResults) {
-  	if(hlf==null){
-    hlf = new HitListFrame(query, queryResults);
-    desktop.add(hlf);
-  	}
-  	else
-  		hlf.setQueryResults(query, queryResults);   
-  	showHitlistFrame();
-   try {
-    		hlf.setMaximum(true);
-   } catch (PropertyVetoException e) {			
-   }
-   hlf.setVisible(true);
-  }
+
+
   public void addBranchesFrame(String query, int[] hits) {
 	    brf = new GrupniPrikazFrame(query, hits);
 	    desktop.add(brf);
@@ -118,7 +107,16 @@ public class MainFrame extends JFrame {
 	    hlf.setVisible(true);
 	    return hlf;
 	  }
-  
+    public void addNetHitListFrame(NetHitListFrameBisis5 netHitListFrame) {
+        try {
+            desktop.remove(nhlf);
+            desktop.repaint();
+        } catch (Exception e) {}
+        nhlf = netHitListFrame;
+        desktop.add(netHitListFrame);
+        nhlf.setVisible(true);
+    }
+
   public void addReportFrame(String title, JasperPrint jp) {
     ReportFrame rf = new ReportFrame(title, jp);
     desktop.add(rf);
@@ -263,6 +261,21 @@ public class MainFrame extends JFrame {
   private CoderFrame countersFrame = null;
   private SearchAdvancedFrame searchAdvancedFrame= null;
   private JTextField statusnaLinija = null;
-  
-  
+    private NetHitListFrameBisis5 nhlf = null;
+
+    public void addHitListFrame(Result queryResults, String sQuery) {
+        if(hlf==null){
+            hlf = new HitListFrame(sQuery, queryResults);
+            desktop.add(hlf);
+        }
+        else {
+            hlf.setQueryResults(sQuery, queryResults);
+            showHitlistFrame();
+        }
+        try {
+            hlf.setMaximum(true);
+        } catch (PropertyVetoException e) {
+        }
+        hlf.setVisible(true);
+    }
 }

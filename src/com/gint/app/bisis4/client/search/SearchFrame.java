@@ -18,8 +18,9 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Vector;
-
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -38,6 +39,11 @@ import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.text.JTextComponent;
 
+import com.gint.app.bisis4.client.searchNetBisiV5.*;
+import com.gint.app.bisis4.client.searchNetBisiV5.model.OtherLibsSearch;
+import com.gint.app.bisis4.client.searchNetBisiV5.model.SearchModel;
+import com.gint.app.bisis4.client.searchNetBisiV5.retrofit.LibDTO;
+import com.gint.app.bisis4.client.searchNetBisiV5.retrofit.LibService;
 import org.apache.lucene.search.Query;
 import org.dom4j.Document;
 
@@ -67,7 +73,7 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
   public SearchFrame() {
     super("Pretra\u017eivanje zapisa", true, true, false, true);
     setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-    setPreferredSize(new Dimension(700,310));    
+    setPreferredSize(new Dimension(700,325));
     td=MessagingEnvironment.getThreadDispatcher();
     addInternalFrameListener(new InternalFrameAdapter(){
       public void internalFrameActivated(InternalFrameEvent e){
@@ -176,36 +182,64 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
       public void actionPerformed(ActionEvent ev) {
         if (rbLocalSearch.isSelected())
           handleLocalSearch();
-        else
-          handleNetSearch();
+        else {
+            if (cmbNetSearchVersion.getSelectedItem().equals("Bisis 4")){
+                handleNetSearch();
+            }else{
+                handleNetSearchBisis5();
+            }
+
+        }
       }
     });
     rbLocalSearch.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ev) {
         if (rbLocalSearch.isSelected()){
         	Component []itemsInList=spServerList.getComponents();
+
         	for(int i=0;i<itemsInList.length;i++)
         		itemsInList[i].setEnabled(false);
         	spServerList.getViewport().setVisible(false);
+            spServerList.getViewport().setView(null);
         	rbZipNetSearch.setEnabled(false);
+        	cmbNetSearchVersion.setEnabled(false);
         }
       }
     });
     rbNetSearch.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ev) {
         if (rbNetSearch.isSelected()){
-        	if(spServerList.getViewport().getView()==null)
-        		populateServerList();
-        	else{
-        		Component []itemsInList=spServerList.getComponents();
-            	for(int i=0;i<itemsInList.length;i++)
-            		itemsInList[i].setEnabled(true);
-            	spServerList.getViewport().setVisible(true);
-            	rbZipNetSearch.setEnabled(true);
-        	}
+            cmbNetSearchVersion.setEnabled(true);
+            spServerList.getViewport().setVisible(true);
+            if (cmbNetSearchVersion.getSelectedItem().equals("Bisis 4")) {
+                //if (spServerList.getViewport().getView() == null)
+                    populateServerListBisisV4();
+                //else {
+                 //   System.out.println("refreshujem ");
+                 //   Component[] itemsInList = spServerList.getComponents();
+                 //   for (int i = 0; i < itemsInList.length; i++)
+                //        itemsInList[i].setEnabled(true);
+                //    spServerList.getViewport().setVisible(true);
+                 //   rbZipNetSearch.setEnabled(true);
+                //}
+            }else{
+                populateServerListBisisV5();
+
+            }
         	
         }
       }
+    });
+    cmbNetSearchVersion.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            spServerList.getViewport().setView(null);
+            if (cmbNetSearchVersion.getSelectedItem().equals("Bisis 4")){
+                populateServerListBisisV4();
+            }else{
+                populateServerListBisisV5();
+            }
+        }
     });
     
     
@@ -277,11 +311,16 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
     c.weighty = 0.1;
     searchPlacePanel.add(rbLocalSearch, c);
     c.gridy = 1;
-    searchPlacePanel.add(rbNetSearch, c);
+    c.insets = new Insets(0, 0, 5, 0);
+    Box bv =  Box.createHorizontalBox();
+    bv.add(rbNetSearch, c);
+    bv.add(cmbNetSearchVersion);
+    searchPlacePanel.add(bv, c);
+    c.gridx = 0;
     c.gridy = 2;
     c.weighty = 0.7;
     searchPlacePanel.add(spServerList, c);
-    c.gridy = 4;
+    c.gridy = 3;
     c.gridx=0;
     c.weighty = 0.1;
     searchPlacePanel.add(rbZipNetSearch, c);
@@ -342,6 +381,7 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
     btnSearch.setFocusable(false);
     rbLocalSearch.setFocusable(false);
     rbNetSearch.setFocusable(false);
+    cmbNetSearchVersion.setEnabled(false);
     cbSort.setFocusable(false);
     //getRootPane().setDefaultButton(btnSearch);
     ButtonGroup btnGroup = new ButtonGroup();
@@ -661,7 +701,87 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
   	 	btnSearch.setEnabled(true);
   
   }
-  
+  private void handleNetSearchBisis5(){
+      OtherLibsSearch libsSearch = new OtherLibsSearch();
+      ArrayList<String> libraries = new ArrayList<String>();
+      String text1 = "";
+      String text2 = "";
+      String text3 = "";
+      String text4 = "";
+      String text5 = "";
+      if(tfPref1.isVisible())
+          text1 = tfPref1.getText();
+      else
+          text1 = codedPref1.getText();
+
+      if(tfPref2.isVisible())
+          text2 = tfPref2.getText();
+      else
+          text2 = codedPref2.getText();
+
+      if(tfPref3.isVisible())
+          text3 = tfPref3.getText();
+      else
+          text3 = codedPref3.getText();
+      if(tfPref4.isVisible())
+          text4 = tfPref4.getText();
+      else
+          text4 = codedPref4.getText();
+
+      if(tfPref5.isVisible())
+          text5 = tfPref5.getText();
+      else
+          text5 = codedPref5.getText();
+
+      if(text1.equals("") && text2.equals("") && text3.equals("") && text4.equals("") && text5.equals("")){
+          JOptionPane.showMessageDialog(BisisApp.getMainFrame(),
+                  "Niste postavili ni jedan kriterijum za pretragu!", "Pretraga", JOptionPane.INFORMATION_MESSAGE);
+      }else {
+
+      String[] prefixes = new String[5];
+      String[] values = new String[5];
+      String[] operators = new String[4];
+
+      prefixes[0] = btnPref1.getText();
+      prefixes[1] = btnPref2.getText();
+      prefixes[2] = btnPref3.getText();
+      prefixes[3] = btnPref4.getText();
+      prefixes[4] = btnPref5.getText();
+
+      values[0] = text1;
+      values[1] = text2;
+      values[2] = text3;
+      values[3] = text4;
+      values[4] = text5;
+
+      operators[0] = cbOper1.getSelectedItem().toString();
+      operators[1] = cbOper2.getSelectedItem().toString();
+      operators[2] = cbOper3.getSelectedItem().toString();
+      operators[3] = cbOper4.getSelectedItem().toString();
+      SearchModel searchModel = new SearchModel(prefixes[0], prefixes[1], prefixes[2], prefixes[3], prefixes[4],
+              values[0], values[1], values[2], values[3], values[4],
+              operators[0], operators[1], operators[2], operators[3], null, null, null);
+
+
+      JCheckList list=(JCheckList)spServerList.getViewport().getView();
+      for (int i = 0; i < list.getModel().getSize(); i++) {
+          CheckableItem ci = (CheckableItem)list.getModel().getElementAt(i);
+          if (ci.isSelected()){
+                libraries.add(((LibDTO)ci.getObject()).getLibraryName());
+          }
+      }
+      libsSearch.setLibraries(libraries);
+      libsSearch.setSearchModel(searchModel);
+      SearchStatusDlgBisis5 searchDialog = new SearchStatusDlgBisis5();
+      SearchTaskBisis5 searchTask = new SearchTaskBisis5(libsSearch, searchDialog);
+      searchTask.execute();
+      searchDialog.setVisible(true);
+      btnSearch.setEnabled(true);
+      }
+
+
+
+  }
   private void handleNetSearch() {
 	String convID = "" + (MessagingEnvironment.getMyLibServer()).getLibId() + "_"
     + new java.util.Date().getTime();
@@ -781,9 +901,22 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
       rbZipNetSearch.setEnabled(true);
     }
   }
+  public void refreshServerListBisisV5(List<LibDTO> libs){
+      Vector<CheckableItem> items=new Vector<CheckableItem>();
+      for (LibDTO lib : libs){
+          CheckableItem item = new CheckableItem(lib);
+          item.setSelected(true);
+          items.add(item);
+      }
+      CheckableItem[] arr=new CheckableItem[items.size()];
+      arr=items.toArray(arr);
+      JCheckList list = new JCheckList(arr);
+      spServerList.getViewport().setView(list);
+      rbZipNetSearch.setEnabled(true);
+  }
   
-  private void populateServerList() {
-	  Vector<LibraryServerDesc> receivedList = ServerListReader.prepareServerList();
+  private void populateServerListBisisV4() {
+	  Vector<LibraryServerDesc> receivedList = ServerListReader.prepareServerListBisisV4();
 	  if (receivedList != null) {
 		  refreshServerList(receivedList);
 	  }else{
@@ -791,7 +924,15 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
 		          "Lista servera trenutno nedostupna!", "Pretraga", JOptionPane.ERROR_MESSAGE);
 	  }
   }
-  
+  private void populateServerListBisisV5(){
+        List<LibDTO> receivedLibs = LibService.prepareServerListBisisV5();
+        if (receivedLibs != null){
+            refreshServerListBisisV5(receivedLibs);
+        }else{
+            JOptionPane.showMessageDialog(BisisApp.getMainFrame(),
+                    "Lista servera trenutno nedostupna!", "Pretraga", JOptionPane.ERROR_MESSAGE);
+        }
+  }
   /**
    * Support function used from processResponse and accessible from runners
    * inside threads
@@ -870,6 +1011,7 @@ public class SearchFrame extends JInternalFrame implements XMLMessagingProcessor
   private JPanel searchPlacePanel = new JPanel();
   private JRadioButton rbLocalSearch = new JRadioButton("Pretraga u lokalu");
   private JRadioButton rbNetSearch = new JRadioButton("Pretraga na mre\u017ei");
+  private JComboBox cmbNetSearchVersion = new JComboBox(new String[]{"Bisis 4", "Bisis 5"});
   private JScrollPane spServerList = new JScrollPane();
   private JRadioButton rbZipNetSearch = new JRadioButton("Koristi kompresiju za prenos");
   private JPanel pServerList = new JPanel();
