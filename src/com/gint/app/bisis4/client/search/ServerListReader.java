@@ -29,11 +29,12 @@ import com.gint.app.bisis4.xmlmessaging.util.SOAPUtilClient;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class ServerListReader {
-	
-	/* Function that will create list of available servers 
+
+
+	/* Function that will create list of available servers
 	 * by requesting servers.xml
 	 */
-	public static Vector<LibraryServerDesc> prepareServerList(){
+	public static Vector<LibraryServerDesc> prepareServerListBisisV4(){
 		if(MessagingEnvironment.DEBUG==1)
 			System.out.println("PrepareServerList called");
 		Vector<LibraryServerDesc> result=null;
@@ -87,6 +88,7 @@ public class ServerListReader {
 		}
 		return result;
 	}
+
 	
 	private static Document readServersListData(){
 		Document resp=null;

@@ -131,7 +131,7 @@ public class SearchTask extends SwingWorker<Integer, Integer> {
 	           "Nema pogodaka!", "Pretraga", JOptionPane.INFORMATION_MESSAGE);
 	       }
 	       else{
-	        BisisApp.getMainFrame().addHitListFrame(queryString, queryResult);
+	        BisisApp.getMainFrame().addHitListFrame( queryResult, queryString);
 	       }
 	     } 
 	     statusDlg.dispose();  

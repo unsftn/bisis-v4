@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jnlp codebase="http://147.91.218.23/bisisclient" href="bisis.jnlp" spec="1.7+">
+<jnlp codebase="http://localhost:8080/bisisclient" href="bisis.jnlp" spec="1.7+">
   <information>
     <title>Bisis aplikacija</title>
     <shortcut>
@@ -24,6 +24,7 @@
     <jar href="libs/axis.jar"/>
     <jar href="libs/c3p0-0.9.1.jar"/>
     <jar href="libs/cglib-2.2.jar"/>
+    <jar href="libs/converter-gson-2.3.0.jar"/>
     <jar href="libs/commons-dbcp-1.2.1.jar"/>
     <jar href="libs/commons-beanutils.jar"/>
     <jar href="libs/commons-betwixt-0.7.jar"/>
@@ -42,6 +43,7 @@
     <jar href="libs/forms-1.0.7.jar"/>
     <jar href="libs/freemarker.jar"/>
     <jar href="libs/gint-utils.jar"/>
+    <jar href="libs/gson-2.8.2.jar" />
     <jar href="libs/hessian-3.0.20.jar"/>
     <jar href="libs/hibernate3.jar"/>
     <jar href="libs/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
@@ -57,8 +59,10 @@
     <jar href="libs/jdbc2_0-stdext.jar"/>
     <jar href="libs/jsr173_1.0_api.jar"/>
     <jar href="libs/jta-1.1.jar"/>
+    <jar href="libs/kotlin-stdlib-1.3.11.jar"/>
     <jar href="libs/log4j-1.2.11.jar"/>
     <jar href="libs/looks-2.1.1.jar"/>
+    <jar href="libs/lombok-1.18.4.jar"/>
     <jar href="libs/lucene-core-2.2.0.jar"/>
     <jar href="libs/mysql-connector-java-5.1.6-bin.jar"/>
     <jar href="libs/options.jar"/>
@@ -76,9 +80,15 @@
     <jar href="libs/xmlpublic.jar"/>
     <jar href="libs/jaxen-1.1.1.jar"/>
     <jar href="libs/servlet-api-2.4.jar"/>
+    <jar href="libs/okhttp-3.13.1.jar"/>
+    <jar href="libs/okio-2.1.0.jar"/>
+    <jar href="libs/retrofit-2.4.0.jar"/>
+    <jar href="libs/spring-data-mongodb-2.1.1.RELEASE.jar"/>
+    <!--<jar href="libs/animal-sniffer-annotation-1.14.jar"/>-->
+
   </resources>
   <resources os="Windows"/>
   <application-desc main-class="com.gint.app.bisis4.client.BisisApp">
-    <argument>http://localhost/bisisclient/client-config.ini</argument>
+    <argument>http://localhost:8080/bisisclient/client-config.ini</argument>
   </application-desc>
 </jnlp>

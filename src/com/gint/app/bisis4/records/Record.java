@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
-import com.gint.app.bisis4.client.editor.recordtree.CurrRecord;
+import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gint.app.bisis4.records.serializers.PrimerakSerializer;
-
+@JsonIgnoreProperties( ignoreUnknown = true )
+@Document(collection = "#{@libraryPrefixProvider.getLibPrefix()}_records")
 public class Record implements Serializable {
 
   /**

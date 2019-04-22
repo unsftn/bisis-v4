@@ -39,7 +39,22 @@ public class DBManager {
 	    ex.printStackTrace();
 	  }  
   }
-  
+   public String getBisis5AuthToken(){
+  	try {
+		Connection conn = poolingDataSource.getConnection();
+		String sql = "SELECT text FROM configs where name = 'bisis5AuthToken';";
+		Statement stmt = conn.createStatement();
+		ResultSet rset = stmt.executeQuery(sql);
+		boolean res;
+		if (rset.next()) {
+			String token = rset.getString(1);
+			return token;
+		}
+	}catch (SQLException e){
+  		e.printStackTrace();
+	}
+		return null;
+  	}
   public boolean login(UserBean user){
 	  try {
 		  Connection conn = poolingDataSource.getConnection();
