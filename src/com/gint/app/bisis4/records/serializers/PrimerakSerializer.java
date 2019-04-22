@@ -448,10 +448,17 @@ public class PrimerakSerializer {
   }
   
   public static Godina getGodina(Field f) {  	
-    if (!f.getName().equals("997"))
-      return null;
-    Godina g = new Godina();
-    boolean toLog = false;
+    if (!f.getName().equals("997")) {
+        return null;
+    }
+      boolean toLog = false;
+      // If inventory number doesn't exist skip
+//      if (f.getSubfieldContent('f')== null || "".equals(f.getSubfieldContent('f')) || f.getSubfieldContent('f').length() != 11) {
+//        log.warn("Inventarni broj inje validan za:" + getSubsubfieldContent(f, '1', 'q'));
+//        toLog = true;
+//        return null;
+//    }
+      Godina g = new Godina();
     g.setBrojRacuna(getSubsubfieldContent(f, '1', 'm'));
     try {
       String s = getSubsubfieldContent(f, '1', 'q');
